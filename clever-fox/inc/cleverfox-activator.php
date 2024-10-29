@@ -229,6 +229,12 @@ class Cleverfox_Activator {
 				require CLEVERFOX_PLUGIN_DIR . 'inc/giant/default-widgets/default-widget.php';
 			}
 			
+			if ( 'Evion' == $theme->name){
+				require CLEVERFOX_PLUGIN_DIR . 'inc/evion/default-pages/upload-media.php';
+				require CLEVERFOX_PLUGIN_DIR . 'inc/evion/default-pages/home-page.php';
+				require CLEVERFOX_PLUGIN_DIR . 'inc/evion/default-widgets/default-widget.php';
+			}
+			
 			update_option( 'item_details_page', 'Done' );
 		}
 	}
