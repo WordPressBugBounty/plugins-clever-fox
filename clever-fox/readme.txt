@@ -4,7 +4,7 @@ Tags: homepage setup, companion, one click demo, sections, customizer
 Requires at least: 6.0
 Tested up to: 6.6
 Requires PHP: 5.6
-Stable tag: 26.2.46
+Stable tag: 26.2.47
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -80,6 +80,7 @@ Clever Fox plugin to enhance the functionality of free themes made by <a href="h
 - [CardioPress](https://wordpress.org/themes/cardiopress/)
 - [Profolio](https://wordpress.org/themes/profolio/)
 - [VillaPress](https://wordpress.org/themes/villapress/)
+- [Evion](https://wordpress.org/themes/evion/)				- [Free Demo](https://www.nayrathemes.com/demo/lite/evion/)
 
 == Installation ==
 
@@ -162,6 +163,7 @@ Yes, This plugin is specially make for Nayra Themes. You can install theme for e
 - [CardioPress](https://wordpress.org/themes/cardiopress/)
 - [Profolio](https://wordpress.org/themes/profolio/)
 - [VillaPress](https://wordpress.org/themes/villapress/)
+- [Evion](https://wordpress.org/themes/evion/)
 
 == Screenshots ==
 
@@ -190,6 +192,9 @@ Clever Fox WordPress Plugin is licensed under the GPL3 (https://www.gnu.org/lice
 
 
 == Changelog ==
+
+= 26.2.47 =
+* Readme Updated
 
 = 26.2.46 =
 * New Theme Added [Evion]
