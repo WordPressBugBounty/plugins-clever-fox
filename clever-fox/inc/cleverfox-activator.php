@@ -223,10 +223,10 @@ class Cleverfox_Activator {
 				require CLEVERFOX_PLUGIN_DIR . 'inc/corpex/default-pages/default-pages.php';
 			}
 			
-			if ( 'Giant' == $theme->name ){
-				require CLEVERFOX_PLUGIN_DIR . 'inc/giant/default-pages/upload-media.php';
-				require CLEVERFOX_PLUGIN_DIR . 'inc/giant/default-pages/home-page.php';
-				require CLEVERFOX_PLUGIN_DIR . 'inc/giant/default-widgets/default-widget.php';
+			if ( 'Artisan' == $theme->name ){
+				require CLEVERFOX_PLUGIN_DIR . 'inc/artisan/default-pages/upload-media.php';
+				require CLEVERFOX_PLUGIN_DIR . 'inc/artisan/default-pages/home-page.php';
+				require CLEVERFOX_PLUGIN_DIR . 'inc/artisan/default-widgets/default-widget.php';
 			}
 			
 			if ( 'Evion' == $theme->name){

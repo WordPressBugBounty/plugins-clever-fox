@@ -4,7 +4,7 @@ Tags: homepage setup, companion, one click demo, sections, customizer
 Requires at least: 6.0
 Tested up to: 6.6
 Requires PHP: 5.6
-Stable tag: 26.2.47
+Stable tag: 26.2.48
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -193,6 +193,9 @@ Clever Fox WordPress Plugin is licensed under the GPL3 (https://www.gnu.org/lice
 
 == Changelog ==
 
+= 26.2.48 =
+* Theme Name Updated [Artisan]
+
 = 26.2.47 =
 * Readme Updated
 
@@ -200,7 +203,7 @@ Clever Fox WordPress Plugin is licensed under the GPL3 (https://www.gnu.org/lice
 * New Theme Added [Evion]
 
 = 26.2.45 =
-* New Theme Added [Giant]
+* New Theme Added [ Artisan]
 
 = 26.2.44 =
 * Readme Updated
