@@ -9,7 +9,7 @@
 	<!-- Start: Service Section
             =======================-->
     <!-- Service start -->
-<section class="service-section service-home">
+<section id="service-section"class="service-section service-home">
     <div class="container">
 		<?php if(!empty($nexcraft_service_title)  || !empty($nexcraft_service_description)): ?>
 			<div class="section-title col-lg-6 mx-auto">

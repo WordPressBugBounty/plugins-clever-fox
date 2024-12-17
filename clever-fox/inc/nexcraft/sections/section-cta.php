@@ -14,7 +14,7 @@
 	if($cta_hs == 1) {
 ?>
 <!-- cta section -->
-<section class="cta-section scroll-bg roller cta-section-home" data-roller="start:0.5" style="background: var(--primary-color);">
+<section id="cta-section" class="cta-section scroll-bg roller cta-section-home" data-roller="start:0.5" style="background: var(--primary-color);">
     <div class="container">
         <div class="row">
 			<div class="col-lg-8 mx-auto">

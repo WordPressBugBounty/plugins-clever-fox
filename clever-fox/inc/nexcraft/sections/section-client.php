@@ -6,7 +6,7 @@
 	if($client_hs == '1'){
 ?>
 	<!-- sponsors -->
-<section class="sponsor-section pb-0">
+<section id="client-section" class="sponsor-section pb-0">
     <div class="container">
 		<?php if(!empty($client_title)  || !empty($client_description)): ?>
 			<div class="section-title col-lg-6 mx-auto">
