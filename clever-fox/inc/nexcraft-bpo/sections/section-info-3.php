@@ -11,7 +11,7 @@
 			$info = json_decode( $info );
 ?>
 <!-- Info section -->
-<div class="info-section nexcraft-info">
+<div class="info-section nexcraft-info info-section-3" id="info-section">
     <div class="container">
         <div class="info-contents owl-carousel">
 				<?php

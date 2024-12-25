@@ -7,7 +7,7 @@
 	if($feature_hs=='1'){
 ?>	
 	<!-- features -->
-<section id="features-section" class="feature-section features-home">
+<section class="feature-section features-home">
     <div class="container">
 		<?php if(!empty($nexcraft_features_title)  || !empty($nexcraft_features_subtitle) || !empty($nexcraft_features_desc)): ?>
 			<div class="section-title col-lg-6 mx-auto">

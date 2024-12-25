@@ -9,7 +9,7 @@
 	if($hs_project_tab=='1'){
 ?>	
 	<!-- portfolio start -->
-<section id="portfolio-section"class="portfolio-section">
+<section class="portfolio-section">
     <div class="container">
         <?php if(!empty($project_title)  || !empty($project_subtitle) || !empty($project_desc)): ?>
 			<div class="section-title col-lg-6 mx-auto">

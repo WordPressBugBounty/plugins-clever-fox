@@ -149,6 +149,23 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 			'type'           => 'textarea',
 		)  
 	);
+	
+	$wp_customize->add_setting( 
+    	'cta_bg_image' , 
+    	array(
+			'default' 			=> esc_url(CLEVERFOX_PLUGIN_URL .'inc/nexcraft/images/slider/slide-img2.jpg'),
+			'capability'     	=> 'edit_theme_options',
+			'sanitize_callback' => 'nexcraft_sanitize_url',	
+			'priority' => 14,
+		) 
+	);
+	
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize , 'cta_bg_image' ,
+		array(
+			'label'          => __( 'Background Image', 'clever-fox' ),
+			'section'        => 'cta_setting',
+		) 
+	));
 }
 
 add_action( 'customize_register', 'nexcraft_cta_setting' );

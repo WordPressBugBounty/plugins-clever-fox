@@ -1,6 +1,6 @@
 <?php
 $theme = wp_get_theme(); // gets the current theme
-$theme_name = strtolower($theme->name);
+$theme_name = strtolower(str_replace(' ', '-', $theme));
 
 $footer_logo_default = CLEVERFOX_PLUGIN_URL .'inc/'.$theme_name.'/images/logo.png';
 	

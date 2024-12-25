@@ -223,7 +223,7 @@ class Cleverfox_Activator {
 				require CLEVERFOX_PLUGIN_DIR . 'inc/corpex/default-pages/default-pages.php';
 			}
 			
-			if ( 'NexCraft' == $theme->name ){
+			if ( 'NexCraft' == $theme->name || 'Nexcraft BPO' == $theme->name ){
 				require CLEVERFOX_PLUGIN_DIR . 'inc/nexcraft/default-pages/upload-media.php';
 				require CLEVERFOX_PLUGIN_DIR . 'inc/nexcraft/default-pages/home-page.php';
 				require CLEVERFOX_PLUGIN_DIR . 'inc/nexcraft/default-widgets/default-widget.php';

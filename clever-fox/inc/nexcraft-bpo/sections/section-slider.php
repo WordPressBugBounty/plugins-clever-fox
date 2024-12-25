@@ -6,7 +6,7 @@
 	if($slider_hs=='1'){
 ?>	
 	<!-- slider -->
-    <section class="slider-section slider-one">
+    <section class="slider-section slider-three" id="slider-section">
 		<div id="slidercarousel" class="carousel slide" data-bs-ride="carousel" data-bs-wrap="true" data-bs-pause="hover" data-bs-interval="5000">
 		
             <div class="carousel-inner">

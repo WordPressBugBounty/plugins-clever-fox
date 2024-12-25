@@ -7,7 +7,7 @@
 	if($funfact_hs == '1'){
 ?>	
 	<!-- funfact section -->
-<section id="funfact-section" class="funfact-section" style="background: var(--primary-color);" >
+<section class="funfact-section" style="background: var(--primary-color);" >
     <div class="container">
         <div class="row">
 			<?php
