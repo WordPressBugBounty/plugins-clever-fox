@@ -4,7 +4,7 @@ Tags: homepage setup, companion, one click demo, sections, customizer
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 5.6
-Stable tag: 26.2.54
+Stable tag: 26.2.55
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -188,11 +188,14 @@ Just navigate WP dashboard menu > Clever Fox > Here You can find all theme via c
 
 == License ==
 
-Clever Fox WordPress Plugin, Copyright (C) 2024 Nayra Themes
+Clever Fox WordPress Plugin, Copyright (C) 2025 Nayra Themes
 Clever Fox WordPress Plugin is licensed under the GPL3 (https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 
 == Changelog ==
+
+= 26.2.55 =
+* Readme Updated
 
 = 26.2.54 =
 * New Theme Added
