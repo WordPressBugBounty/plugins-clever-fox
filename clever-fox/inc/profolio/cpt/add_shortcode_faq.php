@@ -1,5 +1,6 @@
 <?php
-  add_shortcode( 'corpex_faq','corpex_faq_list' );
+if ( ! defined( 'ABSPATH' ) ) exit;
+add_shortcode( 'corpex_faq','corpex_faq_list' );
 function corpex_faq_list ( $atts ) {
   $atts = shortcode_atts( array(
 	 'id' => '',
@@ -8,8 +9,9 @@ function corpex_faq_list ( $atts ) {
   $idPost =  intval($atts['id']);
   if(get_post_status($atts) != "publish") return;
     $terms = get_terms('faq_categories');
-    wp_reset_query();
+    wp_reset_postdata();
     $args = array('post_type' => 'corpex_faq','p' => $idPost,
+	// phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
       'tax_query' => array(
         array(
           'taxonomy' => 'faq_categories',

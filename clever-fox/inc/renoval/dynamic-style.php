@@ -1,9 +1,10 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 if( ! function_exists( 'cleverfox_renoval_dynamic_styles' ) ):
     function cleverfox_renoval_dynamic_styles() {
 		$output_css = '';
 		
-		$theme = wp_get_theme(); // gets the current theme
+		$cleverfox_theme = wp_get_theme(); // gets the current theme
 		
 		/**
 		 * Logo Width 

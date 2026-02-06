@@ -2,6 +2,7 @@
 /**
  * @package Accron
  */
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 require CLEVERFOX_PLUGIN_DIR . 'inc/accron/extras.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/accron/dynamic-style.php';

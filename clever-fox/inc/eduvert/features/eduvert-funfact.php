@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function eduvert_funfact_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================

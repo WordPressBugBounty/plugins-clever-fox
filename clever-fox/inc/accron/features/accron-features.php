@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function accron_features_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -167,7 +168,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		//Pro feature
 		class Accron_features__section_upgrade extends WP_Customize_Control {
 			public function render_content() { 
-				$theme = wp_get_theme(); // gets the current theme	
+				$cleverfox_theme = wp_get_theme(); // gets the current theme	
 				
 			?>
 				<a class="customizer_feature_upgrade_section up-to-pro" href="https://www.nayrathemes.com/accron-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
@@ -227,21 +228,21 @@ function accron_home_features_section_partials( $wp_customize ){
 	$wp_customize->selective_refresh->add_partial( 'features_title', array(
 		'selector'            => '.features-home .section-title h2.section-title-heading',
 		'settings'            => 'features_title',
-		'render_callback'  	  => 'features_title_render_callback',
+		'render_callback'  	  => 'cleverfox_features_title_render_callback',
 	) );
 	
 	// features subtitle
 	$wp_customize->selective_refresh->add_partial( 'features_subtitle', array(
 		'selector'            => '.features-home .section-title span.sub-title',
 		'settings'            => 'features_subtitle',
-		'render_callback'     => 'features_subtitle_render_callback',
+		'render_callback'     => 'cleverfox_features_subtitle_render_callback',
 	) );
 	
 	// features description
 	$wp_customize->selective_refresh->add_partial( 'features_desc', array(
 		'selector'            => '.features-home .section-title p',
 		'settings'            => 'features_desc',
-		'render_callback'     => 'features_desc_render_callback',
+		'render_callback'     => 'cleverfox_features_desc_render_callback',
 	) );
 	
 	// features content
@@ -254,15 +255,15 @@ function accron_home_features_section_partials( $wp_customize ){
 add_action( 'customize_register', 'accron_home_features_section_partials' );
 
 // features title
-function features_title_render_callback() {
+function cleverfox_features_title_render_callback() {
 	return get_theme_mod( 'features_title' );
 }
 // features subtitle
-function features_subtitle_render_callback() {
+function cleverfox_features_subtitle_render_callback() {
 	return get_theme_mod( 'features_subtitle' );
 }
 
 // features description
-function features_desc_render_callback() {
+function cleverfox_features_desc_render_callback() {
 	return get_theme_mod( 'features_desc' );
 }

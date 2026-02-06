@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function evita_service_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -52,7 +53,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	);
 
 	//Service Documentation Link
-	class WP_service_Customize_Control extends WP_Customize_Control {
+	class cleverfox_wp_service_Customize_Control extends WP_Customize_Control {
 	public $type = 'new_menu';
 
 	   function render_content()
@@ -75,7 +76,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		) 
 	);
 
-	$wp_customize->add_control(new WP_service_Customize_Control($wp_customize,
+	$wp_customize->add_control(new cleverfox_wp_service_Customize_Control($wp_customize,
 	'service_doc_link' , 
 		array(
 			'label'          => __( 'Service Documentation Link', 'clever-fox' ),

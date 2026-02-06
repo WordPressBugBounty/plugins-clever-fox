@@ -1,5 +1,6 @@
 <?php
 // Customizer tabs
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 function Cleverfox_conceptly_tabs_customize_register( $wp_customize ) {		
 		

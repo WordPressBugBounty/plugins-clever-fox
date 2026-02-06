@@ -2,6 +2,7 @@
 /**
  * @package   Gradiant
  */
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 require CLEVERFOX_PLUGIN_DIR . 'inc/gradiant/extras.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/gradiant/dynamic-style.php';
@@ -10,7 +11,6 @@ require CLEVERFOX_PLUGIN_DIR . 'inc/gradiant/sections/above-footer.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/colorpress/features/gradiant-header.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/gradiant/features/gradiant-footer.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/gradiant/features/gradiant-slider.php';
-//require CLEVERFOX_PLUGIN_DIR . 'inc/comoxa/features/comoxa-slider.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/gradiant/features/gradiant-info.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/comoxa/features/comoxa-service.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/gradiant/features/gradiant-cta.php';

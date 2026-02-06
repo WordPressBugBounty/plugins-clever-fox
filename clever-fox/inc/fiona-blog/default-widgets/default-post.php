@@ -1,15 +1,16 @@
 <?php
-$MediaId = get_option('fiona_blog_media_id');
-$title = __('Spending a day in Paris, The best place to go','clever-fox');
-$content=__('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever.','clever-fox');
-$title2 = __('A New Age For Trade & Supply Chain Finance','clever-fox');
-$title3 = __('Ranking for keywords around the products','clever-fox');
+if ( ! defined( 'ABSPATH' ) ) exit;
+$cleverfox_MediaId = get_option('fiona_blog_media_id');
+$cleverfox_title = __('Spending a day in Paris, The best place to go','clever-fox');
+$cleverfox_content=__('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever.','clever-fox');
+$cleverfox_title2 = __('A New Age For Trade & Supply Chain Finance','clever-fox');
+$cleverfox_title3 = __('Ranking for keywords around the products','clever-fox');
 
-$postData = array(
+$cleverfox_postData = array(
 				array(
-					'post_title' => $title,
+					'post_title' => $cleverfox_title,
 					'post_status' => 'publish',
-					'post_content' => '<p>'.$content.'</p>',
+					'post_content' => '<p>'.$cleverfox_content.'</p>',
 					'post_author' => 1,
 					'post_type'         =>   'post',
 					'post_category' => array(),
@@ -18,9 +19,9 @@ $postData = array(
 					),
 				),
 				array(
-					'post_title' => $title2,
+					'post_title' => $cleverfox_title2,
 					'post_status' => 'publish',
-					'post_content' => '<p>'.$content.'</p>',
+					'post_content' => '<p>'.$cleverfox_content.'</p>',
 					'post_author' => 1,
 					'post_type'         =>   'post',
 					'post_category' => array(),
@@ -29,9 +30,9 @@ $postData = array(
 					),
 				),
 				array(
-					'post_title' => $title3,
+					'post_title' => $cleverfox_title3,
 					'post_status' => 'publish',
-					'post_content' => '<p>'.$content.'</p>',
+					'post_content' => '<p>'.$cleverfox_content.'</p>',
 					'post_author' => 1,
 					'post_type'         =>   'post',
 					'post_category' => array(),
@@ -42,10 +43,10 @@ $postData = array(
 			);
 
 kses_remove_filters();
-//foreach ( $MediaId as $media) :
-foreach ( $postData as $i => $postData1) : 
-	$id = wp_insert_post($postData1);
-	set_post_thumbnail( $id, $MediaId[$i + 1] );
+//foreach ( $cleverfox_MediaId as $cleverfox_media) :
+foreach ( $cleverfox_postData as $cleverfox_i => $cleverfox_postData1) : 
+	$cleverfox_id = wp_insert_post($cleverfox_postData1);
+	set_post_thumbnail( $cleverfox_id, $cleverfox_MediaId[$cleverfox_i + 1] );
 endforeach;
 //endforeach;
 kses_init_filters();

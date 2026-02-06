@@ -1,5 +1,6 @@
 <?php
-function timeblog_lifestyle_setting( $wp_customize ) {
+if ( ! defined( 'ABSPATH' ) ) exit;
+	function fionablog_timeblog_lifestyle_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
 	Section 4
@@ -100,4 +101,4 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	
 }
 
-add_action( 'customize_register', 'timeblog_lifestyle_setting' );
+add_action( 'customize_register', 'fionablog_timeblog_lifestyle_setting' );

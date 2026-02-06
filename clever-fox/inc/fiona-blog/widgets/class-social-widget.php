@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 if ( ! class_exists( 'fiona_blog_social_icon_widget' ) ) :
 
 	class fiona_blog_social_icon_widget extends WP_Widget{
@@ -12,7 +13,7 @@ if ( ! class_exists( 'fiona_blog_social_icon_widget' ) ) :
 				);	
 				
 				$this->defaults = array(
-					'title' => __( 'Social Icon', 'fiona_blog_social_icon_widget' ),				
+					'title' => __( 'Social Icon', 'clever-fox' ),				
 					'social' => array()
 				);
 			
@@ -33,8 +34,8 @@ if ( ! class_exists( 'fiona_blog_social_icon_widget' ) ) :
 		 
 		$instance = wp_parse_args( (array) $instance, $this->defaults );
 		$instance['social_style'] = isset($instance['social_style']) ? $instance['social_style'] : '';
-		//$social_links = $this->get_social();
-		$social_links = get_social();
+		//$social_links = $this->fionablog_get_social();
+		$social_links = fionablog_get_social();
 	?>
 			<p>
 				<label for="<?php echo esc_attr($this->get_field_id( 'title' )); ?>"><?php  esc_html_e( 'Title', 'clever-fox' ); ?>:</label>
@@ -87,7 +88,7 @@ if ( ! class_exists( 'fiona_blog_social_icon_widget' ) ) :
 						<?php endforeach; ?>
 					</select>
 					</br>
-					<label class="mks-sw-icon"><?php  esc_html_e( 'Url', 'meks-smart-social-widget' ); ?> :</label>
+					<label class="mks-sw-icon"><?php  esc_html_e( 'Url', 'clever-fox' ); ?> :</label>
 					<input type="text" name="<?php echo esc_attr($widget->get_field_name( 'social_url' )); ?>[]" value="<?php echo esc_attr($selected['url']); ?>" placeholder="Example.com" style="width: 82%">
 
 
@@ -171,7 +172,7 @@ if ( ! class_exists( 'fiona_blog_social_icon_widget' ) ) :
 		
 		// Define social icon List
 		protected function get_social_title( $social_name ) {
-			$items = $this->get_social();
+			$items = $this->fionablog_get_social();
 			return $items[$social_name];
 		}
 	}

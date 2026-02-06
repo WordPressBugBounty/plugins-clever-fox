@@ -1,6 +1,6 @@
-<?php 
+<?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function conceptly_info_setting( $wp_customize ) {
-
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
 	Slider Section Panel
@@ -358,42 +358,42 @@ function conceptly_home_info_section_partials( $wp_customize ){
 	$wp_customize->selective_refresh->add_partial( 'info_title2', array(
 		'selector'            => '#contact-info .info-second h5',
 		'settings'            => 'info_title2',
-		'render_callback'  => 'info_second_title_render_callback',
+		'render_callback'  => 'conceptly_info_second_title_render_callback',
 	
 	) );
 	
 	$wp_customize->selective_refresh->add_partial( 'infos_second_img_setting', array(
 		'selector'            => '#contact-info .info-second',
 		'settings'            => 'infos_second_img_setting',
-		'render_callback'  => 'info_second_img_render_callback',
+		'render_callback'  => 'conceptly_info_second_img_render_callback',
 	
 	) );
 	
 	$wp_customize->selective_refresh->add_partial( 'info_description2', array(
 		'selector'            => '#contact-info .info-second p',
 		'settings'            => 'info_description2',
-		'render_callback'  => 'info_second_description_render_callback',
+		'render_callback'  => 'conceptly_info_second_description_render_callback',
 	
 	) );
 	// info third	
 	$wp_customize->selective_refresh->add_partial( 'info_title3', array(
 		'selector'            => '#contact-info .info-third h5',
 		'settings'            => 'info_title3',
-		'render_callback'  => 'info_third_title_render_callback',
+		'render_callback'  => 'conceptly_info_third_title_render_callback',
 	
 	) );
 	
 	$wp_customize->selective_refresh->add_partial( 'infos_third_img_setting', array(
 		'selector'            => '#contact-info .info-third ',
 		'settings'            => 'infos_third_img_setting',
-		'render_callback'  => 'info_third_img_render_callback',
+		'render_callback'  => 'conceptly_info_third_img_render_callback',
 	
 	) );
 	
 	$wp_customize->selective_refresh->add_partial( 'info_description3', array(
 		'selector'            => '#contact-info .info-third p',
 		'settings'            => 'info_description3',
-		'render_callback'  => 'info_third_description_render_callback',
+		'render_callback'  => 'conceptly_info_third_description_render_callback',
 	
 	) );
 	
@@ -412,24 +412,24 @@ function conceptly_info_section_description_render_callback() {
 	return get_theme_mod( 'info_description' );
 }
 // info second
-function info_second_title_render_callback() {
+function conceptly_info_second_title_render_callback() {
 	return get_theme_mod( 'info_title2' );
 }
-function info_second_img_render_callback() {
+function conceptly_info_second_img_render_callback() {
 	return get_theme_mod( 'infos_second_img_setting' );
 }
 
-function info_second_description_render_callback() {
+function conceptly_info_second_description_render_callback() {
 	return get_theme_mod( 'info_description2' );
 }	
 // info third
-function info_third_title_render_callback() {
+function conceptly_info_third_title_render_callback() {
 	return get_theme_mod( 'info_title3' );
 }
-function info_third_img_render_callback() {
+function conceptly_info_third_img_render_callback() {
 	return get_theme_mod( 'infos_third_img_setting' );
 }
 
-function info_third_description_render_callback() {
+function conceptly_info_third_description_render_callback() {
 	return get_theme_mod( 'info_description3' );
 }

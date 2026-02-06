@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 if( ! function_exists( 'cleverfox_evita_dynamic_styles' ) ):
     function cleverfox_evita_dynamic_styles() {
 		$output_css = '';

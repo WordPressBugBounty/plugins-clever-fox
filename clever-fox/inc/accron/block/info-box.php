@@ -1,4 +1,6 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 // Register Block Category
 function accron_block_categories( $categories ) {
     return array_merge( array( array(
@@ -36,8 +38,8 @@ function accron_register() {
     wp_register_style( 'accron_editor_style', CLEVERFOX_PLUGIN_URL . 'inc/accron/block/dist/editor.css', array( 'wp-edit-blocks'), filemtime(CLEVERFOX_PLUGIN_DIR . 'inc/accron/block/dist/editor.css') );
 
     // Register Blocks
-    accron_wp_register_script( 'infos', array( 'render_callback' => 'render_accron_infos' ) );
-    accron_wp_register_script( 'info', array( 'render_callback' => 'render_accron_info' ) );
+    accron_wp_register_script( 'infos', array( 'render_callback' => 'cleverfox_render_accron_infos' ) );
+    accron_wp_register_script( 'info', array( 'render_callback' => 'cleverfox_render_accron_info' ) );
 }
 add_action( 'init', 'accron_register' );
 
@@ -65,7 +67,7 @@ class AccronInfoStyleGenerator {
 }
 
 // Render Infos
-function render_accron_infos($attributes, $content){
+function cleverfox_render_accron_infos($attributes, $content){
     $cId = isset($attributes['cId']) ? esc_attr($attributes['cId']) : '';
 
     // Generate Styles
@@ -86,7 +88,7 @@ function render_accron_infos($attributes, $content){
 }
 
 // Render Info
-function render_accron_info( $attributes ) {
+function cleverfox_render_accron_info( $attributes ) {
     extract( $attributes );
 
     $cId = isset($cId) ? esc_attr($cId) : ''; // Escaping dynamic content

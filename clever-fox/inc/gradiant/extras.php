@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * Gradiant Above Header Social
  */
@@ -181,8 +182,8 @@ function gradiant_get_social_icon_default() {
  *
  * Slider Default
  */
-$theme = wp_get_theme(); // gets the current theme
-if ( 'Comoxa' == $theme->name):	
+$cleverfox_theme = wp_get_theme(); // gets the current theme
+if ( 'Comoxa' == $cleverfox_theme->name):	
 	 function gradiant_get_slider_default() {
 		return apply_filters(
 			'gradiant_get_slider_default', wp_json_encode(
@@ -227,7 +228,7 @@ if ( 'Comoxa' == $theme->name):
 			)
 		);
 	}
-elseif ( 'Appointo' == $theme->name):
+elseif ( 'Appointo' == $cleverfox_theme->name):
 	function gradiant_get_slider_default() {
 		return apply_filters(
 			'gradiant_get_slider_default', wp_json_encode(

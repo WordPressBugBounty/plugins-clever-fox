@@ -2,7 +2,8 @@
 /**
  * @package   StartKit
 */
- 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 require CLEVERFOX_PLUGIN_DIR . 'inc/startkit/extras.php'; 
 require CLEVERFOX_PLUGIN_DIR . 'inc/startkit/features/section-slider.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/startkit/features/section-info.php';

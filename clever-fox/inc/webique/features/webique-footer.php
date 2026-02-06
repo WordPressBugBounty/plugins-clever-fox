@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function webique_lite_footer( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -406,7 +407,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		class Webique_footer_animation__section_upgrade extends WP_Customize_Control {
 			public function render_content() { 
 			?>
-			<a class="customizer_footer_animation_upgrade_section up-to-pro"  href="https://www.nayrathemes.com/webique-pro/" target="_blank"  style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
+			<a class="customizer_footer_animation_upgrade_section up-to-pro"  href="<?php echo esc_url(webique_premium_links()); ?>" target="_blank"  style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 			<?php
 			}
 		}
@@ -687,7 +688,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		class Webique_footer_platform__section_upgrade extends WP_Customize_Control {
 			public function render_content() { 
 			?>
-			<a class="customizer_footer_platform_upgrade_section up-to-pro"  href="https://www.nayrathemes.com/webique-pro/" target="_blank"  style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
+			<a class="customizer_footer_platform_upgrade_section up-to-pro"  href="<?php echo esc_url(webique_premium_links()); ?>" target="_blank"  style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 			<?php
 			}
 		}

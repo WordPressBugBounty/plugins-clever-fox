@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function conceptly_lite_header_setting( $wp_customize ){
 	$selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -502,7 +503,7 @@ function conceptly_clverfox_header_section_partials( $wp_customize ){
 	'header_phone_number', array(
 		'selector'            => '#header-top .tlh-phone ',
 		'settings'            => 'header_phone_number',
-		'render_callback'  => 'header_section_header_phone_number_render_callback',
+		'render_callback'  => 'conceptly_header_section_header_phone_number_render_callback',
 	
 	) );
 	
@@ -520,7 +521,7 @@ function conceptly_clverfox_header_section_partials( $wp_customize ){
 	'header_email', array(
 		'selector'            => '#header-top .tlh-email',
 		'settings'            => 'header_email',
-		'render_callback'  => 'header_section_header_email_render_callback',
+		'render_callback'  => 'conceptly_header_section_header_email_render_callback',
 	
 	) );
 	
@@ -538,7 +539,7 @@ function conceptly_clverfox_header_section_partials( $wp_customize ){
 	'header_faq', array(
 		'selector'            => '#header-top .tlh-faq',
 		'settings'            => 'header_faq',
-		'render_callback'  => 'header_section_header_faq_render_callback',
+		'render_callback'  => 'conceptly_header_section_header_faq_render_callback',
 	
 	) );
 	
@@ -558,25 +559,25 @@ function conceptly_clverfox_header_section_partials( $wp_customize ){
 	'social_icons', array(
 		'selector'            => '#header-top .trh-social',
 		'settings'            => 'social_icons',
-		'render_callback'  => 'header_section_social_render_callback'
+		'render_callback'  => 'conceptly_header_section_social_render_callback'
 	) );
 }
 add_action( 'customize_register', 'conceptly_clverfox_header_section_partials' );
 
 // header_phone_number 
-function header_section_header_phone_number_render_callback() {
+function conceptly_header_section_header_phone_number_render_callback() {
 	return get_theme_mod( 'header_phone_number' );
 }
 // header_email
-function header_section_header_email_render_callback() {
+function conceptly_header_section_header_email_render_callback() {
 	return get_theme_mod( 'header_email' );
 }
 // header_FAQ
-function header_section_header_faq_render_callback() {
+function conceptly_header_section_header_faq_render_callback() {
 	return get_theme_mod( 'header_faq' );
 }
 
 // social_icons
-function header_section_social_render_callback() {
+function conceptly_header_section_social_render_callback() {
 	return get_theme_mod( 'social_icons' );
 }

@@ -1,10 +1,12 @@
 <?php
-$theme = wp_get_theme(); // gets the current theme
-$theme_name = strtolower($theme->name);
+if ( ! defined( 'ABSPATH' ) ) exit;
 
-$footer_logo_default = CLEVERFOX_PLUGIN_URL .'inc/'.$theme_name.'/images/logo.png';
+$cleverfox_theme = wp_get_theme(); // gets the current theme
+$cleverfox_theme_name = strtolower($cleverfox_theme->name);
+
+$cleverfox_footer_logo_default = CLEVERFOX_PLUGIN_URL .'inc/'.$cleverfox_theme_name.'/images/logo.png';
 	
-$activate = array(
+$cleverfox_activate = array(
         'accron-sidebar-primary' => array(
             'search-1',
             'recent-posts-1',
@@ -23,7 +25,7 @@ $activate = array(
 				'text'=>'<aside class="widget widget_text">
                             <div class="textwidget">
                                 <div class="logo">
-                                    <a href="#"><img src="'.esc_url($footer_logo_default).'" alt="Accron" width="212" height="65"></a>
+                                    <a href="#"><img src="'.esc_url($cleverfox_footer_logo_default).'" alt="Accron" width="212" height="65"></a>
                                 </div>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit sed, labore optio ab cum ducimus? Nulla aliquam voluptatibus laboriosam reprehenderit.</p>
                                 <aside class="widget widget_social_widget">
@@ -107,8 +109,8 @@ $activate = array(
 		update_option('widget_archive', array(
 			1 => array('title' => 'Archives')));	
 		
-    update_option('sidebars_widgets',  $activate);
-	$MediaId = get_option('accron_media_id');
-	set_theme_mod( 'custom_logo', $MediaId[0] );
+    update_option('sidebars_widgets',  $cleverfox_activate);
+	$cleverfox_MediaId = get_option('accron_media_id');
+	set_theme_mod( 'custom_logo', $cleverfox_MediaId[0] );
 	set_theme_mod('nav_btn_lbl','Book Now');
 ?>

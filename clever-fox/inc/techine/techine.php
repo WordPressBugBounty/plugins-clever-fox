@@ -2,7 +2,8 @@
 /**
  * @package   Conceptly
  */
- 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 require CLEVERFOX_PLUGIN_DIR . 'inc/conceptly/extras.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/conceptly/dynamic-style.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/techine/sections/above-header.php';

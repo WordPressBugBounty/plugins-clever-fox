@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function gradiant_client_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -164,8 +165,8 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	//Pro feature
 		class Gradiant_client_section_upgrade extends WP_Customize_Control {
 			public function render_content() { 
-				$theme = wp_get_theme(); // gets the current theme	
-				if($theme-> name == 'Shadiant'){
+				$cleverfox_theme = wp_get_theme(); // gets the current theme	
+				if($cleverfox_theme-> name == 'Shadiant'){
 			?>				
 				<a class="customizer_client_upgrade_section up-to-pro" href="https://www.nayrathemes.com/shadiant-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 				

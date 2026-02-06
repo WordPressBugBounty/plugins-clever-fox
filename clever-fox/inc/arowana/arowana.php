@@ -2,6 +2,7 @@
 /**
  * @package   Arowana
  */
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 require CLEVERFOX_PLUGIN_DIR . 'inc/startkit/extras.php'; 
 require CLEVERFOX_PLUGIN_DIR . 'inc/startkit/sections/section-slider.php';

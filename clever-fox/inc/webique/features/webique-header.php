@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function webique_lite_header_settings( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';	
 	/*=========================================
@@ -80,9 +81,8 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		//Pro feature
 		class Webique_site_typo__upgrade extends WP_Customize_Control {
 			public function render_content() { 
-				$theme = wp_get_theme(); // gets the current theme	
 			?>
-				<a class="customizer_site_typo_upgrade_section up-to-pro" href="https://www.nayrathemes.com/webique-pro/" target="_blank""><?php esc_html_e('Unlock By Upgrade to Pro','clever-fox'); ?></a>
+				<a class="customizer_site_typo_upgrade_section up-to-pro" href=<?php echo esc_url(webique_premium_links()); ?>" target="_blank""><?php esc_html_e('Unlock By Upgrade to Pro','clever-fox'); ?></a>
 				
 			<?php
 			}
@@ -188,7 +188,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		class Webique_social__section_upgrade extends WP_Customize_Control {
 			public function render_content() { 
 			?>
-			<a class="customizer_social_upgrade_section up-to-pro"  href="https://www.nayrathemes.com/webique-pro/" target="_blank"  style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
+			 <a class="customizer_social_upgrade_section up-to-pro"  href="<?php echo esc_url(webique_premium_links()); ?>" target="_blank"  style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 			<?php
 			}
 		}
@@ -422,7 +422,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	'hdr_nav_btn',
 		array(
 			'type' => 'hidden',
-			'label' => __('Button','webique'),
+			'label' => __('Button','clever-fox'),
 			'section' => 'above_header',
 		)
 	);
@@ -441,7 +441,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control(
 	'hide_show_nav_btn', 
 		array(
-			'label'	      => esc_html__( 'Hide/Show', 'webique' ),
+			'label'	      => esc_html__( 'Hide/Show', 'clever-fox' ),
 			'section'     => 'above_header',
 			'type'        => 'checkbox'
 		) 
@@ -460,7 +460,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control( 
 		'nav_btn_lbl',
 		array(
-		    'label'   		=> __('Button Label','webique'),
+		    'label'   		=> __('Button Label','clever-fox'),
 		    'section' 		=> 'above_header',
 			'type'		 =>	'text'
 		)  
@@ -479,7 +479,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control( 
 		'nav_btn_link',
 		array(
-		    'label'   		=> __('Button Link','webique'),
+		    'label'   		=> __('Button Link','clever-fox'),
 		    'section' 		=> 'above_header',
 			'type'		 =>	'text'
 		)  
@@ -565,7 +565,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		class Webique_header_animation__section_upgrade extends WP_Customize_Control {
 			public function render_content() { 
 			?>
-			<a class="customizer_header_animation_upgrade_section up-to-pro"  href="https://www.nayrathemes.com/webique-pro/" target="_blank"  style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
+			<a class="customizer_header_animation_upgrade_section up-to-pro"  href="<?php echo esc_url(webique_premium_links()); ?>" target="_blank"  style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 			<?php
 			}
 		}

@@ -1,5 +1,6 @@
 <?php
-function evita_about_setting( $wp_customize ) {
+if ( ! defined( 'ABSPATH' ) ) exit;
+	function evita_about_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
 	About  Section

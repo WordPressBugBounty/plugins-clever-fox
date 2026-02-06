@@ -2,7 +2,8 @@
 /**
  * @package   Avtari
  */
- 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 require CLEVERFOX_PLUGIN_DIR . 'inc/avril/extras.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/avril/dynamic-style.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/avtari/sections/above-header.php';

@@ -2,7 +2,9 @@
 /**
  * @package   Webique
  */
+if ( ! defined( 'ABSPATH' ) ) exit;
 
+require CLEVERFOX_PLUGIN_DIR . 'inc/webique/extras.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/webique/dynamic-style.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/webique/sections/header-animation-bar.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/webique/sections/above-footer.php';
@@ -27,7 +29,7 @@ if ( ! function_exists( 'cleverfox_webique_frontpage_sections' ) ) :
 	add_action( 'webique_sections', 'cleverfox_webique_frontpage_sections' );
 endif;
 
-function websy_customize_remove( $wp_customize ) {
+function cleverfox_webique_websy_customize_remove( $wp_customize ) {
 	 $wp_customize->remove_control('hdr_social_head');
 	 	 $wp_customize->remove_control('hide_show_social_icon');
 		 $wp_customize->remove_control('social_icons');
@@ -37,4 +39,4 @@ function websy_customize_remove( $wp_customize ) {
 		 $wp_customize->remove_control('nav_btn_link');
 		 
 }
-add_action( 'customize_register', 'websy_customize_remove' );
+add_action( 'customize_register', 'cleverfox_webique_websy_customize_remove' );

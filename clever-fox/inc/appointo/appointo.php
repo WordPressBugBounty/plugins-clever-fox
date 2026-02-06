@@ -2,6 +2,7 @@
 /**
  * @package   Gradiant
  */
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 require CLEVERFOX_PLUGIN_DIR . 'inc/gradiant/extras.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/gradiant/dynamic-style.php';
@@ -32,7 +33,7 @@ function cleverfox_gradiant_enqueue_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'cleverfox_gradiant_enqueue_scripts' );
 
-function appointo_customize_remove( $wp_customize ) {
+function gradiant_appointo_customize_remove( $wp_customize ) {
 	$wp_customize->remove_section('above_header');
 }
-add_action( 'customize_register', 'appointo_customize_remove' );
+add_action( 'customize_register', 'gradiant_appointo_customize_remove' );

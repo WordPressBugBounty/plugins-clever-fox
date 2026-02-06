@@ -1,6 +1,6 @@
 <?php 
+if ( ! defined( 'ABSPATH' ) ) exit;
 function hantus_info_setting( $wp_customize ) {
-
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
 	Slider Section Panel
@@ -451,63 +451,63 @@ function hantus_home_info_section_partials( $wp_customize ){
 	$wp_customize->selective_refresh->add_partial( 'info_title', array(
 		'selector'            => '#contact2 .info-first h4',
 		'settings'            => 'info_title',
-		'render_callback'  => 'info_section_title_render_callback',
+		'render_callback'  => 'hantus_info_section_title_render_callback',
 	
 	) );
 	
 	$wp_customize->selective_refresh->add_partial( 'info_first_img_setting', array(
 		'selector'            => '#contact2 .info-first img',
 		'settings'            => 'info_first_img_setting',
-		'render_callback'  => 'home_service_section_img_render_callback',
+		'render_callback'  => 'hantus_home_service_section_img_render_callback',
 	
 	) );
 	
 	$wp_customize->selective_refresh->add_partial( 'info_description', array(
 		'selector'            => '#contact2 .info-first p',
 		'settings'            => 'info_description',
-		'render_callback'  => 'home_service_section_description_render_callback',
+		'render_callback'  => 'hantus_home_service_section_description_render_callback',
 	
 	) );
 // info second	
 	$wp_customize->selective_refresh->add_partial( 'info_title2', array(
 		'selector'            => '#contact2 .info-second h4',
 		'settings'            => 'info_title2',
-		'render_callback'  => 'info_second_title_render_callback',
+		'render_callback'  => 'hantus_info_second_title_render_callback',
 	
 	) );
 	
 	$wp_customize->selective_refresh->add_partial( 'info_second_img_setting', array(
 		'selector'            => '#contact .info-second img',
 		'settings'            => 'info_second_img_setting',
-		'render_callback'  => 'info_second_img_render_callback',
+		'render_callback'  => 'hantus_info_second_img_render_callback',
 	
 	) );
 	
 	$wp_customize->selective_refresh->add_partial( 'info_description2', array(
 		'selector'            => '#contact2 .info-second p',
 		'settings'            => 'info_description2',
-		'render_callback'  => 'info_second_description_render_callback',
+		'render_callback'  => 'hantus_info_second_description_render_callback',
 	
 	) );
 	// info third	
 	$wp_customize->selective_refresh->add_partial( 'info_title3', array(
 		'selector'            => '#contact2 .info-third h4',
 		'settings'            => 'info_title3',
-		'render_callback'  => 'info_third_title_render_callback',
+		'render_callback'  => 'hantus_info_third_title_render_callback',
 	
 	) );
 	
 	$wp_customize->selective_refresh->add_partial( 'info_third_img_setting', array(
 		'selector'            => '#contact .info-third img',
 		'settings'            => 'info_third_img_setting',
-		'render_callback'  => 'info_third_img_render_callback',
+		'render_callback'  => 'hantus_info_third_img_render_callback',
 	
 	) );
 	
 	$wp_customize->selective_refresh->add_partial( 'info_description3', array(
 		'selector'            => '#contact2 .info-third p',
 		'settings'            => 'info_description3',
-		'render_callback'  => 'info_third_description_render_callback',
+		'render_callback'  => 'hantus_info_third_description_render_callback',
 	
 	) );
 	
@@ -515,35 +515,35 @@ function hantus_home_info_section_partials( $wp_customize ){
 
 add_action( 'customize_register', 'hantus_home_info_section_partials' );
 // info first
-function info_section_title_render_callback() {
+function hantus_info_section_title_render_callback() {
 	return get_theme_mod( 'info_title' );
 }
-function home_service_section_img_render_callback() {
+function hantus_home_service_section_img_render_callback() {
 	return get_theme_mod( 'info_first_img_setting' );
 }
 
-function home_service_section_description_render_callback() {
+function hantus_home_service_section_description_render_callback() {
 	return get_theme_mod( 'info_description' );
 }
 // info second
-function info_second_title_render_callback() {
+function hantus_info_second_title_render_callback() {
 	return get_theme_mod( 'info_title2' );
 }
-function info_second_img_render_callback() {
+function hantus_info_second_img_render_callback() {
 	return get_theme_mod( 'info_second_img_setting' );
 }
 
-function info_second_description_render_callback() {
+function hantus_info_second_description_render_callback() {
 	return get_theme_mod( 'info_description2' );
 }	
 // info third
-function info_third_title_render_callback() {
+function hantus_info_third_title_render_callback() {
 	return get_theme_mod( 'info_title3' );
 }
-function info_third_img_render_callback() {
+function hantus_info_third_img_render_callback() {
 	return get_theme_mod( 'info_third_img_setting' );
 }
 
-function info_third_description_render_callback() {
+function hantus_info_third_description_render_callback() {
 	return get_theme_mod( 'info_description3' );
 }

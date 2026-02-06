@@ -1,4 +1,5 @@
-<?php 
+<?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 if ( ! function_exists( 'hantus_slider_setting' ) ) :
 function hantus_slider_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
@@ -112,11 +113,11 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		//Pro feature
 		class Hantus_slider__section_upgrade extends WP_Customize_Control {
 			public function render_content() { 
-				$theme = wp_get_theme(); // gets the current theme
-				if ( 'Thai Spa' == $theme->name){
+				$cleverfox_theme = wp_get_theme(); // gets the current theme
+				if ( 'Thai Spa' == $cleverfox_theme->name){
 			?>
 				<a class="customizer_slider_upgrade_section up-to-pro" href="https://www.nayrathemes.com/thaispa-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
-			<?php }elseif ( 'Cosmics' == $theme->name){ ?>	
+			<?php }elseif ( 'Cosmics' == $cleverfox_theme->name){ ?>	
 				<a class="customizer_slider_upgrade_section up-to-pro" href="https://www.nayrathemes.com/cosmics-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 			<?php
 			   }else{
@@ -281,28 +282,28 @@ function hantus_home_slider_section_partials( $wp_customize ){
 	$wp_customize->selective_refresh->add_partial( 'slide_title', array(
 		'selector'            => '#slider .header-single-slider h3',
 		'settings'            => 'slide_title',
-		'render_callback'  => 'home_section_slider_tit_render_callback',
+		'render_callback'  => 'hantus_home_section_slider_tit_render_callback',
 	
 	) );
 	// slider subtitle
 	$wp_customize->selective_refresh->add_partial( 'slide_subtitle', array(
 		'selector'            => '#slider .header-single-slider h1',
 		'settings'            => 'slide_subtitle',
-		'render_callback'  => 'home_section_slide_subtitle_render_callback',
+		'render_callback'  => 'hantus_home_section_slide_subtitle_render_callback',
 	
 	) );
 	// slider title
 	$wp_customize->selective_refresh->add_partial( 'slide_description', array(
 		'selector'            => '#slider .header-single-slider p',
 		'settings'            => 'slide_description',
-		'render_callback'  => 'home_section_slider_desc_render_callback',
+		'render_callback'  => 'hantus_home_section_slider_desc_render_callback',
 	
 	) );
 	// slider button
 	$wp_customize->selective_refresh->add_partial( 'slide_btn_text', array(
 		'selector'            => '#slider .header-single-slider a',
 		'settings'            => 'slide_btn_text',
-		'render_callback'  => 'home_section_slider_button_render_callback',
+		'render_callback'  => 'hantus_home_section_slider_button_render_callback',
 	
 	) );
 	
@@ -310,18 +311,18 @@ function hantus_home_slider_section_partials( $wp_customize ){
 add_action( 'customize_register', 'hantus_home_slider_section_partials' );
 
 // slider title
-function home_section_slider_tit_render_callback() {
+function hantus_home_section_slider_tit_render_callback() {
 	return get_theme_mod( 'slide_title' );
 }
 // slider subtitle
-function home_section_slide_subtitle_render_callback() {
+function hantus_home_section_slide_subtitle_render_callback() {
 	return get_theme_mod( 'slide_subtitle' );
 }
 //slide desc
-function home_section_slider_desc_render_callback() {
+function hantus_home_section_slider_desc_render_callback() {
 	return get_theme_mod( 'slide_description' );
 }
 //slide desc
-function home_section_slider_button_render_callback() {
+function hantus_home_section_slider_button_render_callback() {
 	return get_theme_mod( 'slide_btn_text' );
 }

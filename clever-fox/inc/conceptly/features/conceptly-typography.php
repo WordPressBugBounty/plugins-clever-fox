@@ -1,5 +1,7 @@
-<?php function conceptly_pro_typography_customizer( $wp_customize ) {
-	$selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
+<?php
+if ( ! defined( 'ABSPATH' ) ) exit;
+function conceptly_pro_typography_customizer( $wp_customize ) {
+$selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 $wp_customize->add_panel( 'conceptly_typography_setting', array(
 		'priority'       => 38,
 		'capability'     => 'edit_theme_options',

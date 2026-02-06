@@ -1,5 +1,6 @@
 <?php
-function eractor_header_settings( $wp_customize ) {
+if ( ! defined( 'ABSPATH' ) ) exit;
+function renoval_eractor_header_settings( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	
 	/*=========================================
@@ -36,7 +37,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	);
 	
 	//Header Contact Details Documentation Link
-	class WP_cntct_details_section_Customize_Control extends WP_Customize_Control {
+	class renoval_eractor_wp_cntct_details_section_Customize_Control extends WP_Customize_Control {
 	public $type = 'new_menu';
 
 	   function render_content()
@@ -59,7 +60,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		) 
 	);
 
-	$wp_customize->add_control(new WP_cntct_details_section_Customize_Control($wp_customize,
+	$wp_customize->add_control(new renoval_eractor_wp_cntct_details_section_Customize_Control($wp_customize,
 	'cntct_details_doc_link' , 
 		array(
 			'label'          => __( 'Contact Details Documentation Link', 'clever-fox' ),
@@ -133,7 +134,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	Menu Link
 	=========================================*/
 		//Header Top Menu Link Documentation Link
-		class WP_top_menu_section_Customize_Control extends WP_Customize_Control {
+		class renoval_eractor_wp_top_menu_section_Customize_Control extends WP_Customize_Control {
 		public $type = 'new_menu';
 
 		   function render_content()
@@ -156,7 +157,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 			) 
 		);
 
-		$wp_customize->add_control(new WP_top_menu_section_Customize_Control($wp_customize,
+		$wp_customize->add_control(new renoval_eractor_wp_top_menu_section_Customize_Control($wp_customize,
 		'top_menu_doc_link' , 
 			array(
 				'label'          => __( 'Top Menu Documentation Link', 'clever-fox' ),
@@ -212,10 +213,10 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 			)
 	);
 }
-add_action( 'customize_register', 'eractor_header_settings' );
+add_action( 'customize_register', 'renoval_eractor_header_settings' );
 
 // Header selective refresh
-function eractor_header_partials( $wp_customize ){
+function renoval_eractor_header_partials( $wp_customize ){
 	// tlh_contct_icon
 	$wp_customize->selective_refresh->add_partial( 'tlh_contct_icon', array(
 		'selector'            => '.content-area .contact-icon i',
@@ -238,7 +239,7 @@ function eractor_header_partials( $wp_customize ){
 	) );	
 }
 
-add_action( 'customize_register', 'eractor_header_partials' );
+add_action( 'customize_register', 'renoval_eractor_header_partials' );
 
 // tlh_contct_icon
 function renoval_tlh_tlh_contct_icon_render_callback() {

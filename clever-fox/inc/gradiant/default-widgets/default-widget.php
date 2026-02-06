@@ -1,5 +1,6 @@
 <?php
-$activate = array(
+if ( ! defined( 'ABSPATH' ) ) exit;
+$cleverfox_activate = array(
         'gradiant-sidebar-primary' => array(
             'search-1',
             'recent-posts-1',
@@ -15,10 +16,10 @@ $activate = array(
 			 'search-1',
         )
     );
-	$theme = wp_get_theme();
+	$cleverfox_theme = wp_get_theme();
     /* the default titles will appear */
    update_option('widget_text', array(  
-		1 => array('title' => 'About '. $theme->name,
+		1 => array('title' => 'About '. $cleverfox_theme->name,
         'text'=>'<div class="textwidget">
 				<p>'.sprintf(/* translators: %s: Description */esc_html__( '%s.', 'clever-fox' ),CLEVERFOX_FOOTER_ABOUT).'</p>
 				<div class="footer-badge">
@@ -42,9 +43,9 @@ $activate = array(
 			1 => array('title' => 'Search'), 
 			2 => array('title' => 'Search')));	
 		
-    update_option('sidebars_widgets',  $activate);
-	$MediaId = get_option('gradiant_media_id');
-	set_theme_mod( 'custom_logo', $MediaId[0] );
-	set_theme_mod( 'footer_first_img', CLEVERFOX_PLUGIN_URL .'inc/'.strtolower($theme->name).'/images/logo.png' );
+    update_option('sidebars_widgets',  $cleverfox_activate);
+	$cleverfox_MediaId = get_option('gradiant_media_id');
+	set_theme_mod( 'custom_logo', $cleverfox_MediaId[0] );
+	set_theme_mod( 'footer_first_img', CLEVERFOX_PLUGIN_URL .'inc/'.strtolower($cleverfox_theme->name).'/images/logo.png' );
 	set_theme_mod('nav_btn_lbl','Book Now');
 ?>

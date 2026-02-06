@@ -2,7 +2,8 @@
 /**
  * @package   Fiona
  */
- 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 require CLEVERFOX_PLUGIN_DIR . 'inc/fiona-blog/extras.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/fiona-blog/dynamic-style.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/fiona-blog/sections/above-header.php';
@@ -26,7 +27,7 @@ function cleverfox_fiona_blog_enqueue_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'cleverfox_fiona_blog_enqueue_scripts' );
 
-function timeblog_customize_remove( $wp_customize ) {
+function cleverfox_fionablog_timeblog_customize_remove( $wp_customize ) {
 	$wp_customize->remove_section('slider_setting');
 }
-add_action( 'customize_register', 'timeblog_customize_remove' );
+add_action( 'customize_register', 'cleverfox_fionablog_timeblog_customize_remove' );

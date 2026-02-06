@@ -1,5 +1,6 @@
 <?php
-$activate = array(
+if ( ! defined( 'ABSPATH' ) ) exit;
+$cleverfox_activate = array(
         'webique-sidebar-primary' => array(
             'search-1',
             'recent-posts-1',
@@ -18,10 +19,10 @@ $activate = array(
 			 'widget_archives-1',
         )
     );
-	$theme = wp_get_theme();
+	$cleverfox_theme = wp_get_theme();
     /* the default titles will appear */
    update_option('widget_text', array(  
-		1 => array('title' => 'About '. $theme->name,
+		1 => array('title' => 'About '. $cleverfox_theme->name,
         'text'=>'<div class="textwidget">
 				<p>'.sprintf(/* translators: %s: Description */esc_html__( '%s.', 'clever-fox' ),CLEVERFOX_FOOTER_ABOUT).'</p>
 				<div class="footer-badge">
@@ -45,8 +46,8 @@ $activate = array(
 			1 => array('title' => 'Search'), 
 			2 => array('title' => 'Search')));	
 		
-    update_option('sidebars_widgets',  $activate);
-	$MediaId = get_option('webique_media_id');
-	set_theme_mod( 'custom_logo', $MediaId[0] );
+    update_option('sidebars_widgets',  $cleverfox_activate);
+	$cleverfox_MediaId = get_option('webique_media_id');
+	set_theme_mod( 'custom_logo', $cleverfox_MediaId[0] );
 	set_theme_mod( 'nav_btn_lbl', 'Consult Now' );
 ?>

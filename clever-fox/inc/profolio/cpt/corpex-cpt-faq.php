@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 // code for custom post type  FAQ
 		function corpex_faq() {
 	
@@ -60,21 +61,23 @@
 
 		function corpex_meta_faq_save($post_id) 
 		{
-		
+			if( isset($_POST['corpex_meta_faq_nonce']) ){
+				$faqnonce = sanitize_key($_POST['corpex_meta_faq_nonce']); 
+			}else{
+				return;
+			}
 		 // Check if nonce is set and valid
-			if ( !isset($_POST['corpex_meta_faq_nonce']) || !wp_verify_nonce($_POST['corpex_meta_faq_nonce'], 'corpex_meta_faq_nonce') ) {
+			if ( !isset($faqnonce) || !wp_verify_nonce($faqnonce, 'corpex_meta_faq_nonce') ) {
+				return;
+			}
+			if((defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) || (defined('DOING_AJAX') && DOING_AJAX) || isset($_REQUEST['bulk_edit'])) {
+				return;
+			}
+			if (!current_user_can('edit_post', $post_id)) {
 				return;
 			}
 			
-			if(isset( $_POST['post_ID']))
-			{ 	
-				$post_ID = $_POST['post_ID'];				
-				$post_type=get_post_type($post_ID);
-				if($post_type=='corpex_faq')
-				{	
-					
-				}
-			}
+			//Noting Here to Update
 		}
 		
 		// FAQ Category Texonomy
@@ -97,18 +100,31 @@
 		$defualt_tex_id = get_option('custom_texo_faq_id');
 		//quick update category
 		if (isset($_POST['action'])) {
+			if( isset($_POST['corpex_taxonomy_nonce']) ){
+				$catnonce = sanitize_key($_POST['corpex_taxonomy_nonce']); 
+			}else{
+				return;
+			}
         // Verify nonce
-			if (!isset($_POST['corpex_taxonomy_nonce']) || !wp_verify_nonce($_POST['corpex_taxonomy_nonce'], 'corpex_taxonomy_nonce')) {
+			if (!isset($catnonce) || !wp_verify_nonce($catnonce, 'corpex_taxonomy_nonce')) {
 				return;
 			}
 
 			// Update or insert term based on action
-			if ($_POST['action'] === 'update-tag' && isset($_POST['taxonomy']) && $_POST['taxonomy'] === 'faq_categories') {
-				wp_update_term($_POST['tag_ID'], 'faq_categories', array(
-					'name' => sanitize_text_field($_POST['name']),
-					'slug' => sanitize_title($_POST['slug']),
-					'description' => sanitize_text_field($_POST['description'])
-				));
+			if ($_POST['action'] === 'update-tag' && isset($_POST['taxonomy']) && $_POST['taxonomy'] === 'faq_categories') {				
+				// Sanitize inputs
+				$tag_ID = isset($_POST['tag_ID']) ? intval($_POST['tag_ID']) : 0;
+				$name = isset($_POST['name']) ? sanitize_text_field(wp_unslash($_POST['name'])) : '';
+				$slug = isset($_POST['slug']) ? sanitize_title(wp_unslash($_POST['slug'])) : '';
+				$description = isset($_POST['description']) ? sanitize_textarea_field(wp_unslash($_POST['description'])) : '';
+				
+				if ($tag_ID && !empty($name)) {
+					wp_update_term($tag_ID, 'faq_categories', array(
+						'name' => $name,
+						'slug' => $slug,
+						'description' => $description
+					));
+				}
 			} elseif ($_POST['action'] === 'add-tag' && empty($default_tex_id)) {
 				$term = wp_insert_term('All', 'faq_categories', array(
 					'description' => 'Default Category',
@@ -168,7 +184,7 @@ function corpex_faq_manage_points_pin_columns( $column, $post_id ) {
 }
 add_action( 'manage_corpex_faq_posts_custom_column', 'corpex_faq_manage_points_pin_columns', 10, 2 );
 
-function my_rewrite_flush() {
+function corpex_my_rewrite_flush() {
     // First, we "add" the custom post type via the above written function.
     // Note: "add" is written with quotes, as CPTs don't get added to the DB,
     // They are only referenced in the post_type column with a post entry, 
@@ -179,4 +195,4 @@ function my_rewrite_flush() {
     // You should *NEVER EVER* do this on every page load!!
     flush_rewrite_rules();
 }
-register_activation_hook( __FILE__, 'my_rewrite_flush' );
+register_activation_hook( __FILE__, 'corpex_my_rewrite_flush' );

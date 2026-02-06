@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 // Register Block Category
 function medazin_block_categories( $categories ) {
     return array_merge( array( array(
@@ -36,8 +37,8 @@ function medazin_register() {
     wp_register_style( 'medazin_editor_style', CLEVERFOX_PLUGIN_URL . '/inc/medazin/block/dist/editor.css', array( 'wp-edit-blocks'), '0.0' );
 
     // Register Blocks
-    medazin_wp_register_script( 'infos', array( 'render_callback' => 'render_medazin_infos' ) );
-    medazin_wp_register_script( 'info', array( 'render_callback' => 'render_medazin_info' ) );
+    medazin_wp_register_script( 'infos', array( 'render_callback' => 'medazin_render_medazin_infos' ) );
+    medazin_wp_register_script( 'info', array( 'render_callback' => 'medazin_render_medazin_info' ) );
 }
 add_action( 'init', 'medazin_register' );
 
@@ -65,7 +66,7 @@ class MedazinInfoStyleGenerator {
 }
 
 // Render Infos
-function render_medazin_infos($attributes, $content){
+function medazin_render_medazin_infos($attributes, $content){
     $cId = isset($attributes['cId']) ? esc_attr($attributes['cId']) : '';
 
     // Generate Styles
@@ -86,7 +87,7 @@ function render_medazin_infos($attributes, $content){
 }
 
 // Render Info
-function render_medazin_info( $attributes ) {
+function medazin_render_medazin_info( $attributes ) {
     extract( $attributes );
 
     $cId = isset($cId) ? esc_attr($cId) : ''; // Escaping dynamic content

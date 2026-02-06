@@ -1,6 +1,6 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function conceptly_sponsers_setting( $wp_customize ) {
-
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
 	Sponsers Section Panel
@@ -105,17 +105,17 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		//Pro feature
 		class Conceptly_sponsors__section_upgrade extends WP_Customize_Control {
 			public function render_content() {
-			$theme = wp_get_theme(); // gets the current theme
-			if ( 'Ameya' == $theme->name){	
+			$cleverfox_theme = wp_get_theme(); // gets the current theme
+			if ( 'Ameya' == $cleverfox_theme->name){	
 			?>
 				<a class="customizer_sponsors_upgrade_section up-to-pro" href="https://www.nayrathemes.com/ameya-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 			<?php
-				}elseif ( 'Azwa' == $theme->name){
+				}elseif ( 'Azwa' == $cleverfox_theme->name){
 			?>
 				<a class="customizer_sponsors_upgrade_section up-to-pro" href="https://www.nayrathemes.com/azwa-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 				
 			<?php
-				}elseif ( 'Techine' == $theme->name){
+				}elseif ( 'Techine' == $cleverfox_theme->name){
 			?>
 				<a class="customizer_sponsors_upgrade_section up-to-pro" href="https://www.nayrathemes.com/techine-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 				

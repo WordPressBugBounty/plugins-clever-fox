@@ -1,9 +1,10 @@
  <!--===// Start: Slider
     =================================--> 
 <?php  
-	$slider_hs 						= get_theme_mod('slider_hs','1');
-	$slider 						= get_theme_mod('slider',nexcraft_get_slider_default());
-	if($slider_hs=='1'){
+	if ( ! defined( 'ABSPATH' ) ) exit;
+	$nexcraft_slider_hs 						= get_theme_mod('slider_hs','1');
+	$nexcraft_slider 						= get_theme_mod('slider',nexcraft_get_slider_default());
+	if($nexcraft_slider_hs=='1'){
 ?>	
 	<!-- slider -->
     <section class="slider-section slider-one">
@@ -11,37 +12,37 @@
 		
             <div class="carousel-inner">
 				<?php
-					if ( ! empty( $slider ) ) {
-						$slider = json_decode( $slider );
-						$count = 1;
-					foreach ( $slider as $slide_item ) {
-						$title = ! empty( $slide_item->title ) ? apply_filters( 'nexcraft_translate_single_string', $slide_item->title, 'slider section' ) : '';
-						$subtitle = ! empty( $slide_item->subtitle ) ? apply_filters( 'nexcraft_translate_single_string', $slide_item->subtitle, 'slider section' ) : '';
-						$button = ! empty( $slide_item->text2) ? apply_filters( 'nexcraft_translate_single_string', $slide_item->text2,'slider section' ) : '';
-						$link = ! empty( $slide_item->link ) ? apply_filters( 'nexcraft_translate_single_string', $slide_item->link, 'slider section' ) : '';
-						$image = ! empty( $slide_item->image_url ) ? apply_filters( 'nexcraft_translate_single_string', $slide_item->image_url, 'slider section' ) : '';
-						$active_class = ($count==1)?'active':'';
+					if ( ! empty( $nexcraft_slider ) ) {
+						$nexcraft_slider = json_decode( $nexcraft_slider );
+						$nexcraft_count = 1;
+					foreach ( $nexcraft_slider as $nexcraft_slide_item ) {
+						$nexcraft_repeater_title = ! empty( $nexcraft_slide_item->title ) ? apply_filters( 'nexcraft_translate_single_string', $nexcraft_slide_item->title, 'slider section' ) : '';
+						$nexcraft_repeater_subtitle = ! empty( $nexcraft_slide_item->subtitle ) ? apply_filters( 'nexcraft_translate_single_string', $nexcraft_slide_item->subtitle, 'slider section' ) : '';
+						$nexcraft_repeater_button = ! empty( $nexcraft_slide_item->text2) ? apply_filters( 'nexcraft_translate_single_string', $nexcraft_slide_item->text2,'slider section' ) : '';
+						$nexcraft_repeater_link = ! empty( $nexcraft_slide_item->link ) ? apply_filters( 'nexcraft_translate_single_string', $nexcraft_slide_item->link, 'slider section' ) : '';
+						$nexcraft_repeater_image = ! empty( $nexcraft_slide_item->image_url ) ? apply_filters( 'nexcraft_translate_single_string', $nexcraft_slide_item->image_url, 'slider section' ) : '';
+						$nexcraft_repeater_active_class = ($nexcraft_count==1)?'active':'';
 				?>
-					<div class="carousel-item <?php echo esc_attr($active_class); ?>">
+					<div class="carousel-item <?php echo esc_attr($nexcraft_repeater_active_class); ?>">
 						<div class="slider-item">
-							<?php if ( ! empty( $image ) ) : ?>
-								<img src="<?php echo esc_url($image); ?>" class="d-block w-100" alt="<?php echo esc_attr__('Image','clever-fox'); ?>">
+							<?php if ( ! empty( $nexcraft_repeater_image ) ) : ?>
+								<img src="<?php echo esc_url($nexcraft_repeater_image); ?>" class="d-block w-100" alt="<?php echo esc_attr__('Image','clever-fox'); ?>">
 							<?php endif; ?>	
 							<div class="slider-content">
 								<div class="container">
 									<div class="carousel-caption text-center mx-auto">
-										<?php if ( ! empty( $subtitle ) ) : ?>
+										<?php if ( ! empty( $nexcraft_repeater_subtitle ) ) : ?>
 											 <span class="slide_subtitle">
-												<?php if($subtitle): esc_html(printf(/* translators: %s: subtitle */__( '%s','clever-fox' ),$subtitle)); endif; ?>	
+												<?php if($nexcraft_repeater_subtitle): echo esc_html($nexcraft_repeater_subtitle); endif; ?>	
 											</span> 
 										<?php endif; ?>
-										<?php if ( ! empty( $title ) ) : ?>
+										<?php if ( ! empty( $nexcraft_repeater_title ) ) : ?>
 											<h2 class="slide_title">
-												<?php if($title): esc_html(printf(/* translators: %s: title */__( '%s','clever-fox' ),$title)); endif; ?>
+												<?php if($nexcraft_repeater_title): echo esc_html($nexcraft_repeater_title); endif; ?>
 											</h2>
 										<?php endif; ?>
-										<?php if ( ! empty( $button ) ) : ?>
-											<a href="<?php echo esc_url( $link ); ?>" class="main-btn"class="main-btn"> <?php if($button): esc_html(printf(/* translators: %s: button */__( '%s','clever-fox' ),$button)); endif; ?> <i class="fas fa-angle-double-right"></i></a>
+										<?php if ( ! empty( $nexcraft_repeater_button ) ) : ?>
+											<a href="<?php echo esc_url( $nexcraft_repeater_link ); ?>" class="main-btn"class="main-btn"> <?php if($nexcraft_repeater_button): echo esc_html($nexcraft_repeater_button); endif; ?> <i class="fas fa-angle-double-right"></i></a>
 										<?php endif; ?>	
 									
 									</div>
@@ -50,7 +51,7 @@
 						</div>
 					</div>
 					
-				<?php $count++; }  ?>  
+				<?php $nexcraft_count++; }  ?>  
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#slidercarousel" data-bs-slide="prev">
                 <i class="fas fa-arrow-left"></i>

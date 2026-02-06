@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function medazin_blog_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -13,7 +14,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	);
 
 	//Blog Documentation Link
-	class WP_blog_Customize_Control extends WP_Customize_Control {
+	class medazin_wp_blog_Customize_Control extends WP_Customize_Control {
 	public $type = 'new_menu';
 
 	   function render_content()
@@ -36,7 +37,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		) 
 	);
 
-	$wp_customize->add_control(new WP_blog_Customize_Control($wp_customize,
+	$wp_customize->add_control(new medazin_wp_blog_Customize_Control($wp_customize,
 	'blog_doc_link' , 
 		array(
 			'label'          => __( 'Blog Documentation Link', 'clever-fox' ),

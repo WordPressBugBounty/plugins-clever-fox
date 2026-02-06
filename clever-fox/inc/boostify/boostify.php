@@ -2,7 +2,8 @@
 /**
  * @package   Boostify
  */
- 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 require CLEVERFOX_PLUGIN_DIR . 'inc/boostify/extras.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/boostify/dynamic-style.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/boostify/sections/above-header.php';

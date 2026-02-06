@@ -2,6 +2,7 @@
 /**
  * @package   StartBiz
  */
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 require CLEVERFOX_PLUGIN_DIR . 'inc/startbiz/sections/contact-info.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/startkit/extras.php'; 

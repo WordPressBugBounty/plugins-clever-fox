@@ -2,6 +2,7 @@
 /**
  * @package   Gradiant
  */
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 require CLEVERFOX_PLUGIN_DIR . 'inc/gradiant/extras.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/gradiant/dynamic-style.php';

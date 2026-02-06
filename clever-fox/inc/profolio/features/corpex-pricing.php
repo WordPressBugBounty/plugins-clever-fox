@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function corpex_pricing_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -13,15 +14,15 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	);
 
 	//Pricing Documentation Link
-	class WP_pricing_Customize_Control extends WP_Customize_Control {
+	class corpex_profolio_wp_pricing_Customize_Control extends WP_Customize_Control {
 	public $type = 'new_menu';
 
 	   function render_content()
 	   
 	   {
 	   ?>
-			<h3>How to add pricing section :</h3>
-			<p>Frontpage Section > pricing Section <br><br> <a href="#" style="background-color:rgba(223, 69, 44, 1);; color:#fff;display: flex;align-items: center;justify-content: center;text-decoration: none;   font-weight: 600;padding: 15px 10px;">Click Here</a></p>
+			<h3><?php echo esc_html__('How to add pricing section','clever-fox'); ?> :</h3>
+			<p><?php echo esc_html__('Frontpage Section > pricing Section','clever-fox'); ?> <br><br> <a href="#" style="background-color:rgba(223, 69, 44, 1);; color:#fff;display: flex;align-items: center;justify-content: center;text-decoration: none;   font-weight: 600;padding: 15px 10px;"><?php echo esc_html__('Click Here','clever-fox'); ?></a></p>
 			
 		<?php
 	   }
@@ -36,7 +37,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		) 
 	);
 
-	$wp_customize->add_control(new WP_pricing_Customize_Control($wp_customize,
+	$wp_customize->add_control(new corpex_profolio_wp_pricing_Customize_Control($wp_customize,
 	'pricing_doc_link' , 
 		array(
 			'label'          => __( 'Pricing Documentation Link', 'clever-fox' ),

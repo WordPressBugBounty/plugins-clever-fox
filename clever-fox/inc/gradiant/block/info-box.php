@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 // Register Block Category
 function gradiant_block_categories( $categories ) {
     return array_merge( array( array(
@@ -36,8 +37,8 @@ function gradiant_register() {
     wp_register_style( 'gradiant_editor_style', CLEVERFOX_PLUGIN_URL . '/inc/gradiant/block/dist/editor.css', array( 'wp-edit-blocks'), '0.0' );
 
     // Register Blocks
-    gradiant_wp_register_script( 'infos', array( 'render_callback' => 'render_gradiant_infos' ) );
-    gradiant_wp_register_script( 'info', array( 'render_callback' => 'render_gradiant_info' ) );
+    gradiant_wp_register_script( 'infos', array( 'render_callback' => 'gradiant_render_gradiant_infos' ) );
+    gradiant_wp_register_script( 'info', array( 'render_callback' => 'gradiant_render_gradiant_info' ) );
 }
 add_action( 'init', 'gradiant_register' );
 
@@ -65,7 +66,7 @@ class GradiantInfoStyleGenerator {
 }
 
 // Render Infos
-function render_gradiant_infos($attributes, $content){
+function gradiant_render_gradiant_infos($attributes, $content){
     $cId = isset($attributes['cId']) ? esc_attr($attributes['cId']) : '';
 
     // Generate Styles
@@ -86,7 +87,7 @@ function render_gradiant_infos($attributes, $content){
 }
 
 // Render Info
-function render_gradiant_info( $attributes ) {
+function gradiant_render_gradiant_info( $attributes ) {
     extract( $attributes );
 
     $cId = isset($cId) ? esc_attr($cId) : ''; // Escaping dynamic content
@@ -143,7 +144,7 @@ function render_gradiant_info( $attributes ) {
     // </div>";
 	
 	
-	echo "<div class='av-column-" . esc_attr($columns['desktop']) . "  " . esc_attr($infoTypes) . " " .strtolower(str_replace(' ','-',$infoType))."' id='gradiantInfo-" . esc_attr($cId) . "'>
+	echo "<div class='av-column-" . esc_attr($columns['desktop']) . "  " . esc_attr($infoTypes) . " " .esc_attr(strtolower(str_replace(' ','-',$infoType)))."' id='gradiantInfo-" . esc_attr($cId) . "'>
         <aside class='widget widget-contact'>
             <div class='contact-area'>
                 " . wp_kses_post($iconEl) . " " . wp_kses_post($titleEl) . " " . wp_kses_post($descEl) . "

@@ -2,7 +2,8 @@
 /**
  * @package   Fiona
  */
- 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 require CLEVERFOX_PLUGIN_DIR . 'inc/fiona-blog/extras.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/fiona-blog/dynamic-style.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/fiona-blog/sections/above-header.php';

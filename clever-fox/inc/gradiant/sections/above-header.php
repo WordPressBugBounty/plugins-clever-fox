@@ -1,11 +1,12 @@
 <?php
+	if ( ! defined( 'ABSPATH' ) ) exit;
 	if ( ! function_exists( 'gradiant_above_header' ) ) :
 	function gradiant_above_header() {
-		$hide_show_social_icon 		= get_theme_mod( 'hide_show_social_icon','1'); 
-		$hide_show_cntct_details 	= get_theme_mod( 'hide_show_cntct_details','1'); 
-		$hide_show_email_details 	= get_theme_mod( 'hide_show_email_details','1');
-		$hide_show_mbl_details 		= get_theme_mod( 'hide_show_mbl_details','1');
-		if($hide_show_social_icon =='1' || $hide_show_cntct_details =='1' || $hide_show_email_details =='1' || $hide_show_mbl_details =='1'):
+		$gradiant_hide_show_social_icon 		= get_theme_mod( 'hide_show_social_icon','1'); 
+		$gradiant_hide_show_cntct_details 	= get_theme_mod( 'hide_show_cntct_details','1'); 
+		$gradiant_hide_show_email_details 	= get_theme_mod( 'hide_show_email_details','1');
+		$gradiant_hide_show_mbl_details 		= get_theme_mod( 'hide_show_mbl_details','1');
+		if($gradiant_hide_show_social_icon =='1' || $gradiant_hide_show_cntct_details =='1' || $gradiant_hide_show_email_details =='1' || $gradiant_hide_show_mbl_details =='1'):
 		?>
 			<div id="above-header" class="header-above-info d-av-block d-none">
 				<div class="header-widget">

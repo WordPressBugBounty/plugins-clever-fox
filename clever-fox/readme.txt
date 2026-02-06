@@ -2,9 +2,9 @@
 Contributors: nayrathemes
 Tags: homepage setup, companion, one click demo, sections, customizer
 Requires at least: 4.6 or higher
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 5.6
-Stable tag: 26.2.92
+Stable tag: 28.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -30,9 +30,11 @@ Clever Fox plugin to enhance the functionality for free themes made by <a href="
 
 **Clever Fox Compatible Themes:**
 
+- [News 25](https://wordpress.org/themes/news-25/)    - [Free Demo](https://www.nayrathemes.com/demo/lite/news25/)
 - [Webique](https://wordpress.org/themes/webique/)    - [Free Demo](https://www.nayrathemes.com/demo/lite/webique/)
 - [Websy](https://wordpress.org/themes/websy/)    	  - [Free Demo](https://www.nayrathemes.com/demo/lite/websy/)
 - [Webora](https://wordpress.org/themes/webora/)	  - [Free Demo](https://www.nayrathemes.com/demo/lite/webora/)
+- [WebAura](https://wordpress.org/themes/webaura/)	  - [Free Demo](https://www.nayrathemes.com/demo/lite/webaura/)
 - [StartKit](https://wordpress.org/themes/startkit/)  - [Free Demo](https://www.nayrathemes.com/demo/lite/startkit/)
 - [StartBiz](https://wordpress.org/themes/startbiz/)  - [Free Demo](https://www.nayrathemes.com/demo/lite/startbiz/)
 - [Arowana](https://wordpress.org/themes/arowana/)	  - [Free Demo](https://www.nayrathemes.com/demo/lite/arowana/)
@@ -121,9 +123,11 @@ Just upload the `clever-fox.zip` to the `/wp-content/plugins/` directory, and th
 Yes, This plugin is specially make for Nayra Themes. You can install theme for enhance your experience.
 
 = Clever Fox Compatible Themes =
+- [News 25](https://wordpress.org/themes/news-25/)
 - [Webique](https://wordpress.org/themes/webique/)
 - [Websy](https://wordpress.org/themes/websy/)
 - [Webora](https://wordpress.org/themes/webora/)
+- [WebAura](https://wordpress.org/themes/webaura/)
 - [StartKit](https://wordpress.org/themes/startkit/)
 - [StartBiz](https://wordpress.org/themes/startbiz/)
 - [Arowana](https://wordpress.org/themes/arowana/)
@@ -195,6 +199,9 @@ Yes, This plugin is specially make for Nayra Themes. You can install theme for e
 10. Boostify
 11. Hantus
 12. Startkit
+13. Webique
+14. Websy
+15. Webora
 
 = How to Find All Nayra Themes? =
 Just navigate WP dashboard menu > Clever Fox > Here You can find all theme via category wise. Install theme as your needs.
@@ -203,11 +210,56 @@ Just navigate WP dashboard menu > Clever Fox > Here You can find all theme via c
 
 == License ==
 
-Clever Fox WordPress Plugin, Copyright (C) 2025 Nayra Themes
+Clever Fox WordPress Plugin, Copyright (C) 2026 Nayra Themes
 Clever Fox WordPress Plugin is licensed under the GPL3 (https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 
 == Changelog ==
+
+= 28.4 =
+* New Themes Added
+
+= 28.3 =
+* Readme Updated
+
+= 28.2 =
+* Readme Updated
+
+= 28.1 =
+* New Theme Added
+
+= 28.0 =
+* Tested WP 6.9 Compatibility
+
+= 27.9 =
+* New Theme Added
+
+= 27.8 =
+* Version Increased
+
+= 27.7 =
+* New Theme Added
+
+= 27.6 =
+* New Theme Added
+
+= 27.5 =
+* New Theme Added
+
+= 27.4 =
+* Readme Updated
+
+= 27.3 =
+* New Theme Added
+
+= 27.2 =
+* Plugin Admin Page Theme Filter Issue Fixed
+
+= 27.1 =
+* Plugin Admin Page Work
+
+= 27.0 =
+* Readme Updated
 
 = 26.2.92 =
 * Readme Updated

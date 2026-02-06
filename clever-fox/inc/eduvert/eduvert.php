@@ -2,6 +2,7 @@
 /**
  * @package   Eduvert
  */
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 require CLEVERFOX_PLUGIN_DIR . 'inc/eduvert/extras.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/eduvert/dynamic-style.php';

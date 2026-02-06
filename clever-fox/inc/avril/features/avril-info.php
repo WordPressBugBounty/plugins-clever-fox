@@ -1,6 +1,6 @@
 <?php 
+if ( ! defined( 'ABSPATH' ) ) exit;
 function avril_info_setting( $wp_customize ) {
-
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
 	Info
@@ -428,26 +428,26 @@ function avril_home_info_section_partials( $wp_customize ){
 
 add_action( 'customize_register', 'avril_home_info_section_partials' );
 // info first
-function info_section_title_render_callback() {
+function avril_info_section_title_render_callback() {
 	return get_theme_mod( 'info_title' );
 }
 
-function home_service_section_description_render_callback() {
+function avril_home_service_section_description_render_callback() {
 	return get_theme_mod( 'info_description' );
 }
 // info second
-function info_second_title_render_callback() {
+function avril_info_second_title_render_callback() {
 	return get_theme_mod( 'info_title2' );
 }
 
-function info_second_description_render_callback() {
+function avril_info_second_description_render_callback() {
 	return get_theme_mod( 'info_description2' );
 }	
 // info third
-function info_third_title_render_callback() {
+function avril_info_third_title_render_callback() {
 	return get_theme_mod( 'info_title3' );
 }
 
-function info_third_description_render_callback() {
+function avril_info_third_description_render_callback() {
 	return get_theme_mod( 'info_description3' );
 }

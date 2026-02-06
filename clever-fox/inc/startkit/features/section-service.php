@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 if ( ! function_exists( 'startkit_service_setting' ) ) :
 function startkit_service_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
@@ -167,8 +168,8 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		);
 		
 		
-		$theme = wp_get_theme(); // gets the current theme
-		if ( 'StartKit' == $theme->name || 'StartBiz' == $theme->name){
+		$cleverfox_theme = wp_get_theme(); // gets the current theme
+		if ( 'StartKit' == $cleverfox_theme->name || 'StartBiz' == $cleverfox_theme->name){
 			$wp_customize->add_control( 
 				new Startkit_Repeater( $wp_customize, 
 					'service_contents', 
@@ -208,15 +209,15 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		//Pro feature
 		class Startkit_services__section_upgrade extends WP_Customize_Control {
 			public function render_content() { 
-				$theme = wp_get_theme(); // gets the current theme
-				if ( 'Envira' == $theme->name){	
+				$cleverfox_theme = wp_get_theme(); // gets the current theme
+				if ( 'Envira' == $cleverfox_theme->name){	
 			?>
 				<a class="customizer_service_upgrade_section up-to-pro" href="https://www.nayrathemes.com/envira-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
-				<?php }elseif( 'StartBiz' == $theme->name){ ?>
+				<?php }elseif( 'StartBiz' == $cleverfox_theme->name){ ?>
 					<a class="customizer_service_upgrade_section up-to-pro" href="https://www.nayrathemes.com/startbiz-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
-				<?php }elseif( 'StartWeb' == $theme->name){ ?>
+				<?php }elseif( 'StartWeb' == $cleverfox_theme->name){ ?>
 					<a class="customizer_service_upgrade_section up-to-pro" href="https://www.nayrathemes.com/startweb-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
-				<?php }elseif( 'Arowana' == $theme->name){ ?>	
+				<?php }elseif( 'Arowana' == $cleverfox_theme->name){ ?>	
 					<a class="customizer_service_upgrade_section up-to-pro" href="https://www.nayrathemes.com/arowana-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 				<?php }else{ ?>		
 					<a class="customizer_service_upgrade_section up-to-pro" href="https://www.nayrathemes.com/startkit-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
@@ -252,21 +253,21 @@ function startkit_home_service_section_partials( $wp_customize ){
 	$wp_customize->selective_refresh->add_partial( 'service_title', array(
 		'selector'            => '#services .section-header h2',
 		'settings'            => 'service_title',
-		'render_callback'  => 'home_section_service_title_render_callback',
+		'render_callback'  => 'startkit_home_section_service_title_render_callback',
 	) );
 	
 	// service_subttl
 	$wp_customize->selective_refresh->add_partial( 'service_subttl', array(
 		'selector'            => '#services .section-header .subtitle',
 		'settings'            => 'service_subttl',
-		'render_callback'  => 'home_service_subttl_render_callback',
+		'render_callback'  => 'startkit_home_service_subttl_render_callback',
 	) );
 	
 	// service description
 	$wp_customize->selective_refresh->add_partial( 'service_description', array(
 		'selector'            => '#services .section-header p',
 		'settings'            => 'service_description',
-		'render_callback'  => 'home_section_service_desc_render_callback',
+		'render_callback'  => 'startkit_home_section_service_desc_render_callback',
 	
 	) );
 	// service content
@@ -279,16 +280,16 @@ function startkit_home_service_section_partials( $wp_customize ){
 add_action( 'customize_register', 'startkit_home_service_section_partials' );
 
 // service title
-function home_section_service_title_render_callback() {
+function startkit_home_section_service_title_render_callback() {
 	return get_theme_mod( 'service_title' );
 }
 
 // service_subttl
-function home_service_subttl_render_callback() {
+function startkit_home_service_subttl_render_callback() {
 	return get_theme_mod( 'service_subttl' );
 }
 
 // service description
-function home_section_service_desc_render_callback() {
+function startkit_home_section_service_desc_render_callback() {
 	return get_theme_mod( 'service_description' );
 }

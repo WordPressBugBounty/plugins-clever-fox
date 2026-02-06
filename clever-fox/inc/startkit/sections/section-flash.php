@@ -1,32 +1,32 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 if ( ! function_exists( 'startkit_info_plu' ) ) :
-
 	function startkit_info_plu() {
-	$hide_show_info			= get_theme_mod('hide_show_info','1');
-	$info_icons				= get_theme_mod('info_icons','fa-envelope');
-	$info_title				= get_theme_mod('info_title',__('Design For Business','clever-fox'));
-	$info_description		= get_theme_mod('info_description',__('The chunk standard of Lorem Ipsum used since the 900s is reproduced below','clever-fox'));
-	$info_icons2			= get_theme_mod('info_icons2','fa-cart-plus');
-	$info_title2			= get_theme_mod('info_title2',__('Develop For Work','clever-fox'));
-	$info_description2		= get_theme_mod('info_description2',__('The chunk standard of Lorem Ipsum used since the 900s is reproduced below','clever-fox'));  
-	$info_icons3			= get_theme_mod('info_icons3','fa-life-saver'); 
-	$info_title3			= get_theme_mod('info_title3',__('Maketing For Blast','clever-fox'));
-	$info_description3		= get_theme_mod('info_description3',__('The chunk standard of Lorem Ipsum used since the 900s is reproduced below','clever-fox')); 
+	$startkit_hide_show_info			= get_theme_mod('hide_show_info','1');
+	$startkit_info_icons				= get_theme_mod('info_icons','fa-envelope');
+	$startkit_info_title				= get_theme_mod('info_title',__('Design For Business','clever-fox'));
+	$startkit_info_description		= get_theme_mod('info_description',__('The chunk standard of Lorem Ipsum used since the 900s is reproduced below','clever-fox'));
+	$startkit_info_icons2			= get_theme_mod('info_icons2','fa-cart-plus');
+	$startkit_info_title2			= get_theme_mod('info_title2',__('Develop For Work','clever-fox'));
+	$startkit_info_description2		= get_theme_mod('info_description2',__('The chunk standard of Lorem Ipsum used since the 900s is reproduced below','clever-fox'));  
+	$startkit_info_icons3			= get_theme_mod('info_icons3','fa-life-saver'); 
+	$startkit_info_title3			= get_theme_mod('info_title3',__('Maketing For Blast','clever-fox'));
+	$startkit_info_description3		= get_theme_mod('info_description3',__('The chunk standard of Lorem Ipsum used since the 900s is reproduced below','clever-fox')); 
 ?>
 <!-- Start: Features List
     ============================= -->
-<?php if($hide_show_info == '1') { ?>
+<?php if($startkit_hide_show_info == '1') { ?>
     <section id="features-list">
         <div class="container">
             <div class="row">
 				<div class="col-md-4 mb-lg-0 mb-5">
 					<div class="features-list-item first wow fadeInUp" data-wow-delay="0.1s">
 						<div class="features-icon">
-							<span class="icon"><i class="fa <?php echo esc_attr( $info_icons ); ?>"></i></span>
+							<span class="icon"><i class="fa <?php echo esc_attr( $startkit_info_icons ); ?>"></i></span>
 						</div>
 						<div class="features-content">
-							<h4><?php echo esc_html( $info_title ); ?></h4>
-							<p class="small"><?php echo wp_kses_post( $info_description ); ?></p>
+							<h4><?php echo esc_html( $startkit_info_title ); ?></h4>
+							<p class="small"><?php echo wp_kses_post( $startkit_info_description ); ?></p>
 							<!--a href="#" class="view-more">Read More</a-->
 						</div>
 					</div>
@@ -34,11 +34,11 @@ if ( ! function_exists( 'startkit_info_plu' ) ) :
 				<div class="col-md-4 mb-lg-0 mb-5">
 					<div class="features-list-item second wow fadeInUp" data-wow-delay="0.1s">
 						<div class="features-icon">
-							<span class="icon"><i class="fa <?php echo esc_attr( $info_icons2 ); ?>"></i></span>
+							<span class="icon"><i class="fa <?php echo esc_attr( $startkit_info_icons2 ); ?>"></i></span>
 						</div>
 						<div class="features-content">
-							<h4><?php echo esc_html( $info_title2 ); ?></h4>
-							<p class="small"><?php echo wp_kses_post( $info_description2 ); ?></p>
+							<h4><?php echo esc_html( $startkit_info_title2 ); ?></h4>
+							<p class="small"><?php echo wp_kses_post( $startkit_info_description2 ); ?></p>
 							<!--a href="#" class="view-more">Read More</a-->
 						</div>
 					</div>
@@ -46,11 +46,11 @@ if ( ! function_exists( 'startkit_info_plu' ) ) :
 				<div class="col-md-4 mb-lg-0 mb-5">
 					<div class="features-list-item third wow fadeInUp" data-wow-delay="0.1s">
 						<div class="features-icon">
-							<span class="icon"><i class="fa <?php echo esc_attr( $info_icons3 ); ?>"></i></span>
+							<span class="icon"><i class="fa <?php echo esc_attr( $startkit_info_icons3 ); ?>"></i></span>
 						</div>
 						<div class="features-content">
-							<h4><?php echo esc_html( $info_title3 ); ?></h4>
-							<p class="small"><?php echo wp_kses_post( $info_description3 ); ?></p>
+							<h4><?php echo esc_html( $startkit_info_title3 ); ?></h4>
+							<p class="small"><?php echo wp_kses_post( $startkit_info_description3 ); ?></p>
 							<!--a href="#" class="view-more">Read More</a-->
 						</div>
 					</div>
@@ -62,6 +62,6 @@ if ( ! function_exists( 'startkit_info_plu' ) ) :
  }
 endif;
 if ( function_exists( 'startkit_info_plu' ) ) {
-$section_priority = apply_filters( 'startkit_section_priority', 12, 'startkit_info_plu' );
-add_action( 'startkit_sections', 'startkit_info_plu', absint( $section_priority ) );
+$cleverfox_section_priority = apply_filters( 'startkit_section_priority', 12, 'startkit_info_plu' );
+add_action( 'startkit_sections', 'startkit_info_plu', absint( $cleverfox_section_priority ) );
 }

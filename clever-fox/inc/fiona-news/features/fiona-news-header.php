@@ -1,9 +1,11 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function fiona_news_header_settings( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
 	Below Header Section
-	=========================================*/
+	
+=========================================*/
 	$wp_customize->add_section(
         'below_header',
         array(

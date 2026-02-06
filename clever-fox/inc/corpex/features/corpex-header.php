@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function cleverfox_corpex_header_settings( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -200,15 +201,15 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	);
 
 	//Header Mobile Details Link Documentation Link
-	class WP_mbl_details_section_Customize_Control extends WP_Customize_Control {
+	class corpex_wp_mbl_details_section_Customize_Control extends WP_Customize_Control {
 	public $type = 'new_menu';
 
 	   function render_content()
 	   
 	   {
 	   ?>
-			<h3>How to Add Mobile Details section :</h3>
-			<p>Customizer > Above Header > Phone <br><br> <a href="#" style="background-color:rgba(223, 69, 44, 1);; color:#fff;display: flex;align-items: center;justify-content: center;text-decoration: none;   font-weight: 600;padding: 15px 10px;">Click Here</a></p>
+			<h3><?php echo esc_html__('How to Add Mobile Details section','clever-fox'); ?> :</h3>
+			<p><?php echo esc_html__('Customizer > Above Header > Phone','clever-fox'); ?> <br><br> <a href="#" style="background-color:rgba(223, 69, 44, 1);; color:#fff;display: flex;align-items: center;justify-content: center;text-decoration: none;   font-weight: 600;padding: 15px 10px;"><?php echo esc_html__('Click Here','clever-fox'); ?></a></p>
 			
 		<?php
 	   }
@@ -223,7 +224,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		) 
 	);
 
-	$wp_customize->add_control(new WP_mbl_details_section_Customize_Control($wp_customize,
+	$wp_customize->add_control(new corpex_wp_mbl_details_section_Customize_Control($wp_customize,
 	'mbl_details_doc_link' , 
 		array(
 			'label'          => __( 'Mobile Details Documentation Link', 'clever-fox' ),
@@ -336,15 +337,15 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	);
 
 	//Header Mobile Details Link Documentation Link
-	class WP_email_details_section_Customize_Control extends WP_Customize_Control {
+	class corpex_wp_email_details_section_Customize_Control extends WP_Customize_Control {
 	public $type = 'new_menu';
 
 	   function render_content()
 	   
 	   {
 	   ?>
-			<h3>How to Add Email Details section :</h3>
-			<p>Customizer > Above Header > Email <br><br> <a href="#" style="background-color:rgba(223, 69, 44, 1);; color:#fff;display: flex;align-items: center;justify-content: center;text-decoration: none;   font-weight: 600;padding: 15px 10px;">Click Here</a></p>
+			<h3><?php echo esc_html__('How to Add Email Details section','clever-fox'); ?> :</h3>
+			<p><?php echo esc_html__('Customizer > Above Header > Email','clever-fox'); ?> <br><br> <a href="#" style="background-color:rgba(223, 69, 44, 1);; color:#fff;display: flex;align-items: center;justify-content: center;text-decoration: none;   font-weight: 600;padding: 15px 10px;"><?php echo esc_html__('Click Here','clever-fox'); ?></a></p>
 			
 		<?php
 	   }
@@ -359,7 +360,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		) 
 	);
 
-	$wp_customize->add_control(new WP_email_details_section_Customize_Control($wp_customize,
+	$wp_customize->add_control(new corpex_wp_email_details_section_Customize_Control($wp_customize,
 	'email_details_doc_link' , 
 		array(
 			'label'          => __( 'Email Details Documentation Link', 'clever-fox' ),
@@ -495,7 +496,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	//Pro feature
 		class Corpex_social_icon__section_upgrade extends WP_Customize_Control {
 			public function render_content() { 
-				$theme = wp_get_theme(); // gets the current theme	
+				$cleverfox_theme = wp_get_theme(); // gets the current theme	
 				
 			?>
 				<a class="customizer_social_upgrade_section up-to-pro" href="https://www.nayrathemes.com/corpex-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
@@ -553,15 +554,15 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	);
 
 	//Header Address Details Link Documentation Link
-	class WP_office_hours_details_section_Customize_Control extends WP_Customize_Control {
+	class corpex_wp_office_hours_details_section_Customize_Control extends WP_Customize_Control {
 	public $type = 'new_menu';
 
 	   function render_content()
 	   
 	   {
 	   ?>
-			<h3>How to Add Office Hours Details section :</h3>
-			<p>Customizer > Above Header > Office Hours <br><br> <a href="#" style="background-color:rgba(223, 69, 44, 1);; color:#fff;display: flex;align-items: center;justify-content: center;text-decoration: none;   font-weight: 600;padding: 15px 10px;">Click Here</a></p>
+			<h3><?php echo esc_html__('How to Add Office Hours Details section','clever-fox'); ?> :</h3>
+			<p><?php echo esc_html__('Customizer > Above Header > Office Hours','clever-fox'); ?> <br><br> <a href="#" style="background-color:rgba(223, 69, 44, 1);; color:#fff;display: flex;align-items: center;justify-content: center;text-decoration: none;   font-weight: 600;padding: 15px 10px;"><?php echo esc_html__('Click Here','clever-fox'); ?></a></p>
 			
 		<?php
 	   }
@@ -576,7 +577,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		) 
 	);
 
-	$wp_customize->add_control(new WP_office_hours_details_section_Customize_Control($wp_customize,
+	$wp_customize->add_control(new corpex_wp_office_hours_details_section_Customize_Control($wp_customize,
 	'office_hours_details_doc_link' , 
 		array(
 			'label'          => __( 'Office Hours Details Documentation Link', 'clever-fox' ),
@@ -688,15 +689,15 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	);
 
 		//Header Office Timing Link Documentation Link
-	class WP_hiring_section_Customize_Control extends WP_Customize_Control {
+	class corpex_wp_hiring_section_Customize_Control extends WP_Customize_Control {
 	public $type = 'new_menu';
 
 	   function render_content()
 	   
 	   {
 	   ?>
-			<h3>How to Add hiring Details section :</h3>
-			<p>Customizer > Above Header > hiring <br><br> <a href="#" style="background-color:rgba(223, 69, 44, 1);; color:#fff;display: flex;align-items: center;justify-content: center;text-decoration: none;   font-weight: 600;padding: 15px 10px;">Click Here</a></p>
+			<h3><?php echo esc_html__('How to Add hiring Details section','clever-fox'); ?> :</h3>
+			<p><?php echo esc_html__('Customizer > Above Header > hiring','clever-fox'); ?> <br><br> <a href="#" style="background-color:rgba(223, 69, 44, 1);; color:#fff;display: flex;align-items: center;justify-content: center;text-decoration: none;   font-weight: 600;padding: 15px 10px;"><?php echo esc_html__('Click Here','clever-fox'); ?></a></p>
 			
 		<?php
 	   }
@@ -711,7 +712,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		) 
 	);
 
-	$wp_customize->add_control(new WP_hiring_section_Customize_Control($wp_customize,
+	$wp_customize->add_control(new corpex_wp_hiring_section_Customize_Control($wp_customize,
 	'hiring_doc_link' , 
 		array(
 			'label'          => __( 'Hiring Documentation Link', 'clever-fox' ),
@@ -794,15 +795,15 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
     );
 
 	//Header Navigation Documentation Link
-	class WP_header_navigation_section_Customize_Control extends WP_Customize_Control {
+	class corpex_wp_header_navigation_section_Customize_Control extends WP_Customize_Control {
 	public $type = 'new_menu';
 
 	   function render_content()
 	   
 	   {
 	   ?>
-			<h3>How to Use Header Navigation section :</h3>
-			<p>Customizer > Header Navigation <br><br> <a href="#" style="background-color:rgba(223, 69, 44, 1);; color:#fff;display: flex;align-items: center;justify-content: center;text-decoration: none;   font-weight: 600;padding: 15px 10px;">Click Here</a></p>
+			<h3><?php echo esc_html__('How to Use Header Navigation section','clever-fox'); ?> :</h3>
+			<p><?php echo esc_html__('Customizer > Header Navigation','clever-fox'); ?> <br><br> <a href="#" style="background-color:rgba(223, 69, 44, 1);; color:#fff;display: flex;align-items: center;justify-content: center;text-decoration: none;   font-weight: 600;padding: 15px 10px;"><?php echo esc_html__('Click Here','clever-fox'); ?></a></p>
 			
 		<?php
 	   }
@@ -817,7 +818,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		) 
 	);
 
-	$wp_customize->add_control(new WP_header_navigation_section_Customize_Control($wp_customize,
+	$wp_customize->add_control(new corpex_wp_header_navigation_section_Customize_Control($wp_customize,
 	'header_navigation_doc_link' , 
 		array(
 			'label'          => __( 'Header Navigation Documentation Link', 'clever-fox' ),

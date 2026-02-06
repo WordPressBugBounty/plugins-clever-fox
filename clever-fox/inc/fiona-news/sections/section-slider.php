@@ -1,18 +1,19 @@
 <?php  
+	if ( ! defined( 'ABSPATH' ) ) exit;
 	if ( ! function_exists( 'fiona_blog_slider' ) ) :
 	function fiona_blog_slider() {
-	$slider_hs 				= get_theme_mod('slider_hs','1');	
-	$slider_category_id 	= get_theme_mod('slider_category_id');
-	if($slider_hs == '1'){
+	$fionablog_fionanews_slider_hs 				= get_theme_mod('slider_hs','1');	
+	$fionablog_fionanews_slider_category_id 	= get_theme_mod('slider_category_id');
+	if($fionablog_fionanews_slider_hs == '1'){
 ?>	     
 	<section id="slider-section" class="slider-wrapper section-14">
 		<div class="main07 main-slider">
            <?php 	
-				$args = array( 'post_type' => 'post', 'category_name' => $slider_category_id,'posts_per_page' => 4,'ignore_sticky_posts' => true ) ; 	
-					query_posts( $args );
-					if(query_posts( $args ))
+				$fionablog_fionanews_args = array( 'post_type' => 'post', 'category_name' => $fionablog_fionanews_slider_category_id,'posts_per_page' => 4,'ignore_sticky_posts' => true ) ; 	
+					$fionablog_fionanews_qry_one = new WP_Query( $fionablog_fionanews_args );
+					if($fionablog_fionanews_qry_one->have_posts())
 					{	
-					while(have_posts()):the_post(); 
+					while($fionablog_fionanews_qry_one->have_posts()):$fionablog_fionanews_qry_one->the_post(); ; 
 					
 			?>
             <div class="item">
@@ -28,11 +29,11 @@
 									<div class="cover-slider">
 										<div class="author-sub-date">
 											<span class="author-name">
-												<?php  $user = wp_get_current_user(); ?>
-												<a href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' ) ));?>" title="Author: <?php esc_html(the_author()); ?>" class="author meta-info hide-on-mobile"> <span class="author-image" style="background-image: url('<?php echo esc_url( get_avatar_url( $user->ID ) ); ?>');"></span><?php esc_html(the_author()); ?></a>
+												<?php  $fionablog_fionanews_user = wp_get_current_user(); ?>
+												<a href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' ) ));?>" title="Author: <?php esc_html(the_author()); ?>" class="author meta-info hide-on-mobile"> <span class="author-image" style="background-image: url('<?php echo esc_url( get_avatar_url( $fionablog_fionanews_user->ID ) ); ?>');"></span><?php esc_html(the_author()); ?></a>
 											</span>
 										</div>
-										<ul class="post-categories"><li><a href="<?php esc_url(the_permalink()); ?>"><?php the_tags('','',''); ?></a></li></ul>
+										<ul class="post-categories"><li><a href="<?php echo esc_url(get_permalink()); ?>"><?php the_tags('','',''); ?></a></li></ul>
 										<?php     
 											if ( is_single() ) :
 											

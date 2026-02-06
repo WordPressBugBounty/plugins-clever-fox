@@ -1,5 +1,6 @@
 <?php
-$theme = wp_get_theme(); // gets the current theme
+if ( ! defined( 'ABSPATH' ) ) exit;
+$cleverfox_theme = wp_get_theme(); // gets the current theme
 /*
  *
  * Social Icon
@@ -44,14 +45,14 @@ function avril_get_social_icon_default() {
  * Slider Default
  */
  
- if( 'Avitech' == $theme->name  || 'Varuda' == $theme->name || 'Evion' == $theme->name){
+ if( 'Avitech' == $cleverfox_theme->name  || 'Varuda' == $cleverfox_theme->name || 'Evion' == $cleverfox_theme->name){
 	 function avril_get_slider_default() {
-	  $theme = wp_get_theme();
+	  $cleverfox_theme = wp_get_theme();
 		return apply_filters(
 			'avril_get_slider_default', wp_json_encode(
 					 array(
 					array(
-						'image_url'       => ( 'Evion' == $theme->name) ? '' : CLEVERFOX_PLUGIN_URL .'inc/avril/images/slider/img02.jpg',
+						'image_url'       => ( 'Evion' == $cleverfox_theme->name) ? '' : CLEVERFOX_PLUGIN_URL .'inc/avril/images/slider/img02.jpg',
 						"image_url2" => CLEVERFOX_PLUGIN_URL .'inc/azwa/images/sliders/slider01.png',
 						'title'           => esc_html__( 'Global Project Managment', 'clever-fox' ),
 						'subtitle'         => esc_html__( 'Services & Solutions', 'clever-fox' ),
@@ -64,7 +65,7 @@ function avril_get_social_icon_default() {
 						'id'              => 'customizer_repeater_slider_001',
 					),
 					array(
-						'image_url'       => ( 'Evion' == $theme->name) ? '' : CLEVERFOX_PLUGIN_URL .'inc/avril/images/slider/img02.jpg',
+						'image_url'       => ( 'Evion' == $cleverfox_theme->name) ? '' : CLEVERFOX_PLUGIN_URL .'inc/avril/images/slider/img02.jpg',
 						"image_url2" => CLEVERFOX_PLUGIN_URL .'inc/azwa/images/sliders/slider03.png',
 						'title'           => esc_html__( 'Develop Stronger Minds', 'clever-fox' ),
 						'subtitle'         => esc_html__( 'Better Coaching Gets', 'clever-fox' ),
@@ -77,7 +78,7 @@ function avril_get_social_icon_default() {
 						'id'              => 'customizer_repeater_slider_002',
 					),
 					array(
-						'image_url'       => ( 'Evion' == $theme->name) ? '' : CLEVERFOX_PLUGIN_URL .'inc/avril/images/slider/img02.jpg',
+						'image_url'       => ( 'Evion' == $cleverfox_theme->name) ? '' : CLEVERFOX_PLUGIN_URL .'inc/avril/images/slider/img02.jpg',
 						"image_url2" => CLEVERFOX_PLUGIN_URL .'inc/azwa/images/sliders/slider01.png',
 						'title'           => esc_html__( 'Industry Analysis', 'clever-fox' ),
 						'subtitle'         => esc_html__( 'Marketing & Strategy', 'clever-fox' ),
@@ -488,38 +489,38 @@ function avril_get_social_icon_default() {
 				 array(
 				array(
 					'title'           => esc_html__( 'Well Documented', 'clever-fox' ),
-					'text'            => esc_html__( 'Lorem Ipsum is simply dummy of printing and typesetting and industry. Lorem Ipsum been.', 'avril-pro' ),
+					'text'            => esc_html__( 'Lorem Ipsum is simply dummy of printing and typesetting and industry. Lorem Ipsum been.', 'clever-fox' ),
 					'icon_value'       => 'fa-folder-open-o',
 					'id'              => 'customizer_repeater_animate_001',
 					
 				),
 				array(
 					'title'           => esc_html__( 'Simple To Use', 'clever-fox' ),
-					'text'            => esc_html__( 'Lorem Ipsum is simply dummy of printing and typesetting and industry. Lorem Ipsum been.', 'avril-pro' ),
+					'text'            => esc_html__( 'Lorem Ipsum is simply dummy of printing and typesetting and industry. Lorem Ipsum been.', 'clever-fox' ),
 					'icon_value'       => 'fa-list',
 					'id'              => 'customizer_repeater_animate_002',				
 				),
 				array(
 					'title'           => esc_html__( 'High Performance', 'clever-fox' ),
-					'text'            => esc_html__( 'Lorem Ipsum is simply dummy of printing and typesetting and industry. Lorem Ipsum been.', 'avril-pro' ),
+					'text'            => esc_html__( 'Lorem Ipsum is simply dummy of printing and typesetting and industry. Lorem Ipsum been.', 'clever-fox' ),
 					'icon_value'       => 'fa-rocket',
 					'id'              => 'customizer_repeater_animate_003',
 				),
 				array(
 					'title'           => esc_html__( 'Development', 'clever-fox' ),
-					'text'            => esc_html__( 'Lorem Ipsum is simply dummy of printing and typesetting and industry. Lorem Ipsum been.', 'avril-pro' ),
+					'text'            => esc_html__( 'Lorem Ipsum is simply dummy of printing and typesetting and industry. Lorem Ipsum been.', 'clever-fox' ),
 					'icon_value'       => 'fa-reorder',
 					'id'              => 'customizer_repeater_animate_004',
 				),
 				array(
 					'title'           => esc_html__( 'Global Use', 'clever-fox' ),
-					'text'            => esc_html__( 'Lorem Ipsum is simply dummy of printing and typesetting and industry. Lorem Ipsum been.', 'avril-pro' ),
+					'text'            => esc_html__( 'Lorem Ipsum is simply dummy of printing and typesetting and industry. Lorem Ipsum been.', 'clever-fox' ),
 					'icon_value'       => 'fa-folder-open-o',
 					'id'              => 'customizer_repeater_animate_005',
 				),
 				array(
 					'title'           => esc_html__( 'Design', 'clever-fox' ),
-					'text'            => esc_html__( 'Lorem Ipsum is simply dummy of printing and typesetting and industry. Lorem Ipsum been.', 'avril-pro' ),
+					'text'            => esc_html__( 'Lorem Ipsum is simply dummy of printing and typesetting and industry. Lorem Ipsum been.', 'clever-fox' ),
 					'icon_value'       => 'fa-reorder',
 					'id'              => 'customizer_repeater_animate_006',
 				),

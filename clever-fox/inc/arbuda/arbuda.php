@@ -2,7 +2,8 @@
 /**
  * @package   Arbuda
  */
- 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 require CLEVERFOX_PLUGIN_DIR . 'inc/aravalli/extras.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/aravalli/dynamic-style.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/aravalli/sections/above-header.php';

@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 if ( ! function_exists( 'startkit_funfact_setting' ) ) :
 function startkit_funfact_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
@@ -155,7 +156,7 @@ function startkit_home_funfact_section_partials( $wp_customize ){
 	$wp_customize->selective_refresh->add_partial( 'funfact_contents', array(
 		'selector'            => '#fun-fact .text-center',
 		'settings'            => 'funfact_contents',
-		'render_callback'  => 'home_section_funfact_render_callback',
+		'render_callback'  => 'startkit_envira_home_section_funfact_render_callback',
 	
 	) );
 	
@@ -164,7 +165,7 @@ function startkit_home_funfact_section_partials( $wp_customize ){
 add_action( 'customize_register', 'startkit_home_funfact_section_partials' );
 
 // social icons
-function home_section_funfact_render_callback() {
+function startkit_envira_home_section_funfact_render_callback() {
 	$funfact_contents =  get_theme_mod( 'funfact_contents' );
 	funfact_contents( $funfact_contents, true );
 	

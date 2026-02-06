@@ -2,6 +2,7 @@
 /**
  * @package NexCraft
  */
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 require CLEVERFOX_PLUGIN_DIR . 'inc/nexcraft/extras.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/nexcraft/dynamic-style.php';

@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function gradiant_service_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -166,28 +167,28 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	//Pro feature
 		class Gradiant_service__section_upgrade extends WP_Customize_Control {
 			public function render_content() { 
-				$theme = wp_get_theme(); // gets the current theme	
-				if ( 'Comoxa' == $theme->name){
+				$cleverfox_theme = wp_get_theme(); // gets the current theme	
+				if ( 'Comoxa' == $cleverfox_theme->name){
 			?>
 				<a class="customizer_service_upgrade_section up-to-pro" href="https://www.nayrathemes.com/comoxa-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 				
-			<?php }elseif('ColorPress' == $theme->name){ ?>	
+			<?php }elseif('ColorPress' == $cleverfox_theme->name){ ?>	
 			
 				<a class="customizer_service_upgrade_section up-to-pro" href="https://www.nayrathemes.com/colorpress-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 				
-			<?php }elseif('Flavita' == $theme->name){ ?>
+			<?php }elseif('Flavita' == $cleverfox_theme->name){ ?>
 			
 				<a class="customizer_service_upgrade_section up-to-pro" href="https://www.nayrathemes.com/flavita-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 				
-			<?php }elseif('Appointo' == $theme->name){ ?>
+			<?php }elseif('Appointo' == $cleverfox_theme->name){ ?>
             
                 <a class="customizer_service_upgrade_section up-to-pro" href="https://www.nayrathemes.com/appointo-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 				
-			<?php }elseif('Colorsy' == $theme->name){ ?>
+			<?php }elseif('Colorsy' == $cleverfox_theme->name){ ?>
 			
 				<a class="customizer_service_upgrade_section up-to-pro" href="https://www.nayrathemes.com/colorsy-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 				
-			<?php }elseif('GradiantX' == $theme->name){ ?>
+			<?php }elseif('GradiantX' == $cleverfox_theme->name){ ?>
 			
 				<a class="customizer_service_upgrade_section up-to-pro" href="https://www.nayrathemes.com/gradiantx-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 				

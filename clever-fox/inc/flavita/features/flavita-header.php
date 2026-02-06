@@ -1,5 +1,6 @@
 <?php
-function flavita_lite_header_settings( $wp_customize ) {
+if ( ! defined( 'ABSPATH' ) ) exit;
+function gradiant_flavita_lite_header_settings( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';	
 	// Header Navigation Contact
 	$wp_customize->add_setting(
@@ -62,8 +63,8 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		)
 	);
 	
-	$theme = wp_get_theme(); // gets the current theme
-	if( 'Colorsy' !== $theme->name){
+	$cleverfox_theme = wp_get_theme(); // gets the current theme
+	if( 'Colorsy' !== $cleverfox_theme->name){
 		//hdr_nav_contact_content3
 		$wp_customize->add_setting(
 			'hdr_nav_contact_content3'
@@ -86,10 +87,10 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		);
 	}
 }
-add_action( 'customize_register', 'flavita_lite_header_settings' );
+add_action( 'customize_register', 'gradiant_flavita_lite_header_settings' );
 
 // Header selective refresh
-function flavita_lite_header_partials( $wp_customize ){
+function gradiant_flavita_lite_header_partials( $wp_customize ){
 	
 	// hdr_nav_contact_content
 	$wp_customize->selective_refresh->add_partial( 'hdr_nav_contact_content', array(
@@ -113,7 +114,7 @@ function flavita_lite_header_partials( $wp_customize ){
 	) );
 	}
 
-add_action( 'customize_register', 'flavita_lite_header_partials' );
+add_action( 'customize_register', 'gradiant_flavita_lite_header_partials' );
 
 // hdr_nav_contact_content
 function gradiant_hdr_nav_contact_content_render_callback() {

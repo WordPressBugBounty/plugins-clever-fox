@@ -1,5 +1,6 @@
 <?php
-function get_social() {
+if ( ! defined( 'ABSPATH' ) ) exit;
+function fionablog_get_social() {
 			$new_icons = array(
 				'fa-glass'                               => '&#xf000 fa-glass',
 				'fa-music'                               => '&#xf001 fa-music',

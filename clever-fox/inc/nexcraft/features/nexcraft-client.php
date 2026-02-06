@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function nexcraft_client_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -13,15 +14,15 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	);
 
 	//Client Documentation Link
-	class WP_client_Customize_Control extends WP_Customize_Control {
+	class nexcraft_wp_client_Customize_Control extends WP_Customize_Control {
 	public $type = 'new_menu';
 
 	   function render_content()
 	   
 	   {
 	   ?>
-			<h3>How to add client section :</h3>
-			<p>Frontpage Section > Client Section <br><br> <a href="#" style="background-color:#03c281; color:#fff;display: flex;align-items: center;justify-content: center;text-decoration: none;   font-weight: 600;padding: 15px 10px;">Click Here</a></p>
+			<h3><?php echo esc_html__('How to add client section','clever-fox'); ?> :</h3>
+			<p><?php echo esc_html__('Frontpage Section > Client Section','clever-fox'); ?> <br><br> <a href="#" style="background-color:#03c281; color:#fff;display: flex;align-items: center;justify-content: center;text-decoration: none;   font-weight: 600;padding: 15px 10px;"><?php echo esc_html__('Click Here','clever-fox'); ?></a></p>
 			
 		<?php
 	   }
@@ -36,7 +37,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		) 
 	);
 
-	$wp_customize->add_control(new WP_client_Customize_Control($wp_customize,
+	$wp_customize->add_control(new nexcraft_wp_client_Customize_Control($wp_customize,
 	'cl_doc_link' , 
 		array(
 			'label'          => __( 'Client Documentation Link', 'clever-fox' ),
@@ -180,7 +181,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 			//Pro feature
 		class  NexCraft_client__section_upgrade extends WP_Customize_Control {
 			public function render_content() { 
-				$theme = wp_get_theme(); // gets the current theme	
+				$cleverfox_theme = wp_get_theme(); // gets the current theme	
 				
 			?>
 				<a class="customizer_client_upgrade_section up-to-pro" href="https://www.nayrathemes.com/nexcraft-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>

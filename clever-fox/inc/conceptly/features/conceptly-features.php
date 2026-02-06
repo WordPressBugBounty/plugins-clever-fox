@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function conceptly_features_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -168,17 +169,17 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		//Pro feature
 		class Conceptly_feature__section_upgrade extends WP_Customize_Control {
 			public function render_content() { 
-			$theme = wp_get_theme(); // gets the current theme
-			if ( 'Ameya' == $theme->name){	
+			$cleverfox_theme = wp_get_theme(); // gets the current theme
+			if ( 'Ameya' == $cleverfox_theme->name){	
 			?>
 				<a class="customizer_feature_upgrade_section up-to-pro" href="https://www.nayrathemes.com/ameya-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 			<?php
-			   }elseif ( 'Azwa' == $theme->name){
+			   }elseif ( 'Azwa' == $cleverfox_theme->name){
 			?>
 				<a class="customizer_feature_upgrade_section up-to-pro" href="https://www.nayrathemes.com/azwa-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 				
 			<?php
-			   }elseif ( 'Techine' == $theme->name){
+			   }elseif ( 'Techine' == $cleverfox_theme->name){
 			?>
 				<a class="customizer_feature_upgrade_section up-to-pro" href="https://www.nayrathemes.com/techine-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 				
@@ -226,14 +227,14 @@ function conceptly_home_feature_section_partials( $wp_customize ){
 	$wp_customize->selective_refresh->add_partial( 'features_title', array(
 		'selector'            => '.home-feature .section-title h2',
 		'settings'            => 'features_title',
-		'render_callback'  => 'feature_section_title_render_callback',
+		'render_callback'  => 'conceptly_feature_section_title_render_callback',
 	
 	) );
 	// description
 	$wp_customize->selective_refresh->add_partial( 'features_description', array(
 		'selector'            => '.home-feature .section-title p',
 		'settings'            => 'features_description',
-		'render_callback'  => 'feature_section_desc_render_callback',
+		'render_callback'  => 'conceptly_feature_section_desc_render_callback',
 	
 	) );
 	
@@ -242,7 +243,7 @@ function conceptly_home_feature_section_partials( $wp_customize ){
 	$wp_customize->selective_refresh->add_partial( 'feature_content', array(
 		'selector'            => '#feature-content',
 		'settings'            => 'feature_content',
-		'render_callback'  => 'feature_section_content_render_callback',
+		'render_callback'  => 'conceptly_feature_section_content_render_callback',
 	
 	) );
 	}
@@ -250,14 +251,14 @@ function conceptly_home_feature_section_partials( $wp_customize ){
 add_action( 'customize_register', 'conceptly_home_feature_section_partials' );
 
 // feature title
-function feature_section_title_render_callback() {
+function conceptly_feature_section_title_render_callback() {
 	return get_theme_mod( 'features_title' );
 }
 // feature description
-function feature_section_desc_render_callback() {
+function conceptly_feature_section_desc_render_callback() {
 	return get_theme_mod( 'features_description' );
 }
 // feature content
-function feature_section_content_render_callback() {
+function conceptly_feature_section_content_render_callback() {
 	return get_theme_mod( 'feature_content' );
 }

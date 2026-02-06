@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function avril_slider_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';	
 	$wp_customize->add_section(
@@ -67,24 +68,24 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		//Pro feature
 		class Avril_slider__section_upgrade extends WP_Customize_Control {
 			public function render_content() {
-				$theme = wp_get_theme(); // gets the current theme	
-				if ( 'Aera' == $theme->name){		
+				$cleverfox_theme = wp_get_theme(); // gets the current theme	
+				if ( 'Aera' == $cleverfox_theme->name){		
 			?>
 				<a class="customizer_slider_upgrade_section up-to-pro" href="https://www.nayrathemes.com/aera-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 			<?php
-				}elseif ( 'Avail' == $theme->name){
+				}elseif ( 'Avail' == $cleverfox_theme->name){
 			?>	
 				<a class="customizer_slider_upgrade_section up-to-pro" href="https://www.nayrathemes.com/avail-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 			<?php
-				}elseif ( 'Avitech' == $theme->name){
+				}elseif ( 'Avitech' == $cleverfox_theme->name){
 			?>	
 				<a class="customizer_slider_upgrade_section up-to-pro" href="https://www.nayrathemes.com/avitech-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 			<?php
-				}elseif ( 'Evion' == $theme->name){
+				}elseif ( 'Evion' == $cleverfox_theme->name){
 			?>	
 				<a class="customizer_slider_upgrade_section up-to-pro" href="https://www.nayrathemes.com/evion-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 			<?php
-				}elseif ( 'Varuda' == $theme->name){
+				}elseif ( 'Varuda' == $cleverfox_theme->name){
 			?>	
 				<a class="customizer_slider_upgrade_section up-to-pro" href="https://www.nayrathemes.com/varuda-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>		
 			<?php
@@ -109,8 +110,8 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		);
 		
 	// slider opacity
-	$theme = wp_get_theme(); // gets the current theme
-	if ( 'Avitech' == $theme->name  || 'Varuda' == $theme->name){
+	$cleverfox_theme = wp_get_theme(); // gets the current theme
+	if ( 'Avitech' == $cleverfox_theme->name  || 'Varuda' == $cleverfox_theme->name){
 		$default_opacity=0.8;
 	}else{
 		$default_opacity=0.5;

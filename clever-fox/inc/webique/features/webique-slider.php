@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function webique_slider_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 $theme = wp_get_theme(); // gets the current theme
@@ -147,16 +148,10 @@ $theme = wp_get_theme(); // gets the current theme
 	//Pro feature
 		class Webique_slider__section_upgrade extends WP_Customize_Control {
 			public function render_content() { 
-				$theme = wp_get_theme(); // gets the current theme	
-				if ( 'Websy' == $theme->name){
 			?>		
-				<a class="customizer_slider_upgrade_section up-to-pro" href="https://www.nayrathemes.com/websy-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
+				<a class="customizer_slider_upgrade_section up-to-pro" href="<?php echo esc_url(webique_premium_links()); ?>" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 			<?php
-				} else {
-				?>		
-				<a class="customizer_slider_upgrade_section up-to-pro" href="https://www.nayrathemes.com/webique-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
-			<?php
-			}}
+			}
 		}
 		
 		$wp_customize->add_setting( 'webique_slider_upgrade_to_pro', array(
@@ -267,7 +262,7 @@ $theme = wp_get_theme(); // gets the current theme
 		class Webique_slider_pro_upgrade extends WP_Customize_Control {
 			public function render_content() { 
 			?>		
-				<a class="customizer_slider_upgrade_section up-to-pro" href="https://www.nayrathemes.com/webique-pro/" target="_blank"><?php esc_html_e('Unlock By Upgrade to Pro','clever-fox'); ?></a>
+				<a class="customizer_slider_upgrade_section up-to-pro" href="<?php echo esc_url(webique_premium_links()); ?>" target="_blank"><?php esc_html_e('Unlock By Upgrade to Pro','clever-fox'); ?></a>
 			<?php
 			}
 		}
@@ -296,7 +291,7 @@ function webique_slider_partials( $wp_customize ){
 		'slider', array(
 			'selector' => '#slider-section .theme-content.text-left',
 			'container_inclusive' => true,
-			'render_callback' => 'slider_callback',
+			'render_callback' => 'webique_slider_callback',
 			'fallback_refresh' => true,
 		)
 	);
@@ -304,6 +299,6 @@ function webique_slider_partials( $wp_customize ){
 
 add_action( 'customize_register', 'webique_slider_partials' );
 
-function slider_callback() {
+function webique_slider_callback() {
 	return get_theme_mod( 'slider' );
 }

@@ -1,13 +1,13 @@
 <?php
-	
+if ( ! defined( 'ABSPATH' ) ) exit;
 /*
 	*
  * Slider Default
  */
  
  function accron_get_slider_default() {
-	 $theme = wp_get_theme() -> name;
-	 if($theme == 'Acronix'){
+	 $cleverfox_theme = wp_get_theme() -> name;
+	 if($cleverfox_theme == 'Acronix'){
 		 $slide_image = 'item1.png';
 	 }else{
 		 $slide_image = 'slider-img1.jpg';
@@ -208,8 +208,8 @@ function accron_get_social_icon_default() {
 	);
 }
 
-if ( ! function_exists( 'blog_header_content' ) ){
-	function blog_header_content() {
+if ( ! function_exists( 'accron_blog_header_content' ) ){
+	function accron_blog_header_content() {
 	
 	/* Blog Header */
 	$blog_title 			= get_theme_mod('blog_title',__('<span class="primary-color">What</span> People Writes','clever-fox'));
@@ -240,4 +240,4 @@ if ( ! function_exists( 'blog_header_content' ) ){
 		<?php endif; ?>
 	<?php }
 }
-add_action( 'blog_header_content', 'blog_header_content' );
+add_action( 'accron_blog_header_content', 'accron_blog_header_content' );

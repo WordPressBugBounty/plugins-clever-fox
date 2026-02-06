@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function aravalli_slider_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -68,12 +69,12 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	//Pro feature
 		class Aravalli_slider__section_upgrade extends WP_Customize_Control {
 			public function render_content() { 
-			$theme = wp_get_theme(); // gets the current theme
-				if ( 'Arbuda' == $theme->name){
+			$cleverfox_theme = wp_get_theme(); // gets the current theme
+				if ( 'Arbuda' == $cleverfox_theme->name){
 			?>
 				<a class="customizer_slider_upgrade_section up-to-pro" href="https://www.nayrathemes.com/arbuda-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 				
-				<?php } else if ( 'VillaPress' == $theme->name){
+				<?php } else if ( 'VillaPress' == $cleverfox_theme->name){
 			?>
 				<a class="customizer_slider_upgrade_section up-to-pro" href="https://www.nayrathemes.com/villapress-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 				

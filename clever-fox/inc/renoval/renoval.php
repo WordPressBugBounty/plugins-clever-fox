@@ -2,6 +2,7 @@
 /**
  * @package   Renoval
  */
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 require CLEVERFOX_PLUGIN_DIR . 'inc/renoval/extras.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/renoval/dynamic-style.php';
@@ -31,8 +32,8 @@ function cleverfox_renoval_enqueue_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'cleverfox_renoval_enqueue_scripts' );
 
-function eractor_customize_remove( $wp_customize ) {
+function cleverfox_renoval_eractor_customize_remove( $wp_customize ) {
 	$wp_customize->remove_control('tlh_mobile_title');
 	$wp_customize->remove_control('tlh_email_title');
 }
-add_action( 'customize_register', 'eractor_customize_remove' );
+add_action( 'customize_register', 'cleverfox_renoval_eractor_customize_remove' );

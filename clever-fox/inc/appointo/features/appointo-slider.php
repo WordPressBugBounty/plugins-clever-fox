@@ -1,7 +1,8 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function gradiant_slider_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
-$theme = wp_get_theme(); // gets the current theme
+$cleverfox_theme = wp_get_theme(); // gets the current theme
 	/*=========================================
 	Slider Section Panel
 	=========================================*/
@@ -91,7 +92,7 @@ $theme = wp_get_theme(); // gets the current theme
 			)
 		);
 		
-		if ( 'Comoxa' == $theme->name){
+		if ( 'Comoxa' == $cleverfox_theme->name){
 			$wp_customize->add_control( 
 			new Gradiant_Repeater( $wp_customize, 
 				'slider', 
@@ -168,7 +169,7 @@ $theme = wp_get_theme(); // gets the current theme
 	
 	// slider opacity
 	$overlay_color	= '0.6';
-	if ( 'Comoxa' == $theme->name){
+	if ( 'Comoxa' == $cleverfox_theme->name){
 		$overlay_color	= '0';
 	}
 	

@@ -1,14 +1,15 @@
 <?php
-$theme = wp_get_theme(); // gets the current theme
-$theme_name = strtolower($theme->name);
+if ( ! defined( 'ABSPATH' ) ) exit;
+$cleverfox_theme = wp_get_theme(); // gets the current theme
+$cleverfox_theme_name = strtolower($cleverfox_theme->name);
 
-if($theme_name == 'profolio'){
-	$footer_logo_default = CLEVERFOX_PLUGIN_URL .'inc/'.$theme_name.'/images/logo-light.png';
+if($cleverfox_theme_name == 'profolio'){
+	$cleverfox_footer_logo_default = CLEVERFOX_PLUGIN_URL .'inc/'.$cleverfox_theme_name.'/images/logo-light.png';
 }else{	
-	$footer_logo_default = CLEVERFOX_PLUGIN_URL .'inc/'.$theme_name.'/images/logo.png';
+	$cleverfox_footer_logo_default = CLEVERFOX_PLUGIN_URL .'inc/'.$cleverfox_theme_name.'/images/logo.png';
 }
 	
-$activate = array(
+$cleverfox_activate = array(
         'corpex-sidebar-primary' => array(
             'search-1',
             'recent-posts-1',
@@ -27,7 +28,7 @@ $activate = array(
 				'text'=>'<aside class="widget widget_text">
                                 <div class="textwidget">
                                     <div class="logo">
-                                        <a href="#"><img src="'.esc_url($footer_logo_default).'" alt="Corpex"></a>
+                                        <a href="#"><img src="'.esc_url($cleverfox_footer_logo_default).'" alt="Corpex"></a>
                                     </div>
                                     <p>corpex we talk destination we shine across your organization to fully understand.</p>
                                     <aside class="widget widget_social_widget">
@@ -91,8 +92,8 @@ $activate = array(
 		update_option('widget_archive', array(
 			1 => array('title' => 'Archives')));	
 		
-    update_option('sidebars_widgets',  $activate);
-	$MediaId = get_option('corpex_media_id');
-	set_theme_mod( 'custom_logo', $MediaId[0] );
+    update_option('sidebars_widgets',  $cleverfox_activate);
+	$cleverfox_MediaId = get_option('corpex_media_id');
+	set_theme_mod( 'custom_logo', $cleverfox_MediaId[0] );
 	set_theme_mod('nav_btn_lbl','Book Now');
 ?>

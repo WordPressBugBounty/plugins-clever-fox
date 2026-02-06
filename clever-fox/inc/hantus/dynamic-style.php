@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 if( ! function_exists( 'hantus_customizer_options' ) ):
     function hantus_customizer_options() {
 			$slider_overlay_enable 				 = get_theme_mod('slider_overlay_enable','1');

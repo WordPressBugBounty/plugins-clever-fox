@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function gradiant_lite_header_settings( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';	
 	/*=========================================
@@ -112,12 +113,12 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	//Pro feature
 		class Gradiant_social__section_upgrade extends WP_Customize_Control {
 			public function render_content() { 
-			$theme = wp_get_theme(); // gets the current theme
-			if ( 'Comoxa' == $theme->name){
+			$cleverfox_theme = wp_get_theme(); // gets the current theme
+			if ( 'Comoxa' == $cleverfox_theme->name){
 			?>
 				<a class="customizer_social_upgrade_section up-to-pro"  href="https://www.nayrathemes.com/comoxa-pro/" target="_blank"  style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 				
-			<?php }elseif('Flavita' == $theme->name){ ?>
+			<?php }elseif('Flavita' == $cleverfox_theme->name){ ?>
 			
 				<a class="customizer_social_upgrade_section up-to-pro"  href="https://www.nayrathemes.com/flavita-pro/" target="_blank"  style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 				
@@ -141,8 +142,8 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 			)
 		);	
 	
-	$theme = wp_get_theme(); // gets the current theme
-	if ( 'Flavita' !== $theme->name){
+	$cleverfox_theme = wp_get_theme(); // gets the current theme
+	if ( 'Flavita' !== $cleverfox_theme->name){
 	/*=========================================
 	Contact
 	=========================================*/

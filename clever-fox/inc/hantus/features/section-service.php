@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function hantus_service_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -218,11 +219,11 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 			//Pro feature
 		class Hantus_service__section_upgrade extends WP_Customize_Control {
 			public function render_content() { 
-				$theme = wp_get_theme(); // gets the current theme
-				if ( 'Thai Spa' == $theme->name){
+				$cleverfox_theme = wp_get_theme(); // gets the current theme
+				if ( 'Thai Spa' == $cleverfox_theme->name){
 			?>
 				<a class="customizer_service_upgrade_section up-to-pro" href="https://www.nayrathemes.com/thaispa-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
-			<?php }elseif ( 'Cosmics' == $theme->name){ ?>	
+			<?php }elseif ( 'Cosmics' == $cleverfox_theme->name){ ?>	
 				<a class="customizer_service_upgrade_section up-to-pro" href="https://www.nayrathemes.com/cosmics-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>	
 			<?php
 			   }else{
@@ -268,14 +269,14 @@ function hantus_home_service_section_partials( $wp_customize ){
 	$wp_customize->selective_refresh->add_partial( 'service_title', array(
 		'selector'            => '#services .service-section h2',
 		'settings'            => 'service_title',
-		'render_callback'  => 'home_section_service_title_render_callback',
+		'render_callback'  => 'hantus_home_section_service_title_render_callback',
 	
 	) );
 	// service description
 	$wp_customize->selective_refresh->add_partial( 'service_description', array(
 		'selector'            => '#services .service-section p',
 		'settings'            => 'service_description',
-		'render_callback'  => 'home_section_service_desc_render_callback',
+		'render_callback'  => 'hantus_home_section_service_desc_render_callback',
 	
 	) );
 	// service content
@@ -289,12 +290,12 @@ function hantus_home_service_section_partials( $wp_customize ){
 add_action( 'customize_register', 'hantus_home_service_section_partials' );
 
 // service title
-function home_section_service_title_render_callback() {
+function hantus_home_section_service_title_render_callback() {
 	return get_theme_mod( 'service_title' );
 }
 
 
 // service description
-function home_section_service_desc_render_callback() {
+function hantus_home_section_service_desc_render_callback() {
 	return get_theme_mod( 'service_description' );
 }

@@ -1,26 +1,27 @@
 <?php  
-	$team_subtitle		= get_theme_mod('team_subtitle', __('<h2>Outstanding</h2><div class="animation"><div class="first"><div>Team</div></div></div>','clever-fox'));
-	$team_description	= get_theme_mod('team_description', __('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.','clever-fox')); 
-	$team_contents		= get_theme_mod('team_contents',renoval_get_team_default());
-	$team_bg_image		= get_theme_mod('team_bg_image',esc_url(CLEVERFOX_PLUGIN_URL .'inc/eractor/images/team/team-bg.jpg'));
+	if ( ! defined( 'ABSPATH' ) ) exit;
+	$renoval_eractor_team_subtitle		= get_theme_mod('team_subtitle', __('<h2>Outstanding</h2><div class="animation"><div class="first"><div>Team</div></div></div>','clever-fox'));
+	$renoval_eractor_team_description	= get_theme_mod('team_description', __('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.','clever-fox')); 
+	$renoval_eractor_team_contents		= get_theme_mod('team_contents',renoval_get_team_default());
+	$renoval_eractor_team_bg_image		= get_theme_mod('team_bg_image',esc_url(CLEVERFOX_PLUGIN_URL .'inc/eractor/images/team/team-bg.jpg'));
 ?>
 	<!-- Start: Team Section
 	=======================-->
-	<section id="team-section" class="team-section team-home team-one wow fadeInUp" <?php if(!empty($team_bg_image)){ ?> style="background-image:url('<?php echo esc_url($team_bg_image); ?>');" <?php } ?>>
+	<section id="team-section" class="team-section team-home team-one wow fadeInUp" <?php if(!empty($renoval_eractor_team_bg_image)){ ?> style="background-image:url('<?php echo esc_url($renoval_eractor_team_bg_image); ?>');" <?php } ?>>
 		<div class="container">
-			<?php if(!empty($team_subtitle) || !empty($team_description)): ?>
+			<?php if(!empty($renoval_eractor_team_subtitle) || !empty($renoval_eractor_team_description)): ?>
 				<div class="row">
 					<div class="section-title text-center">
 						
-						<?php if(!empty($team_subtitle)): ?>
+						<?php if(!empty($renoval_eractor_team_subtitle)): ?>
 							<div>
-								<?php echo wp_kses_post($team_subtitle); ?>
+								<?php echo wp_kses_post($renoval_eractor_team_subtitle); ?>
 							</div>
 						<?php endif; ?>
 						
-						<?php if(!empty($team_description)): ?>
+						<?php if(!empty($renoval_eractor_team_description)): ?>
 							<p>
-								<?php echo wp_kses_post($team_description); ?>
+								<?php echo wp_kses_post($renoval_eractor_team_description); ?>
 							</p>
 						<?php endif; ?>
 					</div>
@@ -29,56 +30,56 @@
 			
 			<div class="row justify-content-center">
 				<?php
-					$team_contents = json_decode($team_contents);
-					if( $team_contents!='' )
+					$renoval_eractor_team_contents = json_decode($renoval_eractor_team_contents);
+					if( $renoval_eractor_team_contents!='' )
 					{
-					foreach($team_contents as $team_item){
-					$image    = ! empty( $team_item->image_url ) ? apply_filters( 'renoval_translate_single_string', $team_item->image_url, 'Team section' ) : '';
-					$title    = ! empty( $team_item->title ) ? apply_filters( 'renoval_translate_single_string', $team_item->title, 'Team section' ) : '';
-					$subtitle = ! empty( $team_item->subtitle ) ? apply_filters( 'renoval_translate_single_string', $team_item->subtitle, 'Team section' ) : '';
-					$link = ! empty( $team_item->link ) ? apply_filters( 'renoval_translate_single_string', $team_item->link, 'Team section' ) : '';
+					foreach($renoval_eractor_team_contents as $renoval_eractor_team_item){
+					$renoval_eractor_repeater_image    = ! empty( $renoval_eractor_team_item->image_url ) ? apply_filters( 'renoval_translate_single_string', $renoval_eractor_team_item->image_url, 'Team section' ) : '';
+					$renoval_eractor_repeater_title    = ! empty( $renoval_eractor_team_item->title ) ? apply_filters( 'renoval_translate_single_string', $renoval_eractor_team_item->title, 'Team section' ) : '';
+					$renoval_eractor_repeater_subtitle = ! empty( $renoval_eractor_team_item->subtitle ) ? apply_filters( 'renoval_translate_single_string', $renoval_eractor_team_item->subtitle, 'Team section' ) : '';
+					$renoval_eractor_repeater_link = ! empty( $renoval_eractor_team_item->link ) ? apply_filters( 'renoval_translate_single_string', $renoval_eractor_team_item->link, 'Team section' ) : '';
 					
 				?>
 					<div class="col-lg-3 col-md-6 col-sm-6 col-12">
 						<div class="team-member">
-							<?php if(!empty($image)): ?>
+							<?php if(!empty($renoval_eractor_repeater_image)): ?>
 								<div class="team-image">
 									<a href="#">
-										<img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($title); ?>">
+										<img src="<?php echo esc_url($renoval_eractor_repeater_image); ?>" alt="<?php echo esc_attr($renoval_eractor_repeater_title); ?>">
 									</a>
 								</div>
 							<?php endif; ?>	
 							
-							<?php if(!empty($title) || !empty($subtitle)): ?>
+							<?php if(!empty($renoval_eractor_repeater_title) || !empty($renoval_eractor_repeater_subtitle)): ?>
 								<div class="team-content">
 									<h5>
-										<?php echo esc_html($title); ?>
+										<?php echo esc_html($renoval_eractor_repeater_title); ?>
 									</h5>
 									<p>
-										<?php echo esc_html($subtitle); ?>
+										<?php echo esc_html($renoval_eractor_repeater_subtitle); ?>
 									</p>
 									<div class="section-element-team">
-										<img src="<?php echo esc_url(CLEVERFOX_PLUGIN_URL .'inc/eractor/images/section-bg.png'); ?>" alt="<?php echo esc_attr($title); ?>"> 
+										<img src="<?php echo esc_url(CLEVERFOX_PLUGIN_URL .'inc/eractor/images/section-bg.png'); ?>" alt="<?php echo esc_attr($renoval_eractor_repeater_title); ?>"> 
 									</div>
 								</div>
 							<?php endif; ?>
 							
 							<div class="section-element-team">
-								<img src="<?php echo esc_url(CLEVERFOX_PLUGIN_URL .'inc/eractor/images/section-bg.png'); ?>" alt="<?php echo esc_attr($title); ?>"> 
+								<img src="<?php echo esc_url(CLEVERFOX_PLUGIN_URL .'inc/eractor/images/section-bg.png'); ?>" alt="<?php echo esc_attr($renoval_eractor_repeater_title); ?>"> 
 							</div>
 							<aside class="widget widget-social-widget">
 								<ul>
-									<?php if ( ! empty( $team_item->social_repeater ) ) :
-										$icons         = html_entity_decode( $team_item->social_repeater );
-										$icons_decoded = json_decode( $icons, true );
-										if ( ! empty( $icons_decoded ) ) : ?>
+									<?php if ( ! empty( $renoval_eractor_repeater_team_item->social_repeater ) ) :
+										$renoval_eractor_repeater_icons         = html_entity_decode( $renoval_eractor_repeater_team_item->social_repeater );
+										$renoval_eractor_repeater_icons_decoded = json_decode( $renoval_eractor_repeater_icons, true );
+										if ( ! empty( $renoval_eractor_repeater_icons_decoded ) ) : ?>
 										<?php
-											foreach ( $icons_decoded as $value ) {
-												$social_icon = ! empty( $value['icon'] ) ? apply_filters( 'renoval_translate_single_string', $value['icon'], 'Team section' ) : '';
-												$social_link = ! empty( $value['link'] ) ? apply_filters( 'renoval_translate_single_string', $value['link'], 'Team section' ) : '';
-												if ( ! empty( $social_icon ) ) {
+											foreach ( $renoval_eractor_repeater_icons_decoded as $renoval_eractor_repeater_value ) {
+												$renoval_eractor_repeater_social_icon = ! empty( $renoval_eractor_repeater_value['icon'] ) ? apply_filters( 'renoval_translate_single_string', $renoval_eractor_repeater_value['icon'], 'Team section' ) : '';
+												$renoval_eractor_repeater_social_link = ! empty( $renoval_eractor_repeater_value['link'] ) ? apply_filters( 'renoval_translate_single_string', $renoval_eractor_repeater_value['link'], 'Team section' ) : '';
+												if ( ! empty( $renoval_eractor_repeater_social_icon ) ) {
 										?>
-											<li><a href="<?php echo esc_url( $social_link ); ?>"><i class="fa <?php echo esc_attr( $social_icon ); ?>"></i></a></li>
+											<li><a href="<?php echo esc_url( $renoval_eractor_repeater_social_link ); ?>"><i class="fa <?php echo esc_attr( $renoval_eractor_repeater_social_icon ); ?>"></i></a></li>
 									<?php	} } endif; endif; ?>								
 								</ul>
 						   </aside>

@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 // code for custom post type  Pricing
 		function corpex_pricing() {
 	
@@ -39,7 +40,7 @@
 							
 			add_meta_box('pricing_all_meta', 'Price Table', 'corpex_meta_pricing','corpex_pricing', 'normal', 'high');
 			
-			add_action('save_post','pricing_meta_save');
+			add_action('save_post','corpex_pricing_meta_save');
 			
 		}
 
@@ -55,7 +56,7 @@
 			
 			$plans_currency 		= sanitize_text_field( get_post_meta( get_the_ID(),'plans_currency', true ));
 			$plans_price 			= sanitize_text_field( get_post_meta( get_the_ID(),'plans_price', true ));
-			$price_content 			=   get_post_meta($post->ID, 'price_content', true);
+			$price_content 			= get_post_meta($post->ID, 'price_content', true);
 			$plans_button_label 	= sanitize_text_field( get_post_meta( get_the_ID(),'plans_button_label', true ));
 			$price_recomended 		= sanitize_text_field( get_post_meta( get_the_ID(),'price_recomended', true ));
 			$plans_button_link 		= sanitize_text_field( get_post_meta( get_the_ID(),'plans_button_link', true ));
@@ -118,10 +119,15 @@
 		}
 
 
-		function pricing_meta_save($post_id) 
+		function corpex_pricing_meta_save($post_id) 
 		{
+			if( isset($_POST['pricing_meta_nonce']) ){
+				$pricingnonce = sanitize_key($_POST['pricing_meta_nonce']); 
+			}else{
+				return;
+			}
 			// Verify nonce
-			if (!isset($_POST['pricing_meta_nonce']) || !wp_verify_nonce($_POST['pricing_meta_nonce'], 'pricing_meta_nonce')) {
+			if (!isset($pricingnonce) || !wp_verify_nonce($pricingnonce, 'pricing_meta_nonce')) {
 				return;
 			}
 			
@@ -133,17 +139,32 @@
 
 			if(isset( $_POST['post_ID']))
 			{ 	
-				$post_ID = $_POST['post_ID'];				
+				$post_ID = intval($_POST['post_ID']);				
 				$post_type=get_post_type($post_ID);
 				if($post_type=='corpex_pricing')
 				{	
-					update_post_meta($post_ID, 'plans_currency', sanitize_text_field($_POST['plans_currency']));
-					update_post_meta($post_ID, 'plans_price', sanitize_text_field($_POST['plans_price']));
-					update_post_meta( $post_id, 'price_content', $_POST['price_content'] );
-					update_post_meta($post_ID, 'plans_button_label', sanitize_text_field($_POST['plans_button_label']));
-					update_post_meta($post_ID, 'plans_button_link', sanitize_text_field($_POST['plans_button_link']));
-					update_post_meta($post_ID, 'price_recomended', sanitize_text_field($_POST['price_recomended']));
-					update_post_meta($post_ID, 'plans_button_link_target', sanitize_text_field($_POST['plans_button_link_target']));					
+					if (isset($_POST['plans_currency'])) {
+						update_post_meta($post_id, 'plans_currency', sanitize_text_field(wp_unslash($_POST['plans_currency'])));	
+					}
+					if (isset($_POST['plans_price'])) {
+						update_post_meta($post_id, 'plans_price', sanitize_text_field(wp_unslash($_POST['plans_price'])));	
+					}
+					if (isset($_POST['price_content'])) {
+						$price_content = array_map('sanitize_text_field', wp_unslash($_POST['price_content']));
+						update_post_meta($post_id, 'price_content', $price_content);	
+					}
+					if (isset($_POST['plans_button_label'])) {
+						update_post_meta($post_id, 'plans_button_label', sanitize_text_field(wp_unslash($_POST['plans_button_label'])));	
+					}
+					if (isset($_POST['plans_button_link'])) {
+						update_post_meta($post_id, 'plans_button_link', esc_url_raw(wp_unslash($_POST['plans_button_link'])));
+						
+						$plans_button_link_target = isset($_POST['plans_button_link_target']) ? '1' : '0';
+						update_post_meta($post_id, 'plans_button_link_target', sanitize_text_field(wp_unslash($_POST['plans_button_link_target'])));	
+					}
+					if (isset($_POST['price_recomended'])) {
+						update_post_meta($post_id, 'price_recomended', sanitize_text_field(wp_unslash($_POST['price_recomended'])));	
+					}				
 				}
 			}
 		}

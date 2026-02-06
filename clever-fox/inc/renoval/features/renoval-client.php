@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function renoval_client_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -13,7 +14,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	);
 
 	//Client Documentation Link
-	class WP_client_Customize_Control extends WP_Customize_Control {
+	class renoval_wp_client_Customize_Control extends WP_Customize_Control {
 	public $type = 'new_menu';
 
 	   function render_content()
@@ -36,7 +37,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		) 
 	);
 
-	$wp_customize->add_control(new WP_client_Customize_Control($wp_customize,
+	$wp_customize->add_control(new renoval_wp_client_Customize_Control($wp_customize,
 	'cl_doc_link' , 
 		array(
 			'label'          => __( 'Client Documentation Link', 'clever-fox' ),
@@ -160,8 +161,8 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	//Pro feature
 		class Renoval_client__section_upgrade extends WP_Customize_Control {
 			public function render_content() { 
-				$theme = wp_get_theme(); // gets the current theme	
-				if('Renoval' == $theme || 'Eractor' == $theme):
+				$cleverfox_theme = wp_get_theme(); // gets the current theme	
+				if('Renoval' == $cleverfox_theme || 'Eractor' == $cleverfox_theme):
 			?>
 				<a class="customizer_client_upgrade_section up-to-pro" href="https://www.nayrathemes.com/renoval-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 				

@@ -1,9 +1,10 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 if( ! function_exists( 'cleverfox_gradiant_dynamic_styles' ) ):
     function cleverfox_gradiant_dynamic_styles() {
 		$output_css = '';
 		
-		$theme = wp_get_theme(); // gets the current theme
+		$cleverfox_theme = wp_get_theme(); // gets the current theme
 		
 		/**
 		 * Logo Width 
@@ -19,7 +20,7 @@ if( ! function_exists( 'cleverfox_gradiant_dynamic_styles' ) ):
 		 * Slider
 		 */
 		 $overlay_color	= '0.6';
-		if ( 'Comoxa' == $theme->name){
+		if ( 'Comoxa' == $cleverfox_theme->name){
 			$overlay_color	= '0';
 		}
 		$slider_opacity						 = get_theme_mod('slider_opacity',$overlay_color);
@@ -77,7 +78,7 @@ if( ! function_exists( 'cleverfox_gradiant_dynamic_styles' ) ):
 		 /**
 		 * Slider
 		 */
-		if ( 'Comoxa' == $theme->name){
+		if ( 'Comoxa' == $cleverfox_theme->name){
 			 $slider_subttl_clr			= get_theme_mod('slider_subttl_clr','#252525');
 			 $slider_desc_clr			= get_theme_mod('slider_desc_clr','#252525');		 
 				if(!empty($slider_subttl_clr)) { 

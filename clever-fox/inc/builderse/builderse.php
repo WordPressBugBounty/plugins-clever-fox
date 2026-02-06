@@ -2,6 +2,7 @@
 /**
  * @package Renoval
  */
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 require CLEVERFOX_PLUGIN_DIR . 'inc/renoval/extras.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/builderse/extras.php';
@@ -33,7 +34,7 @@ function cleverfox_renoval_enqueue_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'cleverfox_renoval_enqueue_scripts' );
 
-function builderse_customize_remove( $wp_customize ) {
+function cleverfox_builderse_customize_remove( $wp_customize ) {
 	 $wp_customize->remove_control('hdr_top_mbl');
 	 $wp_customize->remove_control('mbl_details_doc_link');
 	 $wp_customize->remove_control('hide_show_mbl_details');
@@ -41,4 +42,4 @@ function builderse_customize_remove( $wp_customize ) {
 	 $wp_customize->remove_control('tlh_mobile_title');
 	 $wp_customize->remove_control('tlh_mobile_number');
 }
-add_action( 'customize_register', 'builderse_customize_remove' );
+add_action( 'customize_register', 'cleverfox_builderse_customize_remove' );

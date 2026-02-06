@@ -1,13 +1,14 @@
 <?php
-$theme = wp_get_theme(); // gets the current theme
-if ( 'Arbuda' == $theme->name){	
-	$img_path = CLEVERFOX_PLUGIN_URL .'inc/arbuda/images/logo.png';
-}else if ( 'VillaPress' == $theme->name){
-	$img_path = CLEVERFOX_PLUGIN_URL .'inc/villapress/images/logo.png';
+if ( ! defined( 'ABSPATH' ) ) exit;
+$cleverfox_theme = wp_get_theme(); // gets the current theme
+if ( 'Arbuda' == $cleverfox_theme->name){	
+	$cleverfox_img_path = CLEVERFOX_PLUGIN_URL .'inc/arbuda/images/logo.png';
+}else if ( 'VillaPress' == $cleverfox_theme->name){
+	$cleverfox_img_path = CLEVERFOX_PLUGIN_URL .'inc/villapress/images/logo.png';
 }else{
-	$img_path = CLEVERFOX_PLUGIN_URL .'inc/aravalli/images/footer-logo.png';
+	$cleverfox_img_path = CLEVERFOX_PLUGIN_URL .'inc/aravalli/images/footer-logo.png';
 }
-$activate = array(
+$cleverfox_activate = array(
         'aravalli-sidebar-primary' => array(
             'search-1',
             'recent-posts-1',
@@ -22,8 +23,8 @@ $activate = array(
     );
     /* the default titles will appear */
    update_option('widget_text', array(
-        1 => array('title' => 'About '.$theme->name,
-        'text'=>'<div class="footer-logo"><img src="'.$img_path.'" alt=""></div>
+        1 => array('title' => 'About '.$cleverfox_theme->name,
+        'text'=>'<div class="footer-logo"><img src="'.$cleverfox_img_path.'" alt=""></div>
                         <p>'.sprintf(/* translators: %s: Description */esc_html__( '%s.', 'clever-fox' ),CLEVERFOX_FOOTER_ABOUT).'</p>
 		'),        
 		2 => array('title' => 'Recent Posts'),
@@ -41,7 +42,7 @@ $activate = array(
 			1 => array('title' => 'Search'), 
 			2 => array('title' => 'Search')));	
 		
-    update_option('sidebars_widgets',  $activate);
-	$MediaId = get_option('aravalli_media_id');
-	set_theme_mod( 'custom_logo', $MediaId[0] );
+    update_option('sidebars_widgets',  $cleverfox_activate);
+	$cleverfox_MediaId = get_option('aravalli_media_id');
+	set_theme_mod( 'custom_logo', $cleverfox_MediaId[0] );
 ?>

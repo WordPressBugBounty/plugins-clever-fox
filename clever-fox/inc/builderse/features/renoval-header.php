@@ -1,5 +1,6 @@
 <?php
-function builderse_header_settings( $wp_customize ) {
+if ( ! defined( 'ABSPATH' ) ) exit;
+function renoval_builderse_header_settings( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	
 	/*=========================================
@@ -36,15 +37,15 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	);
 	
 	//Header Contact Details Documentation Link
-	class WP_cntct_details_section_Customize_Control extends WP_Customize_Control {
+	class renoval_wp_cntct_details_section_Customize_Control extends WP_Customize_Control {
 	public $type = 'new_menu';
 
 	   function render_content()
 	   
 	   {
 	   ?>
-			<h3>Setup Article :</h3>
-			<p>Customizer > Header > Contact Details Section <br><br> <a href="#" style="background-color:#fcb900; color:#fff;display: flex;align-items: center;justify-content: center;text-decoration: none;   font-weight: 600;padding: 15px 10px;">Click Here</a></p>
+			<h3><?php echo esc_html__('Setup Article','clever-fox'); ?> :</h3>
+			<p><?php echo esc_html__('Customizer > Header > Contact Details Section','clever-fox'); ?> <br><br> <a href="#" style="background-color:#fcb900; color:#fff;display: flex;align-items: center;justify-content: center;text-decoration: none;   font-weight: 600;padding: 15px 10px;"><?php echo esc_html__('Click Here','clever-fox'); ?></a></p>
 			
 		<?php
 	   }
@@ -59,7 +60,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		) 
 	);
 
-	$wp_customize->add_control(new WP_cntct_details_section_Customize_Control($wp_customize,
+	$wp_customize->add_control(new renoval_wp_cntct_details_section_Customize_Control($wp_customize,
 	'cntct_details_doc_link' , 
 		array(
 			'label'          => __( 'Contact Details Documentation Link', 'clever-fox' ),
@@ -304,15 +305,15 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		);
 
 	//Header instagram Documentation Link
-	class WP_instagram_section_Customize_Control extends WP_Customize_Control {
+	class renoval_wp_instagram_section_Customize_Control extends WP_Customize_Control {
 	public $type = 'new_menu';
 
 	   function render_content()
 	   
 	   {
 	   ?>
-			<h3>Setup Article :</h3>
-			<p>Customizer > Header > Instagram Gallery Section <br><br> <a href="#" style="background-color:#fcb900; color:#fff;display: flex;align-items: center;justify-content: center;text-decoration: none;   font-weight: 600;padding: 15px 10px;">Click Here</a></p> 
+			<h3><?php echo esc_html__('Setup Article','clever-fox'); ?> :</h3>
+			<p><?php echo esc_html__('Customizer > Header > Instagram Gallery Section','clever-fox'); ?> <br><br> <a href="#" style="background-color:#fcb900; color:#fff;display: flex;align-items: center;justify-content: center;text-decoration: none;   font-weight: 600;padding: 15px 10px;"><?php echo esc_html__('Click Here','clever-fox'); ?></a></p> 
 			
 		<?php
 	   }
@@ -327,7 +328,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		) 
 	);
 
-	$wp_customize->add_control(new WP_instagram_section_Customize_Control($wp_customize,
+	$wp_customize->add_control(new renoval_wp_instagram_section_Customize_Control($wp_customize,
 	'instagram_doc_link' , 
 		array(
 			'label'          => __( 'Instagram Documentation Link', 'clever-fox' ),
@@ -373,10 +374,10 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 			)
 		);
 }
-add_action( 'customize_register', 'builderse_header_settings' );
+add_action( 'customize_register', 'renoval_builderse_header_settings' );
 
 // Header selective refresh
-function builderse_header_partials( $wp_customize ){
+function renoval_builderse_header_partials( $wp_customize ){
 	// tlh_contct_icon
 	$wp_customize->selective_refresh->add_partial( 'tlh_contct_icon', array(
 		'selector'            => '.content-area .contact-icon i',
@@ -406,7 +407,7 @@ function builderse_header_partials( $wp_customize ){
 	) );	
 }
 
-add_action( 'customize_register', 'builderse_header_partials' );
+add_action( 'customize_register', 'renoval_builderse_header_partials' );
 
 // tlh_contct_icon
 function renoval_tlh_tlh_contct_icon_render_callback() {

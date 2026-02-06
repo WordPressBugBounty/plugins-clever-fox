@@ -1,5 +1,6 @@
 <?php
-function websy_lite_header_settings( $wp_customize ) {
+if ( ! defined( 'ABSPATH' ) ) exit;
+function webique_websy_lite_header_settings( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';	
 $theme = wp_get_theme();
 if($theme -> name == 'Webora') :
@@ -62,7 +63,7 @@ endif;
 	$wp_customize->add_control(new Webique_Icon_Picker_Control($wp_customize, 
 		'nav_btn2_icon',
 		array(
-		    'label'   		=> __('Icon','gradiant'),
+		    'label'   		=> __('Icon','clever-fox'),
 		    'section' 		=>$section,
 			'iconset' => 'fa',
 		))  
@@ -108,4 +109,4 @@ endif;
 		)  
 	);	
 }
-add_action( 'customize_register', 'websy_lite_header_settings' );
+add_action( 'customize_register', 'webique_websy_lite_header_settings' );

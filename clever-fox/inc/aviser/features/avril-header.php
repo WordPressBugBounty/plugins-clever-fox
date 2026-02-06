@@ -1,5 +1,6 @@
 <?php
-function aviser_lite_header_settings( $wp_customize ) {
+if ( ! defined( 'ABSPATH' ) ) exit;
+function avril_aviser_lite_header_settings( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
 	Header Settings Panel
@@ -122,8 +123,8 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		//Pro feature
 		class Avril_social__section_upgrade extends WP_Customize_Control {
 			public function render_content() { 
-			$theme = wp_get_theme(); // gets the current theme
-				if ( 'Aviser' == $theme->name){	
+			$cleverfox_theme = wp_get_theme(); // gets the current theme
+				if ( 'Aviser' == $cleverfox_theme->name){	
 			?>
 				<a class="customizer_social_upgrade_section up-to-pro"  href="https://www.nayrathemes.com/aviser-pro/" target="_blank"  style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 			<?php
@@ -599,10 +600,10 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		)  
 	);
 }
-add_action( 'customize_register', 'aviser_lite_header_settings' );
+add_action( 'customize_register', 'avril_aviser_lite_header_settings' );
 
 // Header selective refresh
-function aviser_lite_header_partials( $wp_customize ){
+function avril_aviser_lite_header_partials( $wp_customize ){
 	
 	// tlh_mobile_title
 	$wp_customize->selective_refresh->add_partial( 'tlh_mobile_title', array(
@@ -661,7 +662,7 @@ function aviser_lite_header_partials( $wp_customize ){
 	) );
 	}
 
-add_action( 'customize_register', 'aviser_lite_header_partials' );
+add_action( 'customize_register', 'avril_aviser_lite_header_partials' );
 
 // tlh_mobile_title
 function avril_tlh_mobile_title_render_callback() {

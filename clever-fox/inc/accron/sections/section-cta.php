@@ -1,5 +1,6 @@
-<?php  
-	$cta_hs							= get_theme_mod('cta_hs','1'); 
+<?php 
+	if ( ! defined( 'ABSPATH' ) ) exit;
+	$accron_cta_hs					= get_theme_mod('cta_hs','1'); 
 	$accron_cta_title				= get_theme_mod('cta_title',__('Want To Work With Us ?','clever-fox')); 
 	$accron_cta_description			= get_theme_mod('cta_description',__('Meet Our People. See Our Work. Join Our Team','clever-fox'));
 	$accron_cta_video_url			= get_theme_mod('cta_video_url',esc_url('https://www.youtube.com/watch?v=b5Jyqzm5idw'));
@@ -11,7 +12,7 @@
 	$accron_cta_whatsapp_icon		= get_theme_mod('cta_whatsapp_icon','fa-whatsapp');
 	$accron_cta_bg_setting			= get_theme_mod('cta_bg_setting',esc_url(CLEVERFOX_PLUGIN_URL. 'inc/accron/images/bg-cta.jpg')); 
 	$accron_cta_bg_position			= get_theme_mod('cta_bg_position','fixed');
-	if($cta_hs == 1) {
+	if($accron_cta_hs == 1) {
 ?>
 <!-- cta section -->
 <section class="cta-section scroll-bg roller cta-section-home" data-roller="start:0.5" <?php if(!empty($accron_cta_bg_setting)){ ?> style="background:url('<?php echo esc_url($accron_cta_bg_setting); ?>'); background-repeat:no-repeat;background-size:cover; background-attachment:<?php echo esc_attr($accron_cta_bg_position); ?>" <?php } ?>>

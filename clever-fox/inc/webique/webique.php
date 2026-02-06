@@ -1,8 +1,11 @@
 <?php
 /**
- * @package   Webique
+ if ( ! defined( 'ABSPATH' ) ) exit;
+* @package   Webique
  */
+if ( ! defined( 'ABSPATH' ) ) exit;
 
+require CLEVERFOX_PLUGIN_DIR . 'inc/webique/extras.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/webique/dynamic-style.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/webique/sections/above-header.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/webique/sections/header-animation-bar.php';

@@ -1,8 +1,9 @@
 <?php
 /**
- * @package   Avril
+* @package   Avril
  */
- 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 require CLEVERFOX_PLUGIN_DIR . 'inc/avril/extras.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/avril/dynamic-style.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/avril/sections/above-header.php';

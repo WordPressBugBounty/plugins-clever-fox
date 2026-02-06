@@ -2,7 +2,9 @@
 /**
  * @package   Webique
  */
+if ( ! defined( 'ABSPATH' ) ) exit;
 
+require CLEVERFOX_PLUGIN_DIR . 'inc/webique/extras.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/webique/dynamic-style.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/webora/sections/above-header.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/webique/sections/header-animation-bar.php';
@@ -28,7 +30,7 @@ if ( ! function_exists( 'cleverfox_webique_frontpage_sections' ) ) :
 	add_action( 'webique_sections', 'cleverfox_webique_frontpage_sections' );
 endif;
 
-function webora_customize_remove( $wp_customize ) {
+function cleverfox_webique_webora_customize_remove( $wp_customize ) {
 	 $wp_customize->remove_control('hdr_social_head');
 	 	 $wp_customize->remove_control('hide_show_social_icon');
 		 $wp_customize->remove_control('social_icons');
@@ -40,6 +42,4 @@ function webora_customize_remove( $wp_customize ) {
 		 $wp_customize->remove_control('hs_nav_toggle');
 		 
 }
-add_action( 'customize_register', 'webora_customize_remove' );
-
-set_theme_mod('footer_logo',CLEVERFOX_PLUGIN_URL .'inc/webora/images/footer-logo.png' );
+add_action( 'customize_register', 'cleverfox_webique_webora_customize_remove' );

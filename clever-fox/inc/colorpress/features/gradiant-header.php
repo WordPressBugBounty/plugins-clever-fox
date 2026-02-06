@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function gradiant_lite_header_settings( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';	
 	/*=========================================
@@ -114,8 +115,8 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	//Pro feature
 		class Gradiant_header_menu_section_upgrade extends WP_Customize_Control {
 			public function render_content() { 
-				$theme = wp_get_theme(); // gets the current theme	
-				if ( 'Colorsy' == $theme->name){
+				$cleverfox_theme = wp_get_theme(); // gets the current theme	
+				if ( 'Colorsy' == $cleverfox_theme->name){
 			?>
 				<a class="customizer_hdr_menu_upgrade_section up-to-pro" href="https://www.nayrathemes.com/colorsy-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 				

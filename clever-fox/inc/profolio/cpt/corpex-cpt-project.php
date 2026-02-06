@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 // code for custom post type  Project
 		function corpex_project() {
 	
@@ -49,6 +50,8 @@
 		function corpex_meta_project()
 		{
 			global $post;
+			wp_nonce_field('project_meta_nonce_action', 'corpex_meta_project_nonce');
+			wp_nonce_field('update_project_category', '_wpnonce');
 			
 			$project_button_link 			= sanitize_text_field( get_post_meta( get_the_ID(),'project_button_link', true ));
 			$project_button_link_target 	= sanitize_text_field( get_post_meta( get_the_ID(),'project_button_link_target', true ));
@@ -70,19 +73,35 @@
 
 		function corpex_meta_project_save($post_id) 
 		{
+			if( isset($_POST['corpex_meta_project_nonce']) ){
+				$projectnonce = sanitize_key($_POST['corpex_meta_project_nonce']); 
+			}else{
+				return;
+			}
 			// Verify nonce
-			if (!isset($_POST['corpex_meta_project_nonce']) || !wp_verify_nonce($_POST['corpex_meta_project_nonce'], 'corpex_meta_project_nonce')) {
+			if (!isset($projectnonce) || !wp_verify_nonce($projectnonce, 'project_meta_nonce_action')) {
 				return;
 			}
 			
+			if((defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) || (defined('DOING_AJAX') && DOING_AJAX) || isset($_REQUEST['bulk_edit']))
+				return;
+			
+			if ( ! current_user_can( 'edit_page', $post_id ) )
+			{     return ;	} 
+			
 			if(isset( $_POST['post_ID']))
 			{ 	
-				$post_ID = $_POST['post_ID'];				
+				$post_ID = intval($_POST['post_ID']);				
 				$post_type=get_post_type($post_ID);
 				if($post_type=='corpex_project')
 				{	
-					update_post_meta($post_ID, 'project_button_link', sanitize_text_field($_POST['project_button_link']));
-					update_post_meta($post_ID, 'project_button_link_target', sanitize_text_field($_POST['project_button_link_target']));
+					if (isset($_POST['project_button_link'])) {
+						update_post_meta($post_id, 'project_button_link', esc_url_raw(wp_unslash($_POST['project_button_link'])));
+						
+						$project_button_link_target = isset($_POST['project_button_link_target']) ? '1' : '0';
+						update_post_meta($post_id, 'project_button_link_target', sanitize_text_field(wp_unslash($_POST['project_button_link_target'])));
+					}
+					
 				}
 			}
 		}
@@ -103,36 +122,88 @@
 		);
 	
 	
-		//Default category id		
+		// Default category id
 		$defualt_tex_id = get_option('custom_texo_project_id');
-		//quick update category
-		if (isset($_POST['action'])) {
-        // Verify nonce
-			if (!isset($_POST['corpex_taxonomy_nonce']) || !wp_verify_nonce($_POST['corpex_taxonomy_nonce'], 'corpex_taxonomy_nonce')) {
-				return;
-			}
-
-			// Update or insert term based on action
-			if ($_POST['action'] === 'update-tag' && isset($_POST['taxonomy']) && $_POST['taxonomy'] === 'project_categories') {
-				wp_update_term($_POST['tag_ID'], 'project_categories', array(
-					'name' => sanitize_text_field($_POST['name']),
-					'slug' => sanitize_title($_POST['slug']),
-					'description' => sanitize_text_field($_POST['description'])
-				));
-			} elseif ($_POST['action'] === 'add-tag' && empty($default_tex_id)) {
-				$term = wp_insert_term('All', 'project_categories', array(
-					'description' => 'Default Category',
-					'slug' => 'all' // Ensure lowercase slug
-				));
-				if (!is_wp_error($term)) {
-					update_option('custom_texo_project_id', $term['term_id']);
+		
+		// Check if nonce is set and valid (form submission)
+		if (isset($_POST['action'], $_POST['taxonomy'], $_POST['_wpnonce'])) {
+			// Unsanitize the nonce before verification
+			$nonce = sanitize_key($_POST['_wpnonce']); 
+			
+			// Verify the nonce (the second parameter is the action name)
+			if (wp_verify_nonce($nonce, 'update_project_category')) {
+				// Sanitize inputs
+				$tax_ID = isset($_POST['tax_ID']) ? intval($_POST['tax_ID']) : 0;
+				$name = isset($_POST['name']) ? sanitize_text_field(wp_unslash($_POST['name'])) : '';
+				$slug = isset($_POST['slug']) ? sanitize_title(wp_unslash($_POST['slug'])) : '';
+				
+				if ($tax_ID && !empty($name)) {
+					wp_update_term($tax_ID, 'project_categories', array(
+						'name' => $name,
+						'slug' => $slug
+					));
+					
+					update_option('custom_texo_project_id', $defualt_tex_id);
 				}
+			} else {
+				wp_die('Invalid nonce.');
 			}
 		}
-
-		// Delete default category if requested
-		if (isset($_POST['action']) && $_POST['action'] === 'delete-tag' && isset($_POST['tag_ID']) && $_POST['tag_ID'] == $default_tex_id) {
-			delete_option('custom_texo_project_id');
+		
+		// Insert default category if not exists
+		if (!$defualt_tex_id) {
+			wp_insert_term('All', 'project_categories', array(
+				'description' => 'Default Category',
+				'slug' => 'All'
+			));
+			
+			$Current_text_id = term_exists('All', 'project_categories');
+			if ($Current_text_id && isset($Current_text_id['term_id'])) {
+				update_option('custom_texo_project_id', $Current_text_id['term_id']);
+			}
+		}
+		
+		// Update category via POST
+		if (isset($_POST['submit'], $_POST['action'], $_POST['_wpnonce'])) {
+			// Unsanitize the nonce before verification
+			$nonce = sanitize_key($_POST['_wpnonce']); 
+			
+			// Verify the nonce (the second parameter is the action name)
+			if (wp_verify_nonce($nonce, 'update_project_category')) {
+				
+				// Sanitize inputs
+				$tag_ID = isset($_POST['tag_ID']) ? intval($_POST['tag_ID']) : 0;
+				$name = isset($_POST['name']) ? sanitize_text_field(wp_unslash($_POST['name'])) : '';
+				$slug = isset($_POST['slug']) ? sanitize_title(wp_unslash($_POST['slug'])) : '';
+				$description = isset($_POST['description']) ? sanitize_textarea_field(wp_unslash($_POST['description'])) : '';
+				
+				if ($tag_ID && !empty($name)) {
+					wp_update_term($tag_ID, 'project_categories', array(
+						'name' => $name,
+						'slug' => $slug,
+						'description' => $description
+					));
+				}
+			} else {
+				wp_die('Invalid nonce.');
+			}
+		}
+		
+		// Delete category if it matches default
+		if (isset($_POST['action'], $_POST['tag_ID'], $_POST['_wpnonce'])) {
+			// Unsanitize the nonce before verification
+			$nonce = sanitize_key($_POST['_wpnonce']); 
+			
+			// Verify the nonce (the second parameter is the action name)
+			if (wp_verify_nonce($nonce, 'delete_project_category')) {
+				$tag_ID = intval($_POST['tag_ID']);
+				
+				if ($tag_ID === $defualt_tex_id && $_POST['action'] === 'delete-tag') {
+					delete_option('custom_texo_project_id');
+				}
+			} else {
+				wp_die('Invalid nonce.');
+			}
 		}
 	}
 	add_action( 'init', 'corpex_project_taxonomy' );

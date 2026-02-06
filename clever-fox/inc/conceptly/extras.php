@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * Social Icon Default
  *
@@ -39,8 +40,8 @@
  */
  
  function conceptly_get_slides_default() {
-	 $theme = wp_get_theme(); // gets the current theme
-		if ( 'Azwa' == $theme->name){
+	 $cleverfox_theme = wp_get_theme(); // gets the current theme
+		if ( 'Azwa' == $cleverfox_theme->name){
 			return apply_filters(
 			'conceptly_get_slides_default', wp_json_encode(
 			 array(

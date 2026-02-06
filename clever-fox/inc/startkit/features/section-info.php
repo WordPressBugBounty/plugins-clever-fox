@@ -1,4 +1,5 @@
 <?php 
+if ( ! defined( 'ABSPATH' ) ) exit;
 if ( ! function_exists( 'startkit_info_setting' ) ) :
 function startkit_info_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
@@ -96,8 +97,8 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	);
 	}
 	
-	$theme = wp_get_theme(); // gets the current theme
-		if ( 'StartBiz' == $theme->name){
+	$cleverfox_theme = wp_get_theme(); // gets the current theme
+		if ( 'StartBiz' == $cleverfox_theme->name){
 			// Image // 
 			$wp_customize->add_setting( 
 				'info_image' , 
@@ -202,8 +203,8 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	);
 	}
 	
-	$theme = wp_get_theme(); // gets the current theme
-		if ( 'StartBiz' == $theme->name){
+	$cleverfox_theme = wp_get_theme(); // gets the current theme
+		if ( 'StartBiz' == $cleverfox_theme->name){
 			// Image // 
 			$wp_customize->add_setting( 
 				'info_image2' , 
@@ -309,8 +310,8 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	);
 	}
 	
-	$theme = wp_get_theme(); // gets the current theme
-		if ( 'StartBiz' == $theme->name){
+	$cleverfox_theme = wp_get_theme(); // gets the current theme
+		if ( 'StartBiz' == $cleverfox_theme->name){
 			// Image // 
 			$wp_customize->add_setting( 
 				'info_image3' , 
@@ -375,8 +376,8 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	Info contents Section Fourth
 	=========================================*/
 			
-	$theme = wp_get_theme(); // gets the current theme
-		if ( 'Arowana' == $theme->name || 'Envira' == $theme->name){
+	$cleverfox_theme = wp_get_theme(); // gets the current theme
+		if ( 'Arowana' == $cleverfox_theme->name || 'Envira' == $cleverfox_theme->name){
 			
 			//  Info Fourth Head
 			$wp_customize->add_setting(
@@ -469,42 +470,42 @@ function startkit_home_info_section_partials( $wp_customize ){
 	$wp_customize->selective_refresh->add_partial( 'info_title', array(
 		'selector'            => '#features-list .first h4, #features-list .first .item--title a',
 		'settings'            => 'info_title',
-		'render_callback'  => 'info_section_title_render_callback',
+		'render_callback'  => 'startkit_info_section_title_render_callback',
 	
 	) );
 	
 	$wp_customize->selective_refresh->add_partial( 'info_icons', array(
 		'selector'            => '#features-list .first .icon',
 		'settings'            => 'info_icons',
-		'render_callback'  => 'home_service_section_icon_render_callback',
+		'render_callback'  => 'startkit_home_service_section_icon_render_callback',
 	
 	) );
 	
 	$wp_customize->selective_refresh->add_partial( 'info_description', array(
 		'selector'            => '#features-list .first p, #features-list .first .item--content',
 		'settings'            => 'info_description',
-		'render_callback'  => 'home_service_section_description_render_callback',
+		'render_callback'  => 'startkit_home_service_section_description_render_callback',
 	
 	) );
 // info second	
 	$wp_customize->selective_refresh->add_partial( 'info_title2', array(
 		'selector'            => '#features-list .second h4, #features-list .second .item--title a',
 		'settings'            => 'info_title2',
-		'render_callback'  => 'info_second_title_render_callback',
+		'render_callback'  => 'startkit_info_second_title_render_callback',
 	
 	) );
 	
 	$wp_customize->selective_refresh->add_partial( 'info_icons2', array(
 		'selector'            => '#features-list .second .icon',
 		'settings'            => 'info_icons2',
-		'render_callback'  => 'info_second_icon_render_callback',
+		'render_callback'  => 'startkit_info_second_icon_render_callback',
 	
 	) );
 	
 	$wp_customize->selective_refresh->add_partial( 'info_description2', array(
 		'selector'            => '#features-list .second p, #features-list .second .item--content',
 		'settings'            => 'info_description2',
-		'render_callback'  => 'info_second_description_render_callback',
+		'render_callback'  => 'startkit_info_second_description_render_callback',
 	
 	) );
 	
@@ -512,20 +513,20 @@ function startkit_home_info_section_partials( $wp_customize ){
 	$wp_customize->selective_refresh->add_partial( 'info_title3', array(
 		'selector'            => '#features-list .third h4, #features-list .third .item--title a',
 		'settings'            => 'info_title3',
-		'render_callback'  => 'info_third_title_render_callback',
+		'render_callback'  => 'startkit_info_third_title_render_callback',
 	
 	) );
 	
 	$wp_customize->selective_refresh->add_partial( 'info_icons3', array(
 		'selector'            => '#features-list .third .icon',
 		'settings'            => 'info_icons3',
-		'render_callback'  => 'info_third_icon_render_callback',
+		'render_callback'  => 'startkit_info_third_icon_render_callback',
 	) );
 	
 	$wp_customize->selective_refresh->add_partial( 'info_description3', array(
 		'selector'            => '#features-list .third p, #features-list .third .item--content',
 		'settings'            => 'info_description3',
-		'render_callback'  => 'info_third_description_render_callback',
+		'render_callback'  => 'startkit_info_third_description_render_callback',
 	
 	) );
 	
@@ -554,39 +555,39 @@ function startkit_home_info_section_partials( $wp_customize ){
 }
 add_action( 'customize_register', 'startkit_home_info_section_partials' );
 // info first
-function info_section_title_render_callback() {
+function startkit_info_section_title_render_callback() {
 	return get_theme_mod( 'info_title' );
 }
-function home_service_section_icon_render_callback() {
+function startkit_home_service_section_icon_render_callback() {
 	return get_theme_mod( 'info_icons' );
 }
 
-function home_service_section_description_render_callback() {
+function startkit_home_service_section_description_render_callback() {
 	return get_theme_mod( 'info_description' );
 }
 
 
 // info second
-function info_second_title_render_callback() {
+function startkit_info_second_title_render_callback() {
 	return get_theme_mod( 'info_title2' );
 }
-function info_second_icon_render_callback() {
+function startkit_info_second_icon_render_callback() {
 	return get_theme_mod( 'info_icons2' );
 }
 
-function info_second_description_render_callback() {
+function startkit_info_second_description_render_callback() {
 	return get_theme_mod( 'info_description2' );
 }
 	
 // info third
-function info_third_title_render_callback() {
+function startkit_info_third_title_render_callback() {
 	return get_theme_mod( 'info_title3' );
 }
-function info_third_icon_render_callback() {
+function startkit_info_third_icon_render_callback() {
 	return get_theme_mod( 'info_icons3' );
 }
 
-function info_third_description_render_callback() {
+function startkit_info_third_description_render_callback() {
 	return get_theme_mod( 'info_description3' );
 }
 

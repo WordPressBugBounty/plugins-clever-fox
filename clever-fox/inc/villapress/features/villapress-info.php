@@ -1,5 +1,6 @@
 <?php
-function aravalli_info_setting( $wp_customize ) {
+if ( ! defined( 'ABSPATH' ) ) exit;
+function aravalli_villapress_info_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
 	info Section
@@ -62,7 +63,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 			);
     
 	//Pro info
-	class VillaPress_info__section_upgrade extends WP_Customize_Control {
+	class aravalli_villaPress_info__section_upgrade extends WP_Customize_Control {
 		public function render_content() { 		
 		?>
 			<a class="customizer_info_upgrade_section up-to-pro" href="https://www.nayrathemes.com/villapress-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
@@ -76,7 +77,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		'priority' => 9,
 	));
 	$wp_customize->add_control(
-		new VillaPress_info__section_upgrade(
+		new aravalli_villaPress_info__section_upgrade(
 		$wp_customize,
 		'villapress_info_upgrade_to_pro',
 			array(
@@ -115,14 +116,14 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	);
 }
 
-add_action( 'customize_register', 'aravalli_info_setting' );
+add_action( 'customize_register', 'aravalli_villapress_info_setting' );
 
 // info selective refresh
-function aravalli_info_section_partials( $wp_customize ){
+function aravalli_villapress_info_section_partials( $wp_customize ){
 	// info content
 	$wp_customize->selective_refresh->add_partial( 'info_contents', array(
 		'selector'            => '.info-fact .info-content'
 	) );
 	}
 
-add_action( 'customize_register', 'aravalli_info_section_partials' );
+add_action( 'customize_register', 'aravalli_villapress_info_section_partials' );

@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function renoval_testimonial_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -13,15 +14,15 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	);
 
 	//Testimonial Documentation Link
-	class WP_testimonial_Customize_Control extends WP_Customize_Control {
+	class renoval_wp_testimonial_Customize_Control extends WP_Customize_Control {
 	public $type = 'new_menu';
 
 	   function render_content()
 	   
 	   {
 	   ?>
-			<h3>How to add testimonial section :</h3>
-			<p>Frontpage Section > testimonial Section <br><br> <a href="#" style="background-color:#fcb900; color:#fff;display: flex;align-items: center;justify-content: center;text-decoration: none;   font-weight: 600;padding: 15px 10px;">Click Here</a></p>
+			<h3><?php echo esc_html__('How to add testimonial section','clever-fox'); ?> :</h3>
+			<p><?php echo esc_html__('Frontpage Section > testimonial Section','clever-fox'); ?> <br><br> <a href="#" style="background-color:#fcb900; color:#fff;display: flex;align-items: center;justify-content: center;text-decoration: none;   font-weight: 600;padding: 15px 10px;"><?php echo esc_html__('Click Here','clever-fox'); ?></a></p>
 			
 		<?php
 	   }
@@ -36,7 +37,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		) 
 	);
 
-	$wp_customize->add_control(new WP_testimonial_Customize_Control($wp_customize,
+	$wp_customize->add_control(new renoval_wp_testimonial_Customize_Control($wp_customize,
 	'testimonial_doc_link' , 
 		array(
 			'label'          => __( 'Testimonial Documentation Link', 'clever-fox' ),
@@ -185,8 +186,8 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		//Pro feature
 		class Renoval_testimonial__section_upgrade extends WP_Customize_Control {
 			public function render_content() { 
-				$theme = wp_get_theme(); // gets the current theme	
-				if('Renoval' == $theme || 'Builderse' == $theme->name || 'Eractor' == $theme->name):
+				$cleverfox_theme = wp_get_theme(); // gets the current theme	
+				if('Renoval' == $cleverfox_theme || 'Builderse' == $cleverfox_theme->name || 'Eractor' == $cleverfox_theme->name):
 			?>
 				<a class="customizer_testimonial_upgrade_section up-to-pro" href="https://www.nayrathemes.com/renoval-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 				

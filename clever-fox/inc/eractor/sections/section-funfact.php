@@ -1,28 +1,29 @@
 <?php  
-	$funfact_subtitle		= get_theme_mod('funfact_subtitle',__('<h2>Outstanding</h2><div class="animation"><div class="first"><div>Funfact</div></div></div>','clever-fox'));	
-	$funfact_description	= get_theme_mod('funfact_description',__('Lorem Ipsum is simply dummy of printing and typesetting and industry. Lorem Ipsum been.','clever-fox')); 
-	$funfact_contents		= get_theme_mod('funfact_contents',renoval_get_funfact_default());
-	$funfact_left_img		= get_theme_mod('funfact_left_img',esc_url(CLEVERFOX_PLUGIN_URL.'inc/eractor/images/left-funfact.jpg'));  
-	$funfact_bg_img			= get_theme_mod('funfact_bg_img',esc_url(CLEVERFOX_PLUGIN_URL.'inc/eractor/images/funfact-bg.jpg')); 
+	if ( ! defined( 'ABSPATH' ) ) exit;
+	$renoval_eractor_funfact_subtitle		= get_theme_mod('funfact_subtitle',__('<h2>Outstanding</h2><div class="animation"><div class="first"><div>Funfact</div></div></div>','clever-fox'));	
+	$renoval_eractor_funfact_description	= get_theme_mod('funfact_description',__('Lorem Ipsum is simply dummy of printing and typesetting and industry. Lorem Ipsum been.','clever-fox')); 
+	$renoval_eractor_funfact_contents		= get_theme_mod('funfact_contents',renoval_get_funfact_default());
+	$renoval_eractor_funfact_left_img		= get_theme_mod('funfact_left_img',esc_url(CLEVERFOX_PLUGIN_URL.'inc/eractor/images/left-funfact.jpg'));  
+	$renoval_eractor_funfact_bg_img			= get_theme_mod('funfact_bg_img',esc_url(CLEVERFOX_PLUGIN_URL.'inc/eractor/images/funfact-bg.jpg')); 
 ?>	
 	<!--=======================
 		Start: Funfact Section
 	=======================-->
-	<section id="funfact-section" class="funfact-section home-funfact wow fadeInUp" <?php if(!empty($funfact_bg_img)){ ?> style="background-image:url(<?php echo esc_url($funfact_bg_img) ?>);" <?php } ?>>
+	<section id="funfact-section" class="funfact-section home-funfact wow fadeInUp" <?php if(!empty($renoval_eractor_funfact_bg_img)){ ?> style="background-image:url(<?php echo esc_url($renoval_eractor_funfact_bg_img) ?>);" <?php } ?>>
 		<div class="container">
-			<?php if( !empty($funfact_subtitle) || !empty($funfact_description)): ?>
+			<?php if( !empty($renoval_eractor_funfact_subtitle) || !empty($renoval_eractor_funfact_description)): ?>
 				<div class="section-title text-center">
 					
-					<?php if(!empty($funfact_subtitle)): ?>
+					<?php if(!empty($renoval_eractor_funfact_subtitle)): ?>
 						<div>
-							<?php echo wp_kses_post($funfact_subtitle); ?>
+							<?php echo wp_kses_post($renoval_eractor_funfact_subtitle); ?>
 						</div>
 					<?php endif; ?>
 					
-					<?php if(!empty($funfact_description)): ?>
+					<?php if(!empty($renoval_eractor_funfact_description)): ?>
 						<p>
 							<span class="funfact-title">
-								<?php echo wp_kses_post($funfact_description); ?>
+								<?php echo wp_kses_post($renoval_eractor_funfact_description); ?>
 							</span>
 						</p>
 					<?php endif; ?>
@@ -31,12 +32,12 @@
 			
 			
 			<div class="row">
-				<?php if(!empty($funfact_left_img)): ?>
+				<?php if(!empty($renoval_eractor_funfact_left_img)): ?>
 					<div class="col-lg-6 col-md-6 col-sm-12">
 						<div class="left-area-funfact">
 							<div class="ring">
 								<div class="left-image">
-									<img class="rounded-circle" src="<?php echo esc_url($funfact_left_img); ?>" alt="<?php echo esc_attr__('Funfact Image','clever-fox'); ?>">
+									<img class="rounded-circle" src="<?php echo esc_url($renoval_eractor_funfact_left_img); ?>" alt="<?php echo esc_attr__('Funfact Image','clever-fox'); ?>">
 									<span class="funfact-effect-1"></span>
 								</div>
 							</div>
@@ -47,35 +48,35 @@
 				<div class="col-lg-6 col-md-6 col-sm-12">
 					<div class="row">
 						<?php
-							if ( ! empty( $funfact_contents ) ) {
-							$funfact_contents = json_decode( $funfact_contents );
-							foreach ( $funfact_contents as $funfact_item ) {
-								$title = ! empty( $funfact_item->title ) ? apply_filters( 'renoval_translate_single_string', $funfact_item->title, 'Funfact section' ) : '';
-								$subtitle = ! empty( $funfact_item->subtitle ) ? apply_filters( 'renoval_translate_single_string', $funfact_item->subtitle, 'Funfact section' ) : '';
-								$text = ! empty( $funfact_item->text ) ? apply_filters( 'renoval_translate_single_string', $funfact_item->text, 'Funfact section' ) : '';
-								$image = ! empty( $funfact_item->image_url ) ? apply_filters( 'renoval_translate_single_string', $funfact_item->image_url, 'Funfact section' ) : '';
-								$icon = ! empty( $funfact_item->icon_value ) ? apply_filters( 'renoval_translate_single_string', $funfact_item->icon_value, 'Funfact section' ) : '';
-								$choice = ! empty( $funfact_item->choice ) ? apply_filters( 'renoval_translate_single_string', $funfact_item->choice, 'Funfact section' ) : '';
+							if ( ! empty( $renoval_eractor_funfact_contents ) ) {
+							$renoval_eractor_funfact_contents = json_decode( $renoval_eractor_funfact_contents );
+							foreach ( $renoval_eractor_funfact_contents as $renoval_eractor_funfact_item ) {
+								$renoval_eractor_repeater_title = ! empty( $renoval_eractor_funfact_item->title ) ? apply_filters( 'renoval_translate_single_string', $renoval_eractor_funfact_item->title, 'Funfact section' ) : '';
+								$renoval_eractor_repeater_subtitle = ! empty( $renoval_eractor_funfact_item->subtitle ) ? apply_filters( 'renoval_translate_single_string', $renoval_eractor_funfact_item->subtitle, 'Funfact section' ) : '';
+								$renoval_eractor_repeater_text = ! empty( $renoval_eractor_funfact_item->text ) ? apply_filters( 'renoval_translate_single_string', $renoval_eractor_funfact_item->text, 'Funfact section' ) : '';
+								$renoval_eractor_repeater_image = ! empty( $renoval_eractor_funfact_item->image_url ) ? apply_filters( 'renoval_translate_single_string', $renoval_eractor_funfact_item->image_url, 'Funfact section' ) : '';
+								$renoval_eractor_repeater_icon = ! empty( $renoval_eractor_funfact_item->icon_value ) ? apply_filters( 'renoval_translate_single_string', $renoval_eractor_funfact_item->icon_value, 'Funfact section' ) : '';
+								$renoval_eractor_repeater_choice = ! empty( $renoval_eractor_funfact_item->choice ) ? apply_filters( 'renoval_translate_single_string', $renoval_eractor_funfact_item->choice, 'Funfact section' ) : '';
 						?>
 							<div class="col-lg-6 col-md-6 col-sm-12">
 								<div class="funfact-box spin thick">
 									<div class="funfact-icon">
-										<?php if($choice =='customizer_repeater_image'): ?>
-											<img src="<?php echo esc_url($image); ?>" />
+										<?php if($renoval_eractor_repeater_choice =='customizer_repeater_image'): ?>
+											<img src="<?php echo esc_url($renoval_eractor_repeater_image); ?>" />
 										<?php else: ?>
-											<i class="fa <?php echo esc_attr($icon); ?>"></i>
+											<i class="fa <?php echo esc_attr($renoval_eractor_repeater_icon); ?>"></i>
 										<?php endif; ?>
 									</div>
 									<div class="funfact-content">
 										
-										<?php if(!empty($text)): ?>
+										<?php if(!empty($renoval_eractor_repeater_text)): ?>
 											<p>
-												<?php echo esc_html($text); ?>
+												<?php echo esc_html($renoval_eractor_repeater_text); ?>
 											</p>
 										<?php endif; ?>
 										
-										<?php if(!empty($title)  || !empty($subtitle)): ?>
-											<h1><span class="counter"><?php echo esc_html($title); ?></span> <?php echo esc_html($subtitle); ?></h1>
+										<?php if(!empty($renoval_eractor_repeater_title)  || !empty($renoval_eractor_repeater_subtitle)): ?>
+											<h1><span class="counter"><?php echo esc_html($renoval_eractor_repeater_title); ?></span> <?php echo esc_html($renoval_eractor_repeater_subtitle); ?></h1>
 										<?php endif; ?>	
 									</div>
 									

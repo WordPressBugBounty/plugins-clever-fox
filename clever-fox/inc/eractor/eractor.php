@@ -2,6 +2,7 @@
 /**
  * @package Renoval
  */
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 require CLEVERFOX_PLUGIN_DIR . 'inc/renoval/extras.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/eractor/extras.php';
@@ -35,7 +36,7 @@ function cleverfox_renoval_enqueue_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'cleverfox_renoval_enqueue_scripts' );
 
-function eractor_customize_remove( $wp_customize ) {
+function cleverfox_eractor_customize_remove( $wp_customize ) {
 	$wp_customize->remove_control('hdr_top_office_timing');
 	$wp_customize->remove_control('office_timing_doc_link');
 	$wp_customize->remove_control('hide_show_office_timing_details');
@@ -43,4 +44,4 @@ function eractor_customize_remove( $wp_customize ) {
 	$wp_customize->remove_control('tlh_office_timing');
 	$wp_customize->remove_control('tlh_email_title');
 }
-add_action( 'customize_register', 'eractor_customize_remove' );
+add_action( 'customize_register', 'cleverfox_eractor_customize_remove' );

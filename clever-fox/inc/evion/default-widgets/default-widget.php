@@ -1,5 +1,6 @@
 <?php
-$activate = array(
+if ( ! defined( 'ABSPATH' ) ) exit;
+$cleverfox_activate = array(
         'avril-sidebar-primary' => array(
             'search-1',
             'recent-posts-1',
@@ -33,8 +34,8 @@ $activate = array(
 			1 => array('title' => 'Search'), 
 			2 => array('title' => 'Search')));	
 		
-    update_option('sidebars_widgets',  $activate);
-	$MediaId = get_option('avril_media_id');
-	set_theme_mod( 'custom_logo', $MediaId[0] );
+    update_option('sidebars_widgets',  $cleverfox_activate);
+	$cleverfox_MediaId = get_option('avril_media_id');
+	set_theme_mod( 'custom_logo', $cleverfox_MediaId[0] );
 	set_theme_mod('nav_btn_lbl','Book Now');
 	set_theme_mod('slider_opacity','0');

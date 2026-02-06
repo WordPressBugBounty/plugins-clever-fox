@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function renoval_lite_footer( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -32,7 +33,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		) 
 	);	
 	//Above Footer Documentation Link
-	class WP_footer_above_Customize_Control extends WP_Customize_Control {
+	class renoval_wp_footer_above_Customize_Control extends WP_Customize_Control {
 	public $type = 'new_menu';
 
 	   function render_content()
@@ -55,7 +56,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		) 
 	);
 
-	$wp_customize->add_control(new WP_footer_above_Customize_Control($wp_customize,
+	$wp_customize->add_control(new renoval_wp_footer_above_Customize_Control($wp_customize,
 	'footer_above_doc_link' , 
 		array(
 			'label'          => __( 'Footer Above Documentation Link', 'clever-fox' ),

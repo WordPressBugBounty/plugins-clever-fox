@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function nexcraft_project_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -13,15 +14,15 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	);
 
 	//Project Documentation Link
-	class WP_project_Customize_Control extends WP_Customize_Control {
+	class nexcraft_wp_project_Customize_Control extends WP_Customize_Control {
 	public $type = 'new_menu';
 
 	   function render_content()
 	   
 	   {
 	   ?>
-			<h3>How to add project section :</h3>
-			<p>Frontpage Section > project Section <br><br> <a href="#" style="background-color:#03c281; color:#fff;display: flex;align-items: center;justify-content: center;text-decoration: none;   font-weight: 600;padding: 15px 10px;">Click Here</a></p>
+			<h3><?php echo esc_html__('How to add project section','clever-fox'); ?> :</h3>
+			<p><?php echo esc_html__('Frontpage Section > project Section','clever-fox'); ?> <br><br> <a href="#" style="background-color:#03c281; color:#fff;display: flex;align-items: center;justify-content: center;text-decoration: none;   font-weight: 600;padding: 15px 10px;"><?php echo esc_html__('Click Here','clever-fox'); ?></a></p>
 			
 		<?php
 	   }
@@ -36,7 +37,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		) 
 	);
 
-	$wp_customize->add_control(new WP_project_Customize_Control($wp_customize,
+	$wp_customize->add_control(new nexcraft_wp_project_Customize_Control($wp_customize,
 	'project_doc_link' , 
 		array(
 			'label'          => __( 'Project Documentation Link', 'clever-fox' ),

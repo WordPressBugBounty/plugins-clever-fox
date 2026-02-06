@@ -1,11 +1,12 @@
 <?php
-$theme = wp_get_theme(); // gets the current theme
-if ( 'Belltech' == $theme->name){	
-	$img_path = CLEVERFOX_PLUGIN_URL .'inc/belltech/images/footer-logo.png"';
+if ( ! defined( 'ABSPATH' ) ) exit;
+$cleverfox_theme = wp_get_theme(); // gets the current theme
+if ( 'Belltech' == $cleverfox_theme->name){	
+	$cleverfox_img_path = CLEVERFOX_PLUGIN_URL .'inc/belltech/images/footer-logo.png"';
 }else{
-	$img_path = CLEVERFOX_PLUGIN_URL .'inc/metasoft/images/footer-logo.png"';
+	$cleverfox_img_path = CLEVERFOX_PLUGIN_URL .'inc/metasoft/images/footer-logo.png"';
 }
-$activate = array(
+$cleverfox_activate = array(
         'metasoft-sidebar-primary' => array(
             'search-1',
             'recent-posts-1',
@@ -21,7 +22,7 @@ $activate = array(
     /* the default titles will appear */
    update_option('widget_text', array(
         1 => array('title' => '',
-        'text'=>'<div class="logo"><a href="javascript:void(0);"><img src="'.$img_path.'" alt="Metrico "></a></div><p>'.sprintf(/* translators: %s: Description */esc_html__( '%s.', 'clever-fox' ),CLEVERFOX_FOOTER_ABOUT).'</p><div class="theme-link"><a href="javascript:void(0);" class="read-link">Read More</a></div>'),        
+        'text'=>'<div class="logo"><a href="javascript:void(0);"><img src="'.$cleverfox_img_path.'" alt="Metrico "></a></div><p>'.sprintf(/* translators: %s: Description */esc_html__( '%s.', 'clever-fox' ),CLEVERFOX_FOOTER_ABOUT).'</p><div class="theme-link"><a href="javascript:void(0);" class="read-link">Read More</a></div>'),        
 		2 => array('title' => 'Recent Posts'),
 		3 => array('title' => 'Categories'), 
         ));
@@ -37,6 +38,6 @@ $activate = array(
 			1 => array('title' => 'Search'), 
 			2 => array('title' => 'Search')));	
 		
-    update_option('sidebars_widgets',  $activate);
-	$MediaId = get_option('metasoft_media_id');
-	set_theme_mod( 'custom_logo', $MediaId[0] );
+    update_option('sidebars_widgets',  $cleverfox_activate);
+	$cleverfox_MediaId = get_option('metasoft_media_id');
+	set_theme_mod( 'custom_logo', $cleverfox_MediaId[0] );

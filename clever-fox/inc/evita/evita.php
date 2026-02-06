@@ -2,15 +2,14 @@
 /**
  * @package   Evita
  */
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 require CLEVERFOX_PLUGIN_DIR . 'inc/evita/extras.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/evita/dynamic-style.php';
-// require CLEVERFOX_PLUGIN_DIR . 'inc/evita/features/evita-header.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/evita/features/evita-slider.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/evita/features/evita-about.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/evita/features/evita-cta.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/evita/features/evita-service.php';
-// require CLEVERFOX_PLUGIN_DIR . 'inc/evita/features/evita-typography.php';
 
 if ( ! function_exists( 'cleverfox_evita_frontpage_sections' ) ) :
 	function cleverfox_evita_frontpage_sections() {	

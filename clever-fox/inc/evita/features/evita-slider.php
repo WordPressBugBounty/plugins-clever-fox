@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function evita_slider_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -21,7 +22,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 
 
 	//Slider Documentation Link
-	class WP_slider_Customize_Control extends WP_Customize_Control {
+	class cleverfox_wp_slider_Customize_Control extends WP_Customize_Control {
 	public $type = 'new_menu';
 
 	   function render_content()
@@ -44,7 +45,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		) 
 	);
 
-	$wp_customize->add_control(new WP_slider_Customize_Control($wp_customize,
+	$wp_customize->add_control(new cleverfox_wp_slider_Customize_Control($wp_customize,
 	'slider_doc_link' , 
 		array(
 			'label'          => __( 'Slider Documentation Link', 'clever-fox' ),

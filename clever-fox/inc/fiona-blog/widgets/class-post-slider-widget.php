@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * Register Post Categories widget
  *
@@ -8,8 +9,8 @@ class fiona_blog_post_categories_widget extends WP_Widget{
 	function __construct() {
 		parent::__construct(
 			'fiona_blog_post_categories_widget', // Base ID
-			__('Fiona : Post Categories','fiona'), // Name
-			array( 'description' => __('Post Categories widget', 'fiona' ), ) // Args
+			__('Fiona : Post Categories','clever-fox'), // Name
+			array( 'description' => __('Post Categories widget', 'clever-fox' ), ) // Args
 		);
 	}
 	
@@ -45,7 +46,7 @@ class fiona_blog_post_categories_widget extends WP_Widget{
 						<div class="post-content">
 							<!--div class="post-meta">
 								<span class="post-list">
-									<ul class="post-categories"><li><a href="<?php esc_url(the_permalink()); ?>"><?php the_category(' '); ?></a></li></ul>
+									<ul class="post-categories"><li><a href="<?php echo esc_url(get_permalink()); ?>"><?php the_category(' '); ?></a></li></ul>
 								</span>
 								<span class="author-name">
 									<i class="fa fa-user-secret"></i> <a href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' ) ));?>"><?php esc_html(the_author()); ?></a>
@@ -93,11 +94,11 @@ class fiona_blog_post_categories_widget extends WP_Widget{
 		$instance['post_display_num'] = isset($instance['post_display_num']) ? $instance['post_display_num'] : '';
 		?>
 		<p>
-			<label for="<?php echo esc_attr($this->get_field_id( 'post_cat_title' )); ?>"><?php esc_html_e( 'Post Category Title','fiona' ); ?></label>
+			<label for="<?php echo esc_attr($this->get_field_id( 'post_cat_title' )); ?>"><?php esc_html_e( 'Post Category Title','clever-fox' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'post_cat_title' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'post_cat_title' )); ?>" type="text" value="<?php if($instance[ 'post_cat_title' ]) echo esc_attr( $instance[ 'post_cat_title' ] ); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo esc_attr($this->get_field_id( 'selected_cat_id' )); ?>"><?php esc_html_e('Select Post Categories','fiona'); ?></label> 
+			<label for="<?php echo esc_attr($this->get_field_id( 'selected_cat_id' )); ?>"><?php esc_html_e('Select Post Categories','clever-fox'); ?></label> 
 			<select class="widefat" id="<?php echo esc_attr($this->get_field_id( 'selected_cat_id' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'selected_cat_id' )); ?>">
 				<option value>--<?php echo esc_html_e('Select','clever-fox'); ?>--</option>
 				<?php

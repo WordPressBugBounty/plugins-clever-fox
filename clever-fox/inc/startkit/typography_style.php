@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function startkit_own_theme_typography() {
 	$hide_show_typography= get_theme_mod('hide_show_typography','off');
 	if( $hide_show_typography == '1' ):

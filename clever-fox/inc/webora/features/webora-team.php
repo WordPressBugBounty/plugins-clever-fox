@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function webique_team_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -114,13 +115,19 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	/**
 	 * Customizer Repeater for add team
 	 */
+	$clever_fox_theme = wp_get_theme();
+	if ( 'Webora' === $clever_fox_theme->get( 'Name' ) ) :
+		$get_team_default = webora_get_team_default();
+	else:
+		$get_team_default = webique_webaura_get_team_default();
+	endif;
 	
 		$wp_customize->add_setting( 'team_contents', 
 			array(
 			 'sanitize_callback' => 'webique_repeater_sanitize',
 			 'transport'         => $selective_refresh,
 			 'priority' => 8,
-			 'default' => webora_get_team_default()
+			 'default' => $get_team_default
 			)
 		);
 		
@@ -145,13 +152,11 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 
 			//Pro feature
 		class Webique_team__section_upgrade extends WP_Customize_Control {
-			public function render_content() { 
-				$theme = wp_get_theme(); // gets the current theme	
-				if ( 'Webora' == $theme->name){
+			public function render_content() {
 			?>		
-				<a class="customizer_team_upgrade_section up-to-pro" href="https://www.nayrathemes.com/webique-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
+				<a class="customizer_team_upgrade_section up-to-pro" href="<?php echo esc_url(webique_premium_links()); ?>" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 			<?php
-			}}
+			}
 		}
 		
 		$wp_customize->add_setting( 'webique_team_upgrade_to_pro', array(
@@ -200,7 +205,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		class Webique_team_pro_upgrade extends WP_Customize_Control {
 			public function render_content() { 
 			?>		
-				<a class="customizer_team_upgrade_section up-to-pro" href="https://www.nayrathemes.com/webique-pro/" target="_blank"><?php esc_html_e('Unlock By Upgrade to Pro','clever-fox'); ?></a>
+				<a class="customizer_team_upgrade_section up-to-pro" href="<?php echo esc_url(webique_premium_links()); ?>" target="_blank"><?php esc_html_e('Unlock By Upgrade to Pro','clever-fox'); ?></a>
 			<?php
 			}
 		}

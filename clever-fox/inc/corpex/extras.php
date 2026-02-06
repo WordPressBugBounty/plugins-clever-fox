@@ -1,5 +1,5 @@
 <?php
-
+if ( ! defined( 'ABSPATH' ) ) exit;
 /*
  *
  * Slider Default
@@ -426,8 +426,8 @@ function corpex_get_social_icon_default() {
 	);
 }
 
-if ( ! function_exists( 'blog_header_content' ) ){
-	function blog_header_content() {
+if ( ! function_exists( 'corpex_blog_header_content' ) ){
+	function corpex_blog_header_content() {
 	
 	/* Blog Header */
 	$blog_title 			= get_theme_mod('blog_title',__('Our <span>Blog</span>','clever-fox'));
@@ -449,7 +449,7 @@ if ( ! function_exists( 'blog_header_content' ) ){
 		<?php endif; ?>
 	<?php }
 }
-add_action( 'blog_header_content', 'blog_header_content' );
+add_action( 'corpex_blog_header_content', 'corpex_blog_header_content' );
 
 /*
  *

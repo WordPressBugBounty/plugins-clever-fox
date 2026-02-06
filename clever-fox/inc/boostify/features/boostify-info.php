@@ -1,6 +1,6 @@
 <?php 
+if ( ! defined( 'ABSPATH' ) ) exit;
 function boostify_info_setting( $wp_customize ) {
-
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
 	Info

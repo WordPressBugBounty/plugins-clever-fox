@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 // Register Block Category
 function renoval_block_categories( $categories ) {
     return array_merge( array( array(
@@ -36,8 +37,8 @@ function renoval_register() {
     wp_register_style( 'renoval_editor_style', CLEVERFOX_PLUGIN_URL . '/inc/renoval/block/dist/editor.css', array( 'wp-edit-blocks'), '0.0' );
 
     // Register Blocks
-    renoval_wp_register_script( 'infos', array( 'render_callback' => 'render_renoval_infos' ) );
-    renoval_wp_register_script( 'info', array( 'render_callback' => 'render_renoval_info' ) );
+    renoval_wp_register_script( 'infos', array( 'render_callback' => 'renoval_render_renoval_infos' ) );
+    renoval_wp_register_script( 'info', array( 'render_callback' => 'renoval_render_renoval_info' ) );
 }
 add_action( 'init', 'renoval_register' );
 
@@ -65,7 +66,7 @@ class RenovalInfoStyleGenerator {
 }
 
 // Render Infos
-function render_renoval_infos($attributes, $content){
+function renoval_render_renoval_infos($attributes, $content){
     $cId = isset($attributes['cId']) ? esc_attr($attributes['cId']) : '';
 
     // Generate Styles
@@ -86,7 +87,7 @@ function render_renoval_infos($attributes, $content){
 }
 
 // Render Info
-function render_renoval_info( $attributes ) {
+function renoval_render_renoval_info( $attributes ) {
     extract( $attributes );
 
     $cId = isset($cId) ? esc_attr($cId) : ''; // Escaping dynamic content

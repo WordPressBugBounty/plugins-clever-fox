@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function medazin_process_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -13,7 +14,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	);
 
 	//Process Documentation Link
-	class WP_process_Customize_Control extends WP_Customize_Control {
+	class medazin_cardiopress_wp_process_Customize_Control extends WP_Customize_Control {
 	public $type = 'new_menu';
 
 	   function render_content()
@@ -36,7 +37,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		) 
 	);
 
-	$wp_customize->add_control(new WP_process_Customize_Control($wp_customize,
+	$wp_customize->add_control(new medazin_cardiopress_wp_process_Customize_Control($wp_customize,
 	'process_doc_link' , 
 		array(
 			'label'          => __( 'Process Documentation Link', 'clever-fox' ),
@@ -176,7 +177,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	//Pro feature
 	class Medazin_process__section_upgrade extends WP_Customize_Control {
 		public function render_content() { 
-			$theme = wp_get_theme(); // gets the current theme	
+			$cleverfox_theme = wp_get_theme(); // gets the current theme	
 			
 		?>
 			<a class="customizer_process_upgrade_section up-to-pro" href="https://www.nayrathemes.com/clever-fox/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>

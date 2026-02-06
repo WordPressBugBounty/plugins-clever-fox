@@ -37,7 +37,7 @@
 						<input class="cleverfox-range-slider-range" type="range" value="<?php echo esc_attr( $this->value() ); ?>" <?php $this->input_attrs(); $this->link(); ?> />
 						<input class="cleverfox-range-slider-value" type="number" value="<?php echo esc_attr( $this->value() ); ?>" <?php $this->input_attrs(); $this->link(); ?> />
 						<?php if ( ! empty( $this->setting->default ) ) : ?>
-							<span class="cleverfox-range-reset-slider" title="<?php esc_attr_e( 'Reset', 'cleverfox' ); ?>"><span class="dashicons dashicons-image-rotate"></span></span>
+							<span class="cleverfox-range-reset-slider" title="<?php esc_attr_e( 'Reset', 'clever-fox' ); ?>"><span class="dashicons dashicons-image-rotate"></span></span>
 						<?php endif;?>
 					</div>
 				</div>

@@ -2,6 +2,7 @@
 /**
  * @package Corpex
  */
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 require CLEVERFOX_PLUGIN_DIR . 'inc/corpex/extras.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/corpex/dynamic-style.php';

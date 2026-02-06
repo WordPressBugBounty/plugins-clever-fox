@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function accron_service_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -13,7 +14,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	);
 
 	//Service Documentation Link
-	class WP_service_Customize_Control extends WP_Customize_Control {
+	class cleverfox_wp_service_Customize_Control extends WP_Customize_Control {
 	public $type = 'new_menu';
 
 	   function render_content()
@@ -36,7 +37,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		) 
 	);
 
-	$wp_customize->add_control(new WP_service_Customize_Control($wp_customize,
+	$wp_customize->add_control(new cleverfox_wp_service_Customize_Control($wp_customize,
 	'service_doc_link' , 
 		array(
 			'label'          => __( 'Service Documentation Link', 'clever-fox' ),
@@ -261,7 +262,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		//Pro feature
 		class Accron_service__section_upgrade extends WP_Customize_Control {
 			public function render_content() { 
-				$theme = wp_get_theme(); // gets the current theme	
+				$cleverfox_theme = wp_get_theme(); // gets the current theme	
 				
 			?>
 				<a class="customizer_service_upgrade_section up-to-pro" href="https://www.nayrathemes.com/accron-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>

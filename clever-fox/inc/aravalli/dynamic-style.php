@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 if( ! function_exists( 'cleverfox_aravalli_dynamic_style' ) ):
     function cleverfox_aravalli_dynamic_style() {
 

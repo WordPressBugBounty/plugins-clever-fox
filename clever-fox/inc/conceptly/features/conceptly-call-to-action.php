@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function conceptly_call_action_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 
@@ -294,47 +295,44 @@ function conceptly_home_cta_section_partials( $wp_customize ){
 	$wp_customize->selective_refresh->add_partial( 'call_to_action_title', array(
 		'selector'            => '#cta h3',
 		'settings'            => 'call_to_action_title',
-		'render_callback'  => 'cta_section_title_render_callback',
-	
+		'render_callback'  => 'conceptly_cta_section_title_render_callback',
 	) );
 	// description
 	$wp_customize->selective_refresh->add_partial( 'call_to_action_description', array(
 		'selector'            => '#cta p',
 		'settings'            => 'call_to_action_description',
-		'render_callback'  => 'cta_section_desc_render_callback',
-	
+		'render_callback'  => 'conceptly_cta_section_desc_render_callback',
 	) );
 	// CTA button icon
 	$wp_customize->selective_refresh->add_partial( 'cta_icon', array(
 		'selector'            => '#cta-btn .purchase-btn i',
 		'settings'            => 'cta_icon',
-		'render_callback'  => 'cta_section_description_render_callback',
+		'render_callback'  => 'conceptly_cta_section_description_render_callback',
 	
 	) );
 	// CTA button label
 	$wp_customize->selective_refresh->add_partial( 'call_action_button_label', array(
 		'selector'            => '#cta-btn .purchase-btn',
 		'settings'            => 'call_action_button_label',
-		'render_callback'  => 'cta_section_button_render_callback',
-	
+		'render_callback'  => 'conceptly_cta_section_button_render_callback',
 	) );
 	}
 
 add_action( 'customize_register', 'conceptly_home_cta_section_partials' );
 
 // cta editor
-function cta_section_description_render_callback() {
-	return get_theme_mod( 'conceptly_page_editor_all_action' );
+function conceptly_cta_section_description_render_callback() {
+	return get_theme_mod( 'cta_icon' );
 }
 // cta title
-function cta_section_title_render_callback() {
-	return get_theme_mod( 'cta_section_title_render_callback' );
+function conceptly_cta_section_title_render_callback() {
+	return get_theme_mod( 'call_to_action_title' );
 }
 // cta description
-function cta_section_desc_render_callback() {
+function conceptly_cta_section_desc_render_callback() {
 	return get_theme_mod( 'call_to_action_description' );
 }
 // cta button label
-function cta_section_button_render_callback() {
+function conceptly_cta_section_button_render_callback() {
 	return get_theme_mod( 'call_action_button_label' );
 }

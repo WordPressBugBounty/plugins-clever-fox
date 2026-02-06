@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function webique_testimonial_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -246,7 +247,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		class Webique_testimonial_pro_upgrade extends WP_Customize_Control {
 			public function render_content() { 
 			?>		
-				<a class="customizer_testimonial_upgrade_section up-to-pro" href="https://www.nayrathemes.com/webique-pro/" target="_blank"><?php esc_html_e('Unlock By Upgrade to Pro','clever-fox'); ?></a>
+				<a class="customizer_testimonial_upgrade_section up-to-pro" href="<?php echo esc_url(webique_premium_links()); ?>" target="_blank"><?php esc_html_e('Unlock By Upgrade to Pro','clever-fox'); ?></a>
 			<?php
 			}
 		}
@@ -353,7 +354,7 @@ function webique_testimonial_partials( $wp_customize ){
 		'testimonial_ttl', array(
 			'selector' => '.testimonial-section .heading-default h1',
 			'settings'            => 'testimonial_ttl',
-			'render_callback' => 'tesimonial_ttl_callback',
+			'render_callback' => 'webique_websy_testimonial_ttl_callback',
 		)
 	);
 	// Testimonial description
@@ -361,7 +362,7 @@ function webique_testimonial_partials( $wp_customize ){
 		'testimonial_desc', array(
 			'selector' => '.testimonial-section .heading-default p',
 			'settings'            => 'testimonial_desc',
-			'render_callback' => 'testimonial_desc_callback',
+			'render_callback' => 'webique_websy_testimonial_desc_callback',
 		)
 	);
 	// Testimonial Contents
@@ -381,10 +382,10 @@ function webique_testimonial_partials( $wp_customize ){
 add_action( 'customize_register', 'webique_testimonial_partials' );
 
 // Title
-function tesimonial_ttl_callback() {
+function webique_websy_testimonial_ttl_callback() {
 	get_theme_mod('testimonial_ttl');
 }
 //Description
-function testimonial_desc_callback() {
+function webique_websy_testimonial_desc_callback() {
 	get_theme_mod('testimonial_desc');
 }

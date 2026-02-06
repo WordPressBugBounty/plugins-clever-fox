@@ -1,9 +1,10 @@
 <?php
-function avitech_slider_setting( $wp_customize ) {
+if ( ! defined( 'ABSPATH' ) ) exit;
+function avril_avitech_slider_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';	
 	
-	$theme = wp_get_theme(); // gets the current theme
-	if ( 'Avitech' == $theme->name){
+	$cleverfox_theme = wp_get_theme(); // gets the current theme
+	if ( 'Avitech' == $cleverfox_theme->name){
 		// Head
 		$wp_customize->add_setting(
 			'hdr_info_clr_head'
@@ -123,4 +124,4 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		) 
 	);
 }
-add_action( 'customize_register', 'avitech_slider_setting' );
+add_action( 'customize_register', 'avril_avitech_slider_setting' );

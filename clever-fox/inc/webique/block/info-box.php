@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 // Register Block Category
 function webique_block_categories( $categories ) {
     return array_merge( array( array(
@@ -36,8 +37,8 @@ function webique_register() {
     wp_register_style( 'webique_editor_style', CLEVERFOX_PLUGIN_URL . '/inc/webique/block/dist/editor.css', array( 'wp-edit-blocks'), '0.0' );
 
     // Register Blocks
-    webique_wp_register_script( 'infos', array( 'render_callback' => 'render_webique_infos' ) );
-    webique_wp_register_script( 'info', array( 'render_callback' => 'render_webique_info' ) );
+    webique_wp_register_script( 'infos', array( 'render_callback' => 'webique_render_webique_infos' ) );
+    webique_wp_register_script( 'info', array( 'render_callback' => 'webique_render_webique_info' ) );
 }
 add_action( 'init', 'webique_register' );
 
@@ -65,7 +66,7 @@ class WebiqueInfoStyleGenerator {
 }
 
 // Render Infos
-function render_webique_infos($attributes, $content){
+function webique_render_webique_infos($attributes, $content){
     $cId = isset($attributes['cId']) ? esc_attr($attributes['cId']) : '';
 
     // Generate Styles
@@ -86,7 +87,7 @@ function render_webique_infos($attributes, $content){
 }
 
 // Render Info
-function render_webique_info( $attributes ) {
+function webique_render_webique_info( $attributes ) {
     extract( $attributes );
 
     $cId = isset($cId) ? esc_attr($cId) : ''; // Escaping dynamic content
@@ -143,7 +144,7 @@ function render_webique_info( $attributes ) {
     // </div>";
 	
 	
-	echo "<div class='av-column-" . esc_attr($columns['desktop']) . "  " . esc_attr($infoTypes) . " " .strtolower(str_replace(' ','-',$infoType))."' id='webiqueInfo-" . esc_attr($cId) . "'>
+	echo "<div class='av-column-" . esc_attr($columns['desktop']) . "  " . esc_attr($infoTypes) . " " .esc_attr(strtolower(str_replace(' ','-',$infoType)))."' id='webiqueInfo-" . esc_attr($cId) . "'>
         <aside class='widget widget-contact'>
             <div class='contact-area'>
                 " . wp_kses_post($iconEl) . " " . wp_kses_post($titleEl) . " " . wp_kses_post($descEl) . "

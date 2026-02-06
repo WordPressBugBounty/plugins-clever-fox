@@ -1,8 +1,9 @@
 <?php
-$theme = wp_get_theme(); // gets the current theme
-$footer_logo_default = CLEVERFOX_PLUGIN_URL .'inc/'.strtolower($theme->name).'/images/lightlogo.png';
+if ( ! defined( 'ABSPATH' ) ) exit;
+$cleverfox_theme = wp_get_theme(); // gets the current theme
+$cleverfox_footer_logo_default = CLEVERFOX_PLUGIN_URL .'inc/'.strtolower($cleverfox_theme->name).'/images/lightlogo.png';
 	
-$activate = array(
+$cleverfox_activate = array(
         'medazin-sidebar-primary' => array(
             'search-1',
             'recent-posts-1',
@@ -23,12 +24,12 @@ $activate = array(
     );
     /* the default titles will appear */
    update_option('widget_text', array(  
-		1 => array('title' => 'About '.$theme->name,
+		1 => array('title' => 'About '.$cleverfox_theme->name,
 				'text'=>'<aside class="widget widget-text ">
 				<div class="widget-content ">
 					<div class="footer-logo ">
-						<a href="https://nayrathemes.com/demo/lite/'.strtolower($theme->name).'/" class="custom-logo-link" rel="home">
-							<img src="'.esc_url($footer_logo_default).'" class="custom-logo" alt="Medazin">
+						<a href="https://nayrathemes.com/demo/lite/'.strtolower($cleverfox_theme->name).'/" class="custom-logo-link" rel="home">
+							<img src="'.esc_url($cleverfox_footer_logo_default).'" class="custom-logo" alt="Medazin">
 						</a>
 					</div>
 					<div class="footer-content ">
@@ -80,8 +81,8 @@ $activate = array(
 			1 => array('title' => 'Search'), 
 			2 => array('title' => 'Search')));	
 		
-    update_option('sidebars_widgets',  $activate);
-	$MediaId = get_option('medazin_media_id');
-	set_theme_mod( 'custom_logo', $MediaId[0] );
+    update_option('sidebars_widgets',  $cleverfox_activate);
+	$cleverfox_MediaId = get_option('medazin_media_id');
+	set_theme_mod( 'custom_logo', $cleverfox_MediaId[0] );
 	set_theme_mod('nav_btn_lbl','Book Now');
 ?>

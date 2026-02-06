@@ -1,4 +1,5 @@
 <?php  
+	if ( ! defined( 'ABSPATH' ) ) exit;
    if (  is_active_sidebar( 'gradiant-info-sidebar' ) ) {
 ?>	
 <div id="info-section" class="">

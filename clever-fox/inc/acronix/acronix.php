@@ -2,6 +2,7 @@
 /**
  * @package Accron
  */
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 require CLEVERFOX_PLUGIN_DIR . 'inc/accron/extras.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/accron/dynamic-style.php';
@@ -21,8 +22,8 @@ if ( ! function_exists( 'cleverfox_accron_frontpage_sections' ) ) :
 	add_action( 'accron_sections', 'cleverfox_accron_frontpage_sections' );
 endif;
 
-function acronix_customize_remove( $wp_customize ) {
+function accron_acronix_customize_remove( $wp_customize ) {
 	$wp_customize->remove_control('hdr_nav_toggle');
 	$wp_customize->remove_control('hs_nav_toggle');
 }
-add_action( 'customize_register', 'acronix_customize_remove' );
+add_action( 'customize_register', 'accron_acronix_customize_remove' );

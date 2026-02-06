@@ -1,5 +1,6 @@
 <?php
-function startbiz_lite_header_settings( $wp_customize ) {
+if ( ! defined( 'ABSPATH' ) ) exit;
+function startkit_startbiz_lite_header_settings( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	// Header Contact Info // 
 	$wp_customize->add_section(
@@ -114,33 +115,33 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	);
 	
 }
-add_action( 'customize_register', 'startbiz_lite_header_settings' );
+add_action( 'customize_register', 'startkit_startbiz_lite_header_settings' );
 
 // Header selective refresh
-function startbiz_lite_header_partials( $wp_customize ){
+function startkit_startbiz_lite_header_partials( $wp_customize ){
 	// hdr_nav_ct_info_ttl
 	$wp_customize->selective_refresh->add_partial( 'hdr_nav_ct_info_ttl', array(
 		'selector'            => '.navbar-area .emergency-call .text',
 		'settings'            => 'hdr_nav_ct_info_ttl',
-		'render_callback'  => 'startbiz_hdr_nav_ct_info_ttl_render_callback',
+		'render_callback'  => 'startkit_startbiz_hdr_nav_ct_info_ttl_render_callback',
 	) );
 	
 	// hdr_nav_ct_info_subttl
 	$wp_customize->selective_refresh->add_partial( 'hdr_nav_ct_info_subttl', array(
 		'selector'            => '.navbar-area  .emergency-call .title',
 		'settings'            => 'hdr_nav_ct_info_subttl',
-		'render_callback'  => 'startbiz_hdr_nav_ct_info_subttl_render_callback',
+		'render_callback'  => 'startkit_startbiz_hdr_nav_ct_info_subttl_render_callback',
 	) );
 	}
 
-add_action( 'customize_register', 'startbiz_lite_header_partials' );
+add_action( 'customize_register', 'startkit_startbiz_lite_header_partials' );
 
 // hdr_nav_ct_info_ttl
-function startbiz_hdr_nav_ct_info_ttl_render_callback() {
+function startkit_startbiz_hdr_nav_ct_info_ttl_render_callback() {
 	return get_theme_mod( 'hdr_nav_ct_info_ttl' );
 }
 
 // hdr_nav_ct_info_subttl
-function startbiz_hdr_nav_ct_info_subttl_render_callback() {
+function startkit_startbiz_hdr_nav_ct_info_subttl_render_callback() {
 	return get_theme_mod( 'hdr_nav_ct_info_subttl' );
 }

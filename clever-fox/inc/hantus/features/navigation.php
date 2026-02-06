@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 // Customizer tabs for slider section
 if ( ! function_exists( 'hantus_slider_manager_customize_register' ) ) :
 function hantus_slider_manager_customize_register( $wp_customize ) {

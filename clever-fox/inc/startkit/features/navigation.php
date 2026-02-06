@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 // Customizer tabs for slider section
 if ( ! function_exists( 'startkit_slider_manager_customize_register' ) ) :
 function startkit_slider_manager_customize_register( $wp_customize ) {

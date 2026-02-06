@@ -2,7 +2,8 @@
 /**
  * @package   Hantus
  */
- 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 require CLEVERFOX_PLUGIN_DIR . 'inc/thai-spa/sections/above-header.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/thai-spa/features/hantus-above-header.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/hantus/features/navigation.php';

@@ -1,6 +1,6 @@
 <?php 
+if ( ! defined( 'ABSPATH' ) ) exit;
 function corpex_info_setting( $wp_customize ) {
-
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
 	Info
@@ -88,7 +88,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 			//Pro feature
 		class Corpex_info__section_upgrade extends WP_Customize_Control {
 			public function render_content() { 
-				$theme = wp_get_theme(); // gets the current theme	
+				$cleverfox_theme = wp_get_theme(); // gets the current theme	
 				
 			?>
 				<a class="customizer_info_upgrade_section up-to-pro" href="https://www.nayrathemes.com/corpex-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>

@@ -1,4 +1,5 @@
 <?php 
+if ( ! defined( 'ABSPATH' ) ) exit;
 if ( ! function_exists( 'startkit_slider_setting' ) ) :
 function startkit_slider_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
@@ -77,13 +78,13 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	 * Customizer Repeater for add slides
 	 */
 		if ( class_exists( 'Startkit_Repeater' ) ) {
-		 $theme = wp_get_theme(); // gets the current theme
-		if ( 'StartWeb' == $theme->name){			
+		 $cleverfox_theme = wp_get_theme(); // gets the current theme
+		if ( 'StartWeb' == $cleverfox_theme->name){			
 		$wp_customize->add_setting( 'slider', 
 			array(
 			 'sanitize_callback' => 'startkit_repeater_sanitize',
 			 'priority' => 6,
-			 'default' => startweb_get_slider_default(),
+			 'default' => startkit_startweb_get_slider_default(),
 			)
 		);
 		
@@ -144,15 +145,15 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		//Pro feature
 		class Startkit_slider__section_upgrade extends WP_Customize_Control {
 			public function render_content() { 
-				$theme = wp_get_theme(); // gets the current theme
-				if ( 'Envira' == $theme->name){	
+				$cleverfox_theme = wp_get_theme(); // gets the current theme
+				if ( 'Envira' == $cleverfox_theme->name){	
 			?>
 					<a class="customizer_slider_upgrade_section up-to-pro" href="https://www.nayrathemes.com/envira-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
-				<?php }elseif( 'StartBiz' == $theme->name){ ?>
+				<?php }elseif( 'StartBiz' == $cleverfox_theme->name){ ?>
 					<a class="customizer_slider_upgrade_section up-to-pro" href="https://www.nayrathemes.com/startbiz-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
-				<?php }elseif( 'StartWeb' == $theme->name){ ?>
+				<?php }elseif( 'StartWeb' == $cleverfox_theme->name){ ?>
 					<a class="customizer_slider_upgrade_section up-to-pro" href="https://www.nayrathemes.com/startweb-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
-				<?php }elseif( 'Arowana' == $theme->name){ ?>	
+				<?php }elseif( 'Arowana' == $cleverfox_theme->name){ ?>	
 					<a class="customizer_slider_upgrade_section up-to-pro" href="https://www.nayrathemes.com/arowana-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 				<?php }else{ ?>		
 					<a class="customizer_slider_upgrade_section up-to-pro" href="https://www.nayrathemes.com/startkit-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>

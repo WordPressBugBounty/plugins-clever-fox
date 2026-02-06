@@ -1,6 +1,6 @@
 <?php
 /*Define default Values */
-
+if ( ! defined( 'ABSPATH' ) ) exit;
 /**
 ** Header 
 */

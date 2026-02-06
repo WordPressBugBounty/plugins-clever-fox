@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 if ( ! function_exists( 'startkit_typography_customizer' ) ) :
  function startkit_typography_customizer( $wp_customize ) {
 $wp_customize->add_panel( 'startkit_typography_setting', array(
@@ -65,7 +66,7 @@ $wp_customize->add_section(
 		);
 		$wp_customize->add_control(
 		'body_typography_font_weight', array(
-				'label' => __('Font Style','spicepress'),
+				'label' => __('Font Style','clever-fox'),
 				'section' => 'Body_typography',
 				'setting' => 'body_typography_font_weight',
 				'choices'=>$font_weight,

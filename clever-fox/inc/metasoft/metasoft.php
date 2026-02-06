@@ -2,12 +2,12 @@
 /**
  * @package   Metasoft
  */
- 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 require CLEVERFOX_PLUGIN_DIR . 'inc/metasoft/extras.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/metasoft/dynamic-style.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/metasoft/sections/above-header.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/metasoft/features/metasoft-header.php';
-// require CLEVERFOX_PLUGIN_DIR . 'inc/metasoft/features/metasoft-cta.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/metasoft/features/metasoft-expertise.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/metasoft/features/metasoft-info.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/metasoft/features/metasoft-service.php';

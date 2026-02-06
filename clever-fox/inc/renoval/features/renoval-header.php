@@ -1,8 +1,9 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function renoval_lite_header_settings( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';	
 	
-	$theme = wp_get_theme(); // gets the current theme
+	$cleverfox_theme = wp_get_theme(); // gets the current theme
 	
 	/*=========================================
 	Above Header Section
@@ -39,7 +40,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	
 	
 	//Header Social Documentation Link
-	class WP_social_section_Customize_Control extends WP_Customize_Control {
+	class renoval_wp_social_section_Customize_Control extends WP_Customize_Control {
 	public $type = 'new_menu';
 
 	   function render_content()
@@ -62,7 +63,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		) 
 	);
 
-	$wp_customize->add_control(new WP_social_section_Customize_Control($wp_customize,
+	$wp_customize->add_control(new renoval_wp_social_section_Customize_Control($wp_customize,
 	'social_doc_link' , 
 		array(
 			'label'          => __( 'Social Documentation Link', 'clever-fox' ),
@@ -119,8 +120,8 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	//Pro feature
 		class Renoval_social__section_upgrade extends WP_Customize_Control {
 			public function render_content() { 
-			$theme = wp_get_theme(); // gets the current theme
-			if('Renoval' == $theme || 'Builderse' == $theme->name || 'Eractor' == $theme->name){
+			$cleverfox_theme = wp_get_theme(); // gets the current theme
+			if('Renoval' == $cleverfox_theme || 'Builderse' == $cleverfox_theme->name || 'Eractor' == $cleverfox_theme->name){
 			?>
 				<a class="customizer_social_upgrade_section up-to-pro"  href="https://www.nayrathemes.com/renoval-pro/" target="_blank"  style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 			<?php
@@ -164,7 +165,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	);
 	
 	//Header Email Detail Documentation Link
-	class WP_email_details_section_Customize_Control extends WP_Customize_Control {
+	class renoval_wp_email_details_section_Customize_Control extends WP_Customize_Control {
 	public $type = 'new_menu';
 
 	   function render_content()
@@ -187,7 +188,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		) 
 	);
 
-	$wp_customize->add_control(new WP_email_details_section_Customize_Control($wp_customize,
+	$wp_customize->add_control(new renoval_wp_email_details_section_Customize_Control($wp_customize,
 	'email_details_doc_link' , 
 		array(
 			'label'          => __( 'Email Details Documentation Link', 'clever-fox' ),
@@ -301,7 +302,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	);
 
 	//Header Mobile Details Link Documentation Link
-	class WP_mbl_details_section_Customize_Control extends WP_Customize_Control {
+	class renoval_wp_mbl_details_section_Customize_Control extends WP_Customize_Control {
 	public $type = 'new_menu';
 
 	   function render_content()
@@ -324,7 +325,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		) 
 	);
 
-	$wp_customize->add_control(new WP_mbl_details_section_Customize_Control($wp_customize,
+	$wp_customize->add_control(new renoval_wp_mbl_details_section_Customize_Control($wp_customize,
 	'mbl_details_doc_link' , 
 		array(
 			'label'          => __( 'Mobile Details Documentation Link', 'clever-fox' ),
@@ -437,7 +438,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	);
 
 		//Header Office Timing Link Documentation Link
-	class WP_office_timing_section_Customize_Control extends WP_Customize_Control {
+	class renoval_wp_office_timing_section_Customize_Control extends WP_Customize_Control {
 	public $type = 'new_menu';
 
 	   function render_content()
@@ -460,7 +461,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		) 
 	);
 
-	$wp_customize->add_control(new WP_office_timing_section_Customize_Control($wp_customize,
+	$wp_customize->add_control(new renoval_wp_office_timing_section_Customize_Control($wp_customize,
 	'office_timing_doc_link' , 
 		array(
 			'label'          => __( 'Office Timing Documentation Link', 'clever-fox' ),

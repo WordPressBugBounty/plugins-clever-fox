@@ -1,5 +1,6 @@
 <?php
-function techine_lite_header_setting( $wp_customize ){
+if ( ! defined( 'ABSPATH' ) ) exit;
+function conceptly_techine_lite_header_setting( $wp_customize ){
 	$selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	
 	// Company
@@ -83,20 +84,20 @@ function techine_lite_header_setting( $wp_customize ){
 add_action( 'customize_register', 'techine_lite_header_setting' );
 
 // header selective refresh
-function techine_clverfox_header_section_partials( $wp_customize ){
+function conceptly_techine_clverfox_header_section_partials( $wp_customize ){
 	
 	// hdr_company_ttl	
 	$wp_customize->selective_refresh->add_partial( 
 	'hdr_company_ttl', array(
 		'selector'            => '#header-top .li',
 		'settings'            => 'hdr_company_ttl',
-		'render_callback'  => 'header_section_hdr_company_ttl_render_callback',
+		'render_callback'  => 'conceptly_techine_header_section_hdr_company_ttl_render_callback',
 	) );
 	
 }
-add_action( 'customize_register', 'techine_clverfox_header_section_partials' );
+add_action( 'customize_register', 'conceptly_techine_clverfox_header_section_partials' );
 
 // hdr_company_ttl
-function header_section_hdr_company_ttl_render_callback() {
+function conceptly_techine_header_section_hdr_company_ttl_render_callback() {
 	return get_theme_mod( 'hdr_company_ttl' );
 }

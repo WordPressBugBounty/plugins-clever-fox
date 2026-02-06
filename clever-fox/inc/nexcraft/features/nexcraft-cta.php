@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function nexcraft_cta_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -13,7 +14,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	);
 
 	//Cta Documentation Link
-	class WP_cta_Customize_Control extends WP_Customize_Control {
+	class cleverfox_wp_cta_Customize_Control extends WP_Customize_Control {
 	public $type = 'new_menu';
 
 	   function render_content()
@@ -36,7 +37,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		) 
 	);
 
-	$wp_customize->add_control(new WP_cta_Customize_Control($wp_customize,
+	$wp_customize->add_control(new cleverfox_wp_cta_Customize_Control($wp_customize,
 	'cta_doc_link' , 
 		array(
 			'label'          => __( 'Cta Documentation Link', 'clever-fox' ),
@@ -177,35 +178,35 @@ function nexcraft_cta_section_partials( $wp_customize ){
 	$wp_customize->selective_refresh->add_partial( 'cta_call_icon', array(
 		'selector'            => '.cta-section-1 .cta-content .cta-info-wrap .widget-contact .contact-icon ',
 		'settings'            => 'cta_call_icon',
-		'render_callback'  => 'cta_call_icon_render_callback',
+		'render_callback'  => 'cleverfox_cta_call_icon_render_callback',
 	) );
 	
 	// cta_btn_lbl
 	$wp_customize->selective_refresh->add_partial( 'cta_btn_lbl', array(
 		'selector'            => '.cta-content a',
 		'settings'            => 'cta_btn_lbl',
-		'render_callback'  => 'cta_btn_lbl_render_callback',
+		'render_callback'  => 'cleverfox_cta_btn_lbl_render_callback',
 	) );
 	
 	// cta_phone_number
 	$wp_customize->selective_refresh->add_partial( 'cta_phone_number', array(
 		'selector'            => '.cta-section-1 .cta-content .cta-info-wrap .widget-contact .contact-info p a',
 		'settings'            => 'cta_phone_number',
-		'render_callback'  => 'cta_phone_number_render_callback',
+		'render_callback'  => 'cleverfox_cta_phone_number_render_callback',
 	) );
 	
 	// nexcraft_cta_title
 	$wp_customize->selective_refresh->add_partial( 'cta_title', array(
 		'selector'            => '.cta-content h3',
 		'settings'            => 'cta_title',
-		'render_callback'  => 'cta_title_render_callback',
+		'render_callback'  => 'cleverfox_cta_title_render_callback',
 	) );
 	
 	// nexcraft_cta_description
 	$wp_customize->selective_refresh->add_partial( 'cta_description', array(
 		'selector'            => '.cta-content p',
 		'settings'            => 'cta_description',
-		'render_callback'  => 'cta_description_render_callback',
+		'render_callback'  => 'cleverfox_cta_description_render_callback',
 	) );
 	}
 
@@ -213,27 +214,27 @@ add_action( 'customize_register', 'nexcraft_cta_section_partials' );
 
 
 // cta_call_icon
-function cta_call_icon_render_callback() {
+function cleverfox_cta_call_icon_render_callback() {
 	return get_theme_mod( 'cta_call_icon' );
 }
 
 // cta_btn_lbl
-function cta_btn_lbl_render_callback() {
+function cleverfox_cta_btn_lbl_render_callback() {
 	return get_theme_mod( 'cta_btn_lbl' );
 }
 
 // cta_phone_number
-function cta_phone_number_render_callback() {
+function cleverfox_cta_phone_number_render_callback() {
 	return get_theme_mod( 'cta_phone_number' );
 }
 
 // nexcraft_cta_title
-function cta_title_render_callback() {
+function cleverfox_cta_title_render_callback() {
 	return get_theme_mod( 'cta_title' );
 }
 
 
 // nexcraft_cta_description
-function cta_description_render_callback() {
+function cleverfox_cta_description_render_callback() {
 	return get_theme_mod( 'cta_description' );
 }

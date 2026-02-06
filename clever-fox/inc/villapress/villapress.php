@@ -2,7 +2,8 @@
 /**php
  * @package   VillaPress
  */
- 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 require CLEVERFOX_PLUGIN_DIR . 'inc/aravalli/extras.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/villapress/extras.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/aravalli/dynamic-style.php';
@@ -28,8 +29,8 @@ if ( ! function_exists( 'cleverfox_aravalli_frontpage_sections' ) ) :
 	add_action( 'aravalli_sections', 'cleverfox_aravalli_frontpage_sections' );
 endif;
 
-set_theme_mod( 'nav_info_right_ttl',__('Our Location'));
-set_theme_mod( 'nav_info_right_subttl',__('24 St, Angeles, US'));
-set_theme_mod( 'nav_info_left_ttl',__('We Are Open'));
-set_theme_mod( 'nav_info_left_subttl',__('Mon - Fri 8:00 - 16:00'));
-set_theme_mod( 'nav_btn_lbl',__('Book Now'));
+set_theme_mod( 'nav_info_right_ttl',__('Our Location','clever-fox'));
+set_theme_mod( 'nav_info_right_subttl',__('24 St, Angeles, US','clever-fox'));
+set_theme_mod( 'nav_info_left_ttl',__('We Are Open','clever-fox'));
+set_theme_mod( 'nav_info_left_subttl',__('Mon - Fri 8:00 - 16:00','clever-fox'));
+set_theme_mod( 'nav_btn_lbl',__('Book Now','clever-fox'));

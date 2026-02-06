@@ -2,7 +2,8 @@
 /**
  * @package   Hantus
  */
- 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 require CLEVERFOX_PLUGIN_DIR . 'inc/hantus/features/navigation.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/hantus/features/section-slider.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/hantus/features/section-info.php';

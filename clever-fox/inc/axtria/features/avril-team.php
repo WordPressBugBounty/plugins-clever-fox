@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function cleverfox_avril_team_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -184,20 +185,20 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	//Pro feature
 		class Avril_team__section_upgrade extends WP_Customize_Control {
 			public function render_content() { 
-				$theme = wp_get_theme(); // gets the current theme
-				if ( 'Avtari' == $theme->name){
+				$cleverfox_theme = wp_get_theme(); // gets the current theme
+				if ( 'Avtari' == $cleverfox_theme->name){
 			?>
 				<a class="customizer_team_upgrade_section up-to-pro" href="https://www.nayrathemes.com/avtari-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 			
-			<?php }elseif ( 'Avitech' == $theme->name){ ?>	
+			<?php }elseif ( 'Avitech' == $cleverfox_theme->name){ ?>	
 				
 				<a class="customizer_team_upgrade_section up-to-pro" href="https://www.nayrathemes.com/avitech-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 				
-			<?php }elseif ( 'Evion' == $theme->name){ ?>	
+			<?php }elseif ( 'Evion' == $cleverfox_theme->name){ ?>	
 				
 				<a class="customizer_team_upgrade_section up-to-pro" href="https://www.nayrathemes.com/evion-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 				
-			<?php }elseif ( 'Varuda' == $theme->name){ ?>	
+			<?php }elseif ( 'Varuda' == $cleverfox_theme->name){ ?>	
 				
 				<a class="customizer_team_upgrade_section up-to-pro" href="https://www.nayrathemes.com/varuda-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>	
 				

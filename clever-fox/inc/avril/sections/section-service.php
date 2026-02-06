@@ -1,55 +1,56 @@
-<?php 
+<?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 if ( ! function_exists( 'avril_lite_service' ) ) :
 	function avril_lite_service() {
-	$hs_service					= get_theme_mod('hs_service','1');			
-	$service_title				= get_theme_mod('service_title',__('Technology from tomorrow','clever-fox'));
-	$service_subtitle			= get_theme_mod('service_subtitle',__('Outstanding <span class="av-heading animate-7"><span class="av-text-wrapper"><b class="is-show">Services</b>                                   <b>Services</b><b>Services</b></span></span>','clever-fox'));
-	$service_description		= get_theme_mod('service_description',__('Lorem Ipsum is simply dummy of printing and typesetting and industry. Lorem Ipsum been.','clever-fox'));
-	$service_contents			= get_theme_mod('service_contents',avril_get_service_default());
-if($hs_service == '1') {		
+	$avril_hs_service					= get_theme_mod('hs_service','1');
+	$avril_service_title				= get_theme_mod('service_title',__('Technology from tomorrow','clever-fox'));
+	$avril_service_subtitle			= get_theme_mod('service_subtitle',__('Outstanding <span class="av-heading animate-7"><span class="av-text-wrapper"><b class="is-show">Services</b>                                   <b>Services</b><b>Services</b></span></span>','clever-fox'));
+	$avril_service_description		= get_theme_mod('service_description',__('Lorem Ipsum is simply dummy of printing and typesetting and industry. Lorem Ipsum been.','clever-fox'));
+	$avril_service_contents			= get_theme_mod('service_contents',avril_get_service_default());
+if($avril_hs_service == '1') {		
 ?>
     <section id="service-section" class="service-section service-section-hover av-py-default service-home">
     	<div class="av-container">
 			<div class="av-columns-area">
 				<div class="av-column-12">
 					<div class="heading-default wow fadeInUp">
-						<?php if ( ! empty( $service_title ) ) : ?>
-							<span class='ttl'><?php echo wp_kses_post($service_title); ?></span>
+						<?php if ( ! empty( $avril_service_title ) ) : ?>
+							<span class='ttl'><?php echo wp_kses_post($avril_service_title); ?></span>
 						<?php endif; ?>
-						<?php if ( ! empty( $service_subtitle ) ) : ?>		
-							<h3><?php echo wp_kses_post($service_subtitle); ?></h3>    
+						<?php if ( ! empty( $avril_service_subtitle ) ) : ?>		
+							<h3><?php echo wp_kses_post($avril_service_subtitle); ?></h3>    
 						<?php endif; ?>	
-						<?php if ( ! empty( $service_description ) ) : ?>		
-							<p><?php echo wp_kses_post($service_description); ?></p>    
+						<?php if ( ! empty( $avril_service_description ) ) : ?>		
+							<p><?php echo wp_kses_post($avril_service_description); ?></p>    
 						<?php endif; ?>	
 					</div>
 				</div>
 			</div>
             <div class="av-columns-area wow fadeInUp service-row">
 				<?php
-					if ( ! empty( $service_contents ) ) {
-					$service_contents = json_decode( $service_contents );
-					foreach ( $service_contents as $service_item ) {
-						$avril_service_title = ! empty( $service_item->title ) ? apply_filters( 'avril_translate_single_string', $service_item->title, 'service section' ) : '';
-						$text = ! empty( $service_item->text ) ? apply_filters( 'avril_translate_single_string', $service_item->text, 'service section' ) : '';
-						$icon = ! empty( $service_item->icon_value) ? apply_filters( 'avril_translate_single_string', $service_item->icon_value,'service section' ) : '';
-						$avril_serv_link = ! empty( $service_item->link ) ? apply_filters( 'avril_translate_single_string', $service_item->link, 'service section' ) : '';
+					if ( ! empty( $avril_service_contents ) ) {
+					$avril_service_contents = json_decode( $avril_service_contents );
+					foreach ( $avril_service_contents as $avril_service_item ) {
+						$avril_repeater_title = ! empty( $avril_service_item->title ) ? apply_filters( 'avril_translate_single_string', $avril_service_item->title, 'service section' ) : '';
+						$avril_repeater_text = ! empty( $avril_service_item->text ) ? apply_filters( 'avril_translate_single_string', $avril_service_item->text, 'service section' ) : '';
+						$avril_repeater_icon = ! empty( $avril_service_item->icon_value) ? apply_filters( 'avril_translate_single_string', $avril_service_item->icon_value,'service section' ) : '';
+						$avril_repeater_link = ! empty( $avril_service_item->link ) ? apply_filters( 'avril_translate_single_string', $avril_service_item->link, 'service section' ) : '';
 				?>
 				<div class="av-column-4 av-md-column-6 mb-1 p-0">
 					<div class="service-item">
 						<div class="service-icon">
-							<?php if ( ! empty( $icon ) ) {?>
-								<i class="fa <?php echo esc_attr( $icon ); ?> txt-pink"></i>
+							<?php if ( ! empty( $avril_repeater_icon ) ) {?>
+								<i class="fa <?php echo esc_attr( $avril_repeater_icon ); ?> txt-pink"></i>
 							<?php } ?>
 						</div>
 						<div class="service-content">
-							<?php if ( ! empty( $avril_service_title ) ) : ?>
-								<h5 class="service-title"><a href="<?php echo esc_url( $avril_serv_link ); ?>"><?php echo esc_html( $avril_service_title ); ?></a></h5>
+							<?php if ( ! empty( $avril_repeater_title ) ) : ?>
+								<h5 class="service-title"><a href="<?php echo esc_url( $avril_repeater_link ); ?>"><?php echo esc_html( $avril_repeater_title ); ?></a></h5>
 							<?php endif; ?>
-							<?php if ( ! empty( $text ) ) : ?>
-								<p><?php echo esc_html( $text ); ?></p>
+							<?php if ( ! empty( $avril_repeater_text ) ) : ?>
+								<p><?php echo esc_html( $avril_repeater_text ); ?></p>
 							<?php endif; ?>
-							<a href="<?php echo esc_url( $avril_serv_link ); ?>"><i class="fa fa-long-arrow-right"></i></a>
+							<a href="<?php echo esc_url( $avril_repeater_link ); ?>"><i class="fa fa-long-arrow-right"></i></a>
 						</div>
 					</div>
 				</div>
@@ -60,6 +61,6 @@ if($hs_service == '1') {
 <?php	
 	}} endif; 
 	if ( function_exists( 'avril_lite_service' ) ) {
-		$section_priority = apply_filters( 'avril_section_priority', 13, 'avril_lite_service' );
-		add_action( 'avril_sections', 'avril_lite_service', absint( $section_priority ) );
+		$cleverfox_section_priority = apply_filters( 'avril_section_priority', 13, 'avril_lite_service' );
+		add_action( 'avril_sections', 'avril_lite_service', absint( $cleverfox_section_priority ) );
 	}

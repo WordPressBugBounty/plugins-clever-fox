@@ -1,4 +1,6 @@
-<?php function renoval_get_testimonial_default() {
+<?php 
+	if ( ! defined( 'ABSPATH' ) ) exit;
+	function renoval_get_testimonial_default() {
 	return apply_filters(
 		'renoval_get_testimonial_default', wp_json_encode(
 				 array(

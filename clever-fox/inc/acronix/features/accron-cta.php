@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function accron_cta2_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -13,7 +14,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	);
 
 	//Cta2  Documentation Link
-	class WP_cta2_Customize_Control extends WP_Customize_Control {
+	class accron_acronix_wp_cta2_Customize_Control extends WP_Customize_Control {
 	public $type = 'new_menu';
 
 	   function render_content()
@@ -36,7 +37,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		) 
 	);
 
-	$wp_customize->add_control(new WP_cta2_Customize_Control($wp_customize,
+	$wp_customize->add_control(new accron_acronix_wp_cta2_Customize_Control($wp_customize,
 	'cta2_doc_link' , 
 		array(
 			'label'          => __( 'Cta2  Documentation Link', 'clever-fox' ),

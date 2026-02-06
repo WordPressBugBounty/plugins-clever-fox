@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function nexcraft_testimonial_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -13,7 +14,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	);
 
 	//Testimonial Documentation Link
-	class WP_testimonial_Customize_Control extends WP_Customize_Control {
+	class nexcraft_bpo_wp_testimonial_Customize_Control extends WP_Customize_Control {
 	public $type = 'new_menu';
 
 	   function render_content()
@@ -36,7 +37,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		) 
 	);
 
-	$wp_customize->add_control(new WP_testimonial_Customize_Control($wp_customize,
+	$wp_customize->add_control(new nexcraft_bpo_wp_testimonial_Customize_Control($wp_customize,
 	'testimonial_doc_link' , 
 		array(
 			'label'          => __( 'Testimonial Documentation Link', 'clever-fox' ),
@@ -202,7 +203,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	//Pro feature
 		class Nexcraft_testimonial__section_upgrade extends WP_Customize_Control {
 			public function render_content() { 
-				$theme = wp_get_theme(); // gets the current theme	
+				$cleverfox_theme = wp_get_theme(); // gets the current theme	
 				
 			?>
 				<a class="customizer_testimonial_upgrade_section up-to-pro" href="https://www.nayrathemes.com/nexcraft-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>

@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function hantus_testimonial_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -134,11 +135,11 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		//Pro feature
 		class hantus_testimonial__upgrade_to_pro extends WP_Customize_Control {
 			public function render_content() { 
-				$theme = wp_get_theme(); // gets the current theme
-				if ( 'Thai Spa' == $theme->name){
+				$cleverfox_theme = wp_get_theme(); // gets the current theme
+				if ( 'Thai Spa' == $cleverfox_theme->name){
 			?>
 				<a class="customizer_testimonial_upgrade_section up-to-pro" href="https://www.nayrathemes.com/thaispa-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
-			<?php }elseif ( 'Cosmics' == $theme->name){ ?>	
+			<?php }elseif ( 'Cosmics' == $cleverfox_theme->name){ ?>	
 				<a class="customizer_testimonial_upgrade_section up-to-pro" href="https://www.nayrathemes.com/cosmics-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>	
 			<?php
 			   }else{
@@ -221,7 +222,7 @@ function hantus_home_testimonial_section_partials( $wp_customize ){
 	$wp_customize->selective_refresh->add_partial( 'testimonial_contents', array(
 		'selector'            => '#testimonial .tst_contents',
 		'settings'            => 'testimonial_contents',
-		'render_callback'  => 'home_section_testimonial_contents_render_callback',
+		'render_callback'  => 'hantus_home_section_testimonial_contents_render_callback',
 	
 	) );
 	
@@ -230,6 +231,6 @@ function hantus_home_testimonial_section_partials( $wp_customize ){
 add_action( 'customize_register', 'hantus_home_testimonial_section_partials' );
 
 // contents
-function home_section_testimonial_contents_render_callback() {
+function hantus_home_section_testimonial_contents_render_callback() {
 	return get_theme_mod( 'testimonial_contents' );
 }

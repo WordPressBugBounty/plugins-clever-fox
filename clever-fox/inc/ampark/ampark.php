@@ -1,8 +1,9 @@
 <?php
 /**
  * @package   Ampark
- */
- 
+ */ 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 require CLEVERFOX_PLUGIN_DIR . 'inc/avril/extras.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/avril/dynamic-style.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/ampark/sections/above-header.php';
@@ -37,11 +38,11 @@ add_action( 'wp_enqueue_scripts', 'cleverfox_avril_enqueue_scripts' );
 /**
  * Remove Customize Panel from parent theme
  */
-function ampark_remove_parent_setting( $wp_customize ) {
+function avril_ampark_remove_parent_setting( $wp_customize ) {
 	$wp_customize->remove_control('hdr_top_contact');	
 	$wp_customize->remove_control('hide_show_cntct_details');	
 	$wp_customize->remove_control('tlh_contct_icon');	
 	$wp_customize->remove_control('tlh_contact_title');	
 	$wp_customize->remove_control('tlh_contact_sbtitle');		
 }
-add_action( 'customize_register', 'ampark_remove_parent_setting',99 );
+add_action( 'customize_register', 'avril_ampark_remove_parent_setting',99 );

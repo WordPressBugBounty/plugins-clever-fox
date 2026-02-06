@@ -2,6 +2,7 @@
 /**
  * @package Medazin
  */
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 require CLEVERFOX_PLUGIN_DIR . 'inc/medazin/extras.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/medazin/dynamic-style.php';

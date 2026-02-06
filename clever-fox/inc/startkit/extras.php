@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 /*
  *
  * Slider
@@ -42,10 +43,10 @@ endif;
 
 
 
-if ( ! function_exists( 'startweb_get_slider_default' ) ) : 
- function startweb_get_slider_default() {
+if ( ! function_exists( 'startkit_startweb_get_slider_default' ) ) : 
+ function startkit_startweb_get_slider_default() {
 	return apply_filters(
-		'startweb_get_slider_default', wp_json_encode(
+		'startkit_startweb_get_slider_default', wp_json_encode(
 			 array(
 					array("image_url" => CLEVERFOX_PLUGIN_URL .'inc/startkit/images/slider/slider02.jpg',
 					'link' => '#', 

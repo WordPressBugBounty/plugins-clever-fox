@@ -1,10 +1,11 @@
 <?php 
-	$service_hs 						= get_theme_mod('service_hs','1');
+	if ( ! defined( 'ABSPATH' ) ) exit;
+	$nexcraft_service_hs 						= get_theme_mod('service_hs','1');
 	$nexcraft_service_title 				= get_theme_mod('service_title',__('Services','clever-fox'));
 	$nexcraft_service_description			= get_theme_mod('service_description',__('Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur quisquam saepe eveniet, cumque tempore veritatis!.','clever-fox'));
 	$nexcraft_service_contents			= get_theme_mod('service_contents',nexcraft_get_service_default());
 	$nexcraft_service_sec_column			= get_theme_mod('service_sec_column','4');  
-	if($service_hs=='1'){
+	if($nexcraft_service_hs=='1'){
 ?>	
 	<!-- Start: Service Section
             =======================-->
@@ -35,39 +36,39 @@
 			<?php
 				if ( ! empty( $nexcraft_service_contents ) ) {
 				$nexcraft_service_contents = json_decode( $nexcraft_service_contents );
-				$count = 1;
-				foreach ( $nexcraft_service_contents as $service_item ) { 
-					$image2 = ! empty( $service_item->image_url2 ) ? apply_filters( 'translate_single_string', $service_item->image_url2, 'Service section' ) : '';
-					$nexcraft_service_icon = ! empty( $service_item->icon_value) ? apply_filters( 'translate_single_string', $service_item->icon_value,'Service section' ) : '';
-					$nexcraft_service_title = ! empty( $service_item->title ) ? apply_filters( 'translate_single_string', $service_item->title, 'Service section' ) : '';
-					$nexcraft_service_subtitle = ! empty( $service_item->text ) ? apply_filters( 'translate_single_string', $service_item->text, 'Service section' ) : '';
-					$nexcraft_service_btn_lbl = ! empty( $service_item->text2 ) ? apply_filters( 'translate_single_string', $service_item->text2, 'Service section' ) : '';
-					$nexcraft_service_link = ! empty( $service_item->link ) ? apply_filters( 'translate_single_string', $service_item->link, 'Service section' ) : '';
+				$nexcraft_count = 1;
+				foreach ( $nexcraft_service_contents as $nexcraft_service_item ) { 
+					$nexcraft_repeater_image2 = ! empty( $nexcraft_service_item->image_url2 ) ? apply_filters( 'nexcraft_translate_single_string', $nexcraft_service_item->image_url2, 'Service section' ) : '';
+					$nexcraft_repeater_service_icon = ! empty( $nexcraft_service_item->icon_value) ? apply_filters( 'nexcraft_translate_single_string', $nexcraft_service_item->icon_value,'Service section' ) : '';
+					$nexcraft_repeater_service_title = ! empty( $nexcraft_service_item->title ) ? apply_filters( 'nexcraft_translate_single_string', $nexcraft_service_item->title, 'Service section' ) : '';
+					$nexcraft_repeater_service_subtitle = ! empty( $nexcraft_service_item->text ) ? apply_filters( 'nexcraft_translate_single_string', $nexcraft_service_item->text, 'Service section' ) : '';
+					$nexcraft_repeater_service_btn_lbl = ! empty( $nexcraft_service_item->text2 ) ? apply_filters( 'nexcraft_translate_single_string', $nexcraft_service_item->text2, 'Service section' ) : '';
+					$nexcraft_repeater_service_link = ! empty( $nexcraft_service_item->link ) ? apply_filters( 'nexcraft_translate_single_string', $nexcraft_service_item->link, 'Service section' ) : '';
 			?>						
 				<div class="col-lg-<?php echo esc_attr($nexcraft_service_sec_column); ?> col-sm-6">
 					<div class="service">
-						<?php if( ! empty( $nexcraft_service_icon ) ): ?>
+						<?php if( ! empty( $nexcraft_repeater_service_icon ) ): ?>
 							<div class="service-icon">
-								<i class="fas <?php echo esc_attr($nexcraft_service_icon); ?>"></i>
+								<i class="fas <?php echo esc_attr($nexcraft_repeater_service_icon); ?>"></i>
 							</div>
 						<?php endif; ?>
 						<div class="service-content">
-							<?php if ( ! empty( $nexcraft_service_title ) ) : ?>
+							<?php if ( ! empty( $nexcraft_repeater_service_title ) ) : ?>
 								<h2>
-									<?php if($nexcraft_service_title): esc_html(printf(/* translators: %s: nexcraft_service_title */__( '%s','clever-fox' ),$nexcraft_service_title)); endif; ?>
+									<?php if($nexcraft_repeater_service_title): echo esc_html($nexcraft_repeater_service_title); endif; ?>
 								</h2>
 							<?php endif; ?>
-							<?php if ( ! empty( $nexcraft_service_subtitle ) ) : ?>
+							<?php if ( ! empty( $nexcraft_repeater_service_subtitle ) ) : ?>
 								<p>
-									<?php if($nexcraft_service_subtitle): esc_html(printf(/* translators: %s: nexcraft_service_subtitle */__( '%s','clever-fox' ),$nexcraft_service_subtitle)); endif; ?>
+									<?php if($nexcraft_repeater_service_subtitle): echo esc_html($nexcraft_repeater_service_subtitle); endif; ?>
 								</p>
 							<?php endif; ?>	
-							<a href="<?php echo esc_url( $nexcraft_service_link ); ?>" class="main-btn"><?php if($nexcraft_service_btn_lbl): esc_html(printf(/* translators: %s: nexcraft_service_btn_lbl */__( '%s','clever-fox' ),$nexcraft_service_btn_lbl)); endif; ?>
+							<a href="<?php echo esc_url( $nexcraft_repeater_service_link ); ?>" class="main-btn"><?php if($nexcraft_repeater_service_btn_lbl): echo esc_html($nexcraft_repeater_service_btn_lbl); endif; ?>
 							 <i class="fas fa-angle-double-right"></i></a>
 						</div>
 					</div>
 				</div>
-			<?php ++$count; } }?>
+			<?php ++$nexcraft_count; } }?>
 		</div>
 	</div>
 </section>

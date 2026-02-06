@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 // Register Block Category
 function nexcraft_block_categories( $categories ) {
     return array_merge( array( array(
@@ -36,8 +37,8 @@ function nexcraft_register() {
     wp_register_style( 'nexcraft_editor_style', CLEVERFOX_PLUGIN_URL . 'inc/nexcraft/block/dist/editor.css', array( 'wp-edit-blocks'), filemtime(CLEVERFOX_PLUGIN_DIR . 'inc/nexcraft/block/dist/editor.css') );
 
     // Register Blocks
-    nexcraft_wp_register_script( 'infos', array( 'render_callback' => 'render_nexcraft_infos' ) );
-    nexcraft_wp_register_script( 'info', array( 'render_callback' => 'render_nexcraft_info' ) );
+    nexcraft_wp_register_script( 'infos', array( 'render_callback' => 'nexcraft_render_nexcraft_infos' ) );
+    nexcraft_wp_register_script( 'info', array( 'render_callback' => 'nexcraft_render_nexcraft_info' ) );
 }
 add_action( 'init', 'nexcraft_register' );
 
@@ -65,7 +66,7 @@ class  NexCraftInfoStyleGenerator {
 }
 
 // Render Infos
-function render_nexcraft_infos($attributes, $content){
+function nexcraft_render_nexcraft_infos($attributes, $content){
     $cId = isset($attributes['cId']) ? esc_attr($attributes['cId']) : '';
 
     // Generate Styles
@@ -86,7 +87,7 @@ function render_nexcraft_infos($attributes, $content){
 }
 
 // Render Info
-function render_nexcraft_info( $attributes ) {
+function nexcraft_render_nexcraft_info( $attributes ) {
     extract( $attributes );
 
     $cId = isset($cId) ? esc_attr($cId) : ''; // Escaping dynamic content

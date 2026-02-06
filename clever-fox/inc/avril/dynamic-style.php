@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 if( ! function_exists( 'cleverfox_avril_dynamic_styles' ) ):
     function cleverfox_avril_dynamic_styles() {
 		$output_css = '';
@@ -61,8 +62,8 @@ if( ! function_exists( 'cleverfox_avril_dynamic_styles' ) ):
 		/**
 		 * Contact Info
 		 */
-		$theme = wp_get_theme(); // gets the current theme
-		if ( 'Aviser' == $theme->name){
+		$cleverfox_theme = wp_get_theme(); // gets the current theme
+		if ( 'Aviser' == $cleverfox_theme->name){
 			$hide_show_cntct_details 	= get_theme_mod( 'hide_show_cntct_details','1'); 
 			$hide_show_email_details 	= get_theme_mod( 'hide_show_email_details','1');
 			$hide_show_mbl_details 		= get_theme_mod( 'hide_show_mbl_details','1'); 	
@@ -78,7 +79,7 @@ if( ! function_exists( 'cleverfox_avril_dynamic_styles' ) ):
 			}	
 		}
 		
-		if ( 'Avitech' == $theme->name  || 'Varuda' == $theme->name){
+		if ( 'Avitech' == $cleverfox_theme->name  || 'Varuda' == $cleverfox_theme->name){
 			$hdr_info_color 	= get_theme_mod( 'hdr_info_color');
 			$slide_ttl_color 	= get_theme_mod( 'slide_ttl_color');
 			$slide_subttl_color = get_theme_mod( 'slide_subttl_color');

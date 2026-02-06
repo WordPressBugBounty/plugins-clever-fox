@@ -1,5 +1,6 @@
 <?php
-function hantus_abv_header_setting( $wp_customize ) {
+if ( ! defined( 'ABSPATH' ) ) exit;
+function hantus_thaispa_abv_header_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
 	Header Settings Section
@@ -168,8 +169,8 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	//Pro feature
 		class Hantus_Header_Social_section_upgrade extends WP_Customize_Control {
 			public function render_content() { 
-			$theme = wp_get_theme(); // gets the current theme
-				if ( 'Cosmics' == $theme->name){
+			$cleverfox_theme = wp_get_theme(); // gets the current theme
+				if ( 'Cosmics' == $cleverfox_theme->name){
 			?>
 				<a class="customizer_hdr_social_upgrade_section up-to-pro" href="https://www.nayrathemes.com/cosmics-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 				<?php
@@ -378,11 +379,11 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	);
 }
 
-add_action( 'customize_register', 'hantus_abv_header_setting' );
+add_action( 'customize_register', 'hantus_thaispa_abv_header_setting' );
 
 
 // header selective refresh
-function hantus_above_header_section_partials( $wp_customize ){
+function hantus_thaispa_above_header_section_partials( $wp_customize ){
 	// hide_show_social_icon
 	$wp_customize->selective_refresh->add_partial(
 		'hide_show_social_icon', array(
@@ -411,14 +412,14 @@ function hantus_above_header_section_partials( $wp_customize ){
 	$wp_customize->selective_refresh->add_partial( 'hantus_timing', array(
 		'selector'            => '#header-top p',
 		'settings'            => 'hantus_timing',
-		'render_callback'  => 'header_section_hantus_timing_render_callback',
+		'render_callback'  => 'hantus_thaispa_header_section_hantus_timing_render_callback',
 	) );	
 	
 	// email text
 	$wp_customize->selective_refresh->add_partial( 'header_email', array(
 		'selector'            => '#header-top .h-t-e ',
 		'settings'            => 'header_email',
-		'render_callback'  => 'header_section_header_email_render_callback',
+		'render_callback'  => 'hantus_thaispa_header_section_header_email_render_callback',
 	) );
 	
 	
@@ -426,21 +427,21 @@ function hantus_above_header_section_partials( $wp_customize ){
 	$wp_customize->selective_refresh->add_partial( 'header_phone_number', array(
 		'selector'            => '#header-top .h-t-p ',
 		'settings'            => 'header_phone_number',
-		'render_callback'  => 'header_section_header_phone_number_render_callback',
+		'render_callback'  => 'hantus_thaispa_header_section_header_phone_number_render_callback',
 	) );
 }
-add_action( 'customize_register', 'hantus_above_header_section_partials' );
+add_action( 'customize_register', 'hantus_thaispa_above_header_section_partials' );
 
 // hantus_timing
-function header_section_hantus_timing_render_callback() {
+function hantus_thaispa_header_section_hantus_timing_render_callback() {
 	return get_theme_mod( 'hantus_timing' );
 }
 // header_email
-function header_section_header_email_render_callback() {
+function hantus_thaispa_header_section_header_email_render_callback() {
 	return get_theme_mod( 'header_email' );
 }
 // header_phone_number 
-function header_section_header_phone_number_render_callback() {
+function hantus_thaispa_header_section_header_phone_number_render_callback() {
 	return get_theme_mod( 'header_phone_number' );
 }
 
@@ -456,28 +457,28 @@ function hantus_get_social_icon_default() {
 		'hantus_get_social_icon_default', wp_json_encode(
 				 array(
 				array(
-					'icon_value'	  =>  esc_html__( 'fa-facebook', 'thai-spa' ),
-					'link'	  =>  esc_html__( '#', 'thai-spa' ),
+					'icon_value'	  =>  esc_html__( 'fa-facebook', 'clever-fox' ),
+					'link'	  =>  esc_html__( '#', 'clever-fox' ),
 					'id'              => 'customizer_repeater_header_social_001',
 				),
 				array(
-					'icon_value'	  =>  esc_html__( 'fa-google-plus', 'thai-spa' ),
-					'link'	  =>  esc_html__( '#', 'thai-spa' ),
+					'icon_value'	  =>  esc_html__( 'fa-google-plus', 'clever-fox' ),
+					'link'	  =>  esc_html__( '#', 'clever-fox' ),
 					'id'              => 'customizer_repeater_header_social_002',
 				),
 				array(
-					'icon_value'	  =>  esc_html__( 'fa-twitter', 'thai-spa' ),
-					'link'	  =>  esc_html__( '#', 'thai-spa' ),
+					'icon_value'	  =>  esc_html__( 'fa-twitter', 'clever-fox' ),
+					'link'	  =>  esc_html__( '#', 'clever-fox' ),
 					'id'              => 'customizer_repeater_header_social_003',
 				),
 				array(
-					'icon_value'	  =>  esc_html__( 'fa-linkedin', 'thai-spa' ),
-					'link'	  =>  esc_html__( '#', 'thai-spa' ),
+					'icon_value'	  =>  esc_html__( 'fa-linkedin', 'clever-fox' ),
+					'link'	  =>  esc_html__( '#', 'clever-fox' ),
 					'id'              => 'customizer_repeater_header_social_004',
 				),
 				array(
-					'icon_value'	  =>  esc_html__( 'fa-behance', 'thai-spa' ),
-					'link'	  =>  esc_html__( '#', 'thai-spa' ),
+					'icon_value'	  =>  esc_html__( 'fa-behance', 'clever-fox' ),
+					'link'	  =>  esc_html__( '#', 'clever-fox' ),
 					'id'              => 'customizer_repeater_header_social_005',
 				),
 			)

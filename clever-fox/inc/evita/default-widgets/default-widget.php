@@ -1,5 +1,6 @@
 <?php
-$activate = array(
+if ( ! defined( 'ABSPATH' ) ) exit;
+$cleverfox_activate = array(
         'evita-sidebar-primary' => array(
             'search-1',
             'recent-posts-1',
@@ -38,9 +39,9 @@ $activate = array(
 			1 => array('title' => 'Search'), 
 			2 => array('title' => 'Search')));	
 		
-    update_option('sidebars_widgets',  $activate);
-	$MediaId = get_option('evita_media_id');
-	set_theme_mod( 'custom_logo', $MediaId[0] );
+    update_option('sidebars_widgets',  $cleverfox_activate);
+	$cleverfox_MediaId = get_option('evita_media_id');
+	set_theme_mod( 'custom_logo', $cleverfox_MediaId[0] );
 
     set_theme_mod( 'footer_get_in_touch_title', 'Call Us Now' );
     set_theme_mod( 'footer_get_in_touch_number', '+12 345 678 90' );

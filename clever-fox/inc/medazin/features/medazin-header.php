@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function medazin_logo_header_settings( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -9,7 +10,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		array(
 			'priority'      => 2,
 			'capability'    => 'edit_theme_options',
-			'title'			=> __('Header', 'medazin'),
+			'title'			=> __('Header', 'clever-fox'),
 		) 
 	);
 	
@@ -20,7 +21,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
         'title_tagline',
         array(
         	'priority'      => 1,
-            'title' 		=> __('Site Identity','medazin'),
+            'title' 		=> __('Site Identity','clever-fox'),
 			'panel'  		=> 'header_section',
 		)
     );

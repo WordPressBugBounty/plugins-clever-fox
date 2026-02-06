@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 // Register Block Category
 function corpex_block_categories( $categories ) {
     return array_merge( array( array(
@@ -36,8 +37,8 @@ function corpex_register() {
     wp_register_style( 'corpex_editor_style', CLEVERFOX_PLUGIN_URL . 'inc/corpex/block/dist/editor.css', array( 'wp-edit-blocks'), filemtime(CLEVERFOX_PLUGIN_DIR . 'inc/corpex/block/dist/editor.css') );
 
     // Register Blocks
-    corpex_wp_register_script( 'infos', array( 'render_callback' => 'render_corpex_infos' ) );
-    corpex_wp_register_script( 'info', array( 'render_callback' => 'render_corpex_info' ) );
+    corpex_wp_register_script( 'infos', array( 'render_callback' => 'corpex_render_corpex_infos' ) );
+    corpex_wp_register_script( 'info', array( 'render_callback' => 'corpex_render_corpex_info' ) );
 }
 add_action( 'init', 'corpex_register' );
 
@@ -65,7 +66,7 @@ class CorpexInfoStyleGenerator {
 }
 
 // Render Infos
-function render_corpex_infos($attributes, $content){
+function corpex_render_corpex_infos($attributes, $content){
     $cId = isset($attributes['cId']) ? esc_attr($attributes['cId']) : '';
 
     // Generate Styles
@@ -86,7 +87,7 @@ function render_corpex_infos($attributes, $content){
 }
 
 // Render Info
-function render_corpex_info( $attributes ) {
+function corpex_render_corpex_info( $attributes ) {
     extract( $attributes );
 
     $cId = isset($cId) ? esc_attr($cId) : ''; // Escaping dynamic content

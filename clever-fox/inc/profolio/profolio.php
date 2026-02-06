@@ -2,6 +2,7 @@
 /**
  * @package Profolio
  */
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 require CLEVERFOX_PLUGIN_DIR . 'inc/corpex/extras.php';
 require CLEVERFOX_PLUGIN_DIR . 'inc/corpex/dynamic-style.php';
@@ -26,8 +27,8 @@ if ( ! function_exists( 'cleverfox_corpex_frontpage_sections' ) ) :
 	add_action( 'corpex_sections', 'cleverfox_corpex_frontpage_sections' );
 endif;
 
-function profolio_customize_remove( $wp_customize ) {
+function cleverfox_corpex_profolio_customize_remove( $wp_customize ) {
 	$wp_customize->remove_control('hdr_nav_toggle');
 	$wp_customize->remove_control('hs_nav_toggle');
 }
-add_action( 'customize_register', 'profolio_customize_remove' );
+add_action( 'customize_register', 'cleverfox_corpex_profolio_customize_remove' );

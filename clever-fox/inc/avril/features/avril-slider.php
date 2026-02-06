@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function avril_slider_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';	
 	$wp_customize->add_section(
@@ -66,20 +67,20 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		//Pro feature
 		class Avril_slider__section_upgrade extends WP_Customize_Control {
 			public function render_content() { 
-				$theme = wp_get_theme(); // gets the current theme	
-				if ( 'Axtia' == $theme->name){	
+				$cleverfox_theme = wp_get_theme(); // gets the current theme	
+				if ( 'Axtia' == $cleverfox_theme->name){	
 			?>
 				<a class="customizer_slider_upgrade_section up-to-pro" href="https://www.nayrathemes.com/axtia-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 				
-			<?php }elseif( 'Avtari' == $theme->name){ ?>
+			<?php }elseif( 'Avtari' == $cleverfox_theme->name){ ?>
 
 				<a class="customizer_slider_upgrade_section up-to-pro" href="https://www.nayrathemes.com/avtari-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 				
-			<?php }elseif( 'Aviser' == $theme->name){ ?>
+			<?php }elseif( 'Aviser' == $cleverfox_theme->name){ ?>
 
 				<a class="customizer_slider_upgrade_section up-to-pro" href="https://www.nayrathemes.com/aviser-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>	
 				
-			<?php }elseif( 'Ampark' == $theme->name){ ?>
+			<?php }elseif( 'Ampark' == $cleverfox_theme->name){ ?>
 
 				<a class="customizer_slider_upgrade_section up-to-pro" href="https://www.nayrathemes.com/ampark-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>		
 			

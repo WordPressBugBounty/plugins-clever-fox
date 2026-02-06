@@ -2,7 +2,7 @@
 /**
 * Plugin Name: Clever Fox
 * Description: Clever Fox plugin to enhance the functionality for free themes made by Nayra Themes. More than 60000+ trusted websites with Nayra Themes. It provides intuitive features to your website. 45+ Themes compatible with Clever Fox. See below free themes listed here. Avril, Gradiant, Flavita, Fiona Blog, MetaSoft, Conceptly & ColorPress is one of highest installations themes in our collections. Visit our website and find theme as you need. https://www.nayrathemes.com/themes/
-* Version: 26.2.92
+* Version: 28.4
 * Author: nayrathemes
 * Author URI: https://nayrathemes.com
 * Requires:	4.6 or higher
@@ -11,6 +11,9 @@
 * Text Domain:	clever-fox
 * Requires PHP: 5.6
 */
+
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 define( 'CLEVERFOX_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'CLEVERFOX_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'CLEVERFOX_FOOTER_ABOUT', 'There are many variations of dummy passages of Lorem Ipsum a available, but the majority have suffered that is alteration in some that form  injected humour or randomised' );
@@ -26,256 +29,281 @@ function cleverfox_activate() {
 		require_once('inc/custom-controls/controls/range-validator/range-control.php');	
 	}
 	
-	$theme = wp_get_theme(); // gets the current theme
-		if ( 'StartKit' == $theme->name){	
+	$cleverfox_theme = wp_get_theme(); // gets the current theme
+		if ( 'StartKit' == $cleverfox_theme->name){	
 			require_once('inc/startkit/startkit.php');
 		}
 		
-		if ( 'StartBiz' == $theme->name){	
+		if ( 'StartBiz' == $cleverfox_theme->name){	
 			require_once('inc/startbiz/startbiz.php');
 		}
 		
-		if ('Arowana' == $theme->name){	
+		if ('Arowana' == $cleverfox_theme->name){	
 			 require_once('inc/arowana/arowana.php');
 		}
 		
-		if ('Envira' == $theme->name){	
+		if ('Envira' == $cleverfox_theme->name){	
 			 require_once('inc/envira/envira.php');			
 		}
 		
-		if( 'Hantus' == $theme->name){
+		if( 'Hantus' == $cleverfox_theme->name){
 			require_once('inc/hantus/hantus.php');	
 		}
 		
-		if( 'Thai Spa' == $theme->name){
+		if( 'Thai Spa' == $cleverfox_theme->name){
 			require_once('inc/thai-spa/thai-spa.php');	
 		}
 		
-		if( 'Conceptly' == $theme->name){
+		if( 'Conceptly' == $cleverfox_theme->name){
 			require_once('inc/conceptly/conceptly.php');
 		}
 		
-		if( 'Ameya' == $theme->name){
+		if( 'Ameya' == $cleverfox_theme->name){
 			require_once('inc/ameya/ameya.php');
 		}
 		
-		if( 'Azwa' == $theme->name){
+		if( 'Azwa' == $cleverfox_theme->name){
 			require_once('inc/azwa/azwa.php');
 		}
 		
-		if( 'Avril' == $theme->name){
+		if( 'Avril' == $cleverfox_theme->name){
 			require_once('inc/avril/avril.php');
 		}
 		
-		if( 'Aera' == $theme->name){
+		if( 'Aera' == $cleverfox_theme->name){
 			require_once('inc/aera/aera.php');
 		}
 		
-		if( 'Avail' == $theme->name){
+		if( 'Avail' == $cleverfox_theme->name){
 			require_once('inc/avail/avail.php');
 		}
 		
-		if( 'Avtari' == $theme->name){
+		if( 'Avtari' == $cleverfox_theme->name){
 			require_once('inc/avtari/avtari.php');
 		}
 		
-		if( 'Fiona Blog' == $theme->name){
+		if( 'Fiona Blog' == $cleverfox_theme->name){
 			require_once('inc/fiona-blog/fiona-blog.php');
 		}
 		
-		if( 'MetaSoft' == $theme->name ){
+		if( 'MetaSoft' == $cleverfox_theme->name ){
 			require_once('inc/metasoft/metasoft.php');
 		}
 		
-		if( 'Belltech' == $theme->name){
+		if( 'Belltech' == $cleverfox_theme->name){
 			require_once('inc/belltech/belltech.php');
 		}
 		
-		if( 'Fiona Food' == $theme->name){
+		if( 'Fiona Food' == $cleverfox_theme->name){
 			require_once('inc/fiona-food/fiona-food.php');
 		}
 		
-		if( 'Fiona News' == $theme->name){
+		if( 'Fiona News' == $cleverfox_theme->name){
 			require_once('inc/fiona-news/fiona-news.php');
 		}
 		
-		if( 'Axtia' == $theme->name){
+		if( 'Axtia' == $cleverfox_theme->name){
 			require_once('inc/axtria/axtria.php');
 		}
 		
-		if( 'Aravalli' == $theme->name){
+		if( 'Aravalli' == $cleverfox_theme->name){
 			require_once('inc/aravalli/aravalli.php');
 		}
 		
-		if( 'Arbuda' == $theme->name){
+		if( 'Arbuda' == $cleverfox_theme->name){
 			require_once('inc/arbuda/arbuda.php');
 		}
 		
-		if( 'Boostify' == $theme->name){
+		if( 'Boostify' == $cleverfox_theme->name){
 			require_once('inc/boostify/boostify.php');
 		}
 		
-		if( 'Gradiant' == $theme->name){
+		if( 'Gradiant' == $cleverfox_theme->name){
 			require_once('inc/gradiant/gradiant.php');
 			}
 		
-		if( 'Aviser' == $theme->name){
+		if( 'Aviser' == $cleverfox_theme->name){
 			require_once('inc/aviser/aviser.php');
 		}
 		
-		if( 'Comoxa' == $theme->name){
+		if( 'Comoxa' == $cleverfox_theme->name){
 			require_once('inc/comoxa/comoxa.php');
 		}
 		
-		if( 'Techine' == $theme->name){
+		if( 'Techine' == $cleverfox_theme->name){
 			require_once('inc/techine/techine.php');
 		}
 		
-		if( 'ColorPress' == $theme->name){
+		if( 'ColorPress' == $cleverfox_theme->name){
 			require_once('inc/colorpress/colorpress.php');
 		}
 		
-		if( 'Flavita' == $theme->name){
+		if( 'Flavita' == $cleverfox_theme->name){
 			require_once('inc/flavita/flavita.php');
 		}
 		
-		if( 'Avitech' == $theme->name){
+		if( 'Avitech' == $cleverfox_theme->name){
 			require_once('inc/avitech/avitech.php');
 		}
 		
-		if( 'Colorsy' == $theme->name){
+		if( 'Colorsy' == $cleverfox_theme->name){
 			require_once('inc/colorsy/colorsy.php');
 		}
 		
-		if( 'Ampark' == $theme->name){
+		if( 'Ampark' == $cleverfox_theme->name){
 			require_once('inc/ampark/ampark.php');
 		}
 		
-		if( 'Eduvert' == $theme->name){
+		if( 'Eduvert' == $cleverfox_theme->name){
 			require_once('inc/eduvert/eduvert.php');
 		}
 		
-		if( 'Varuda' == $theme->name){
+		if( 'Varuda' == $cleverfox_theme->name){
 			require_once('inc/varuda/varuda.php');
 		}
 		
-		if( 'Cosmics' == $theme->name){
+		if( 'Cosmics' == $cleverfox_theme->name){
 			require_once('inc/cosmics/cosmics.php');
 		}
 		
-		if( 'StartWeb' == $theme->name){
+		if( 'StartWeb' == $cleverfox_theme->name){
 			require_once('inc/startweb/startweb.php');
 		}
 		
-		if( 'Appointo' == $theme->name){
+		if( 'Appointo' == $cleverfox_theme->name){
 			require_once('inc/appointo/appointo.php');
 		}
 		
-		if( 'Renoval' == $theme->name){
+		if( 'Renoval' == $cleverfox_theme->name){
 			require_once('inc/renoval/renoval.php');
 		}
 		
-		if( 'Builderse' == $theme->name){
+		if( 'Builderse' == $cleverfox_theme->name){
 			require_once('inc/builderse/builderse.php');
 		}
 		
-		if( 'Eractor' == $theme->name){
+		if( 'Eractor' == $cleverfox_theme->name){
 			require_once('inc/eractor/eractor.php');
 		}
 		
-		if( 'Medazin' == $theme->name){
+		if( 'Medazin' == $cleverfox_theme->name){
 			require_once('inc/medazin/medazin.php');
 		}
 		
-		if( 'TimeBlog' == $theme->name){
+		if( 'Medisafe' == $cleverfox_theme->name){
+			require_once('inc/medisafe/medisafe.php');
+		}
+		
+		if( 'TimeBlog' == $cleverfox_theme->name){
 			require_once('inc/timeblog/timeblog.php');
 		}		
 		
-		if( 'Convo' == $theme->name){
+		if( 'Convo' == $cleverfox_theme->name){
 			require_once('inc/convo/convo.php');
 		}
 		
-		if( 'Avenza' == $theme->name){
+		if( 'Avenza' == $cleverfox_theme->name){
 			require_once('inc/avenza/avenza.php');
 		}
 		
-		if( 'CardioPress' == $theme->name){
+		if( 'CardioPress' == $cleverfox_theme->name){
 			require_once('inc/cardiopress/cardiopress.php');
 		}
 		
-		if( 'DoctorHub' == $theme->name){
+		if( 'DoctorHub' == $cleverfox_theme->name){
 			require_once('inc/doctorhub/doctorhub.php');
 		}
 		
-		if( 'Accron' == $theme->name){
+		if( 'Accron' == $cleverfox_theme->name){
 			require_once('inc/accron/accron.php');
 		}
 		
-		if( 'Acronix' == $theme->name){
+		if( 'Acronix' == $cleverfox_theme->name){
 			require_once('inc/acronix/acronix.php');
 		}
 		
-		if( 'Evita' == $theme->name){
+		if( 'Evita' == $cleverfox_theme->name){
 			require_once('inc/evita/evita.php');
 		}
 		
-		if( 'Corpex' == $theme->name){
+		if( 'Corpex' == $cleverfox_theme->name){
 			require_once('inc/corpex/corpex.php');
 		}
 		
-		if( 'Cormex' == $theme->name){
+		if( 'Cormex' == $cleverfox_theme->name){
 			require_once('inc/cormex/cormex.php');
 		}
 		
-		if( 'Profolio' == $theme->name){
+		if( 'Profolio' == $cleverfox_theme->name){
 			require_once('inc/profolio/profolio.php');
 		}
 		
-		if( 'VillaPress' == $theme->name){
+		if( 'VillaPress' == $cleverfox_theme->name){
 			require_once('inc/villapress/villapress.php');
 		}
 		
-		if( 'NexCraft' == $theme->name){
+		if( 'NexCraft' == $cleverfox_theme->name){
 			require_once('inc/nexcraft/nexcraft.php');
 		}
 		
-		if( 'Evion' == $theme->name){
+		if( 'Evion' == $cleverfox_theme->name){
 			require_once('inc/evion/evion.php');
 		}
 		
-		if( 'Nexcraft BPO' == $theme->name){
+		if( 'Nexcraft BPO' == $cleverfox_theme->name){
 			require_once('inc/nexcraft-bpo/nexcraft-bpo.php');
 		}
 		
-		if( 'GradiantX' == $theme->name){
+		if( 'GradiantX' == $cleverfox_theme->name){
 			require_once('inc/gradiantx/gradiantx.php');
 		}
 		
-		if( 'ColorFlow' == $theme->name){
+		if( 'ColorFlow' == $cleverfox_theme->name){
 			require_once('inc/colorflow/colorflow.php');
 		}
 		
-		if( 'Shadiant' == $theme->name){
+		if( 'Shadiant' == $cleverfox_theme->name){
 			require_once('inc/shadiant/shadiant.php');
 		}
-		if( 'Webique' == $theme->name){
+		if( 'Webique' == $cleverfox_theme->name){
 			require_once('inc/webique/webique.php');
 		}
-		if( 'Websy' == $theme->name){
+		if( 'Websy' == $cleverfox_theme->name){
 			require_once('inc/websy/websy.php');
 		}
-		if( 'Webora' == $theme->name){
+		if( 'Webora' == $cleverfox_theme->name){
 			require_once('inc/webora/webora.php');
+		}
+		if( 'WebAura' == $cleverfox_theme->name){
+			require_once('inc/webaura/webaura.php');
+		}
+		if( 'News 25' == $cleverfox_theme->name){
+			require_once('inc/news-25/news-25.php');
+		}
+		if( 'News25 Live' == $cleverfox_theme->name){
+			require_once('inc/news25-live/news25-live.php');
+		}
+		if( 'News25 Prime' == $cleverfox_theme->name){
+			require_once('inc/news25-prime/news25-prime.php');
+		}
+		if( 'News25 Breaking' == $cleverfox_theme->name){
+			require_once('inc/news25-breaking/news25-breaking.php');
+		}
+		if( 'News25 Press' == $cleverfox_theme->name){
+			require_once('inc/news25-press/news25-press.php');
+		}
+		if( 'News25 Headline' == $cleverfox_theme->name){
+			require_once('inc/news25-headline/news25-headline.php');
 		}
 	}
 add_action( 'init', 'cleverfox_activate' );
 
-$theme = wp_get_theme();
+$cleverfox_theme = wp_get_theme();
 
 /**
  * Fiona Widgets
  */
-if( 'Fiona Blog' == $theme->name || 'Fiona Food' == $theme->name || 'Fiona News' == $theme->name || 'TimeBlog' == $theme->name){
+if( 'Fiona Blog' == $cleverfox_theme->name || 'Fiona Food' == $cleverfox_theme->name || 'Fiona News' == $cleverfox_theme->name || 'TimeBlog' == $cleverfox_theme->name){
 	require CLEVERFOX_PLUGIN_DIR . 'inc/fiona-blog/widgets/class-fiona-widgets.php';
 }
 
@@ -283,7 +311,7 @@ if( 'Fiona Blog' == $theme->name || 'Fiona Food' == $theme->name || 'Fiona News'
 /**
  * Gradiant Block
  */
-if( 'Gradiant' == $theme->name  || 'Comoxa' == $theme->name  || 'ColorPress' == $theme->name  || 'Flavita' == $theme->name || 'GradiantX' == $theme->name || 'ColorFlow' == $theme->name || 'Shadiant' == $theme->name ){
+if( 'Gradiant' == $cleverfox_theme->name  || 'Comoxa' == $cleverfox_theme->name  || 'ColorPress' == $cleverfox_theme->name  || 'Flavita' == $cleverfox_theme->name || 'GradiantX' == $cleverfox_theme->name || 'ColorFlow' == $cleverfox_theme->name || 'Shadiant' == $cleverfox_theme->name ){
 	require CLEVERFOX_PLUGIN_DIR . '/inc/gradiant/block/info-box.php'; 
 }
 
@@ -292,39 +320,39 @@ if( 'Gradiant' == $theme->name  || 'Comoxa' == $theme->name  || 'ColorPress' == 
 /**
  * Renoval Block
  */
-if( 'Renoval' == $theme->name ){
+if( 'Renoval' == $cleverfox_theme->name ){
 	require CLEVERFOX_PLUGIN_DIR . '/inc/renoval/block/info-box.php'; 
 }
 
 /**
  * Webique Block
  */
-if( 'Webique' == $theme->name ){
+if( 'Webique' == $cleverfox_theme->name ){
 	require CLEVERFOX_PLUGIN_DIR . '/inc/webique/block/info-box.php'; 
 }
 
 /**
  * Profolio
  */
-if( 'Profolio' == $theme->name ){
+if( 'Profolio' == $cleverfox_theme->name ){
 	require CLEVERFOX_PLUGIN_DIR . 'inc/profolio/cpt/cpt-main.php';
 }
 
 /**
  *  NexCraft CPT
  */
-if( 'NexCraft' == $theme->name || 'Nexcraft BPO' == $theme->name ){
+if( 'NexCraft' == $cleverfox_theme->name || 'Nexcraft BPO' == $cleverfox_theme->name ){
 	require CLEVERFOX_PLUGIN_DIR . 'inc/nexcraft/cpt/cpt-main.php';
 }
 
-	if ( ! class_exists( 'Clever_Fox_Setup' ) ) {
+	if ( ! class_exists( 'CleverFox_Setup' ) ) {
 
 	/**
 	 * Customizer Loader
 	 *
 	 * @since 1.0.0
 	 */
-	class Clever_Fox_Setup {
+	class CleverFox_Setup {
 
 		/**
 		 * Instance
@@ -362,7 +390,7 @@ if( 'NexCraft' == $theme->name || 'Nexcraft BPO' == $theme->name ){
 		 * @since 1.0
 		 * @return void
 		 */
-		function activate_theme_once() {
+		function cleverfox_activate_theme_once() {
 			// Check nonce for security
 			check_ajax_referer('clever_fox_nonce', 'security');
 
@@ -375,9 +403,9 @@ if( 'NexCraft' == $theme->name || 'Nexcraft BPO' == $theme->name ){
 			}
 
 			// Validate and sanitize the theme name
-			$theme_name = isset($_POST['theme_name']) ? sanitize_text_field($_POST['theme_name']) : '';
+			$cleverfox_theme_name = isset($_POST['theme_name']) ? sanitize_text_field(wp_unslash($_POST['theme_name'])) : '';
 
-			if (empty($theme_name)) {
+			if (empty($cleverfox_theme_name)) {
 				wp_send_json_error(array(
 					'success' => false,
 					'message' => __('Invalid theme name.', 'clever-fox')
@@ -389,22 +417,24 @@ if( 'NexCraft' == $theme->name || 'Nexcraft BPO' == $theme->name ){
 			if (get_option('theme_activation_mode') !== 'activated') {
 				// Set the theme activation mode to prevent running this code again
 				update_option('theme_activation_mode', 'activated');
-
-				$specia_current_theme = strtolower($_POST['specia_current_theme']);
-				switch_theme($specia_current_theme);
-
-				wp_send_json_success(
-					array(
-						'success' => true,
-						'message' => __('Theme Successfully Activated', 'clever-fox'),
-					)
-				);
+				$specia_current_theme_raw = filter_input(INPUT_POST, 'specia_current_theme', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+				$specia_current_theme = $specia_current_theme_raw ? sanitize_text_field(strtolower($specia_current_theme_raw)) : '';
+				
+				if (!empty($specia_current_theme)) {
+					switch_theme($specia_current_theme);
+					wp_send_json_success(
+						array(
+							'success' => true,
+							'message' => __('Theme Successfully Activated', 'clever-fox'),
+						)
+					);
+				}
 
 				wp_die();
 			}
 		}
 		
-			add_action('after_switch_theme', 'activate_theme_once');		
+			add_action('after_switch_theme', 'cleverfox_activate_theme_once');		
 		}
 		
 		public function clever_fox_enqueue_scripts() {
@@ -418,7 +448,7 @@ if( 'NexCraft' == $theme->name || 'Nexcraft BPO' == $theme->name ){
 			wp_enqueue_script( 'clever-fox-filter-tabs', CLEVERFOX_PLUGIN_URL . 'inc/assets/js/filter-tabs.js', array( 'jquery' ),'0.0',true );
 			
 			$data = apply_filters(
-				'clever_fox_install_theme_localize_vars',
+				'cleverfox_install_theme_localize_vars',
 				array(
 					'installed'  => __( 'Installed! Activating..', 'clever-fox' ),
 					'activating' => __( 'Activating..', 'clever-fox' ),
@@ -458,7 +488,7 @@ if( 'NexCraft' == $theme->name || 'Nexcraft BPO' == $theme->name ){
 	
 	<?php
 	
-		$api_url = 'https://api.wordpress.org/themes/info/1.1/?action=query_themes&request[author]=nayrathemes&request[per_page]=40';
+		$api_url = 'https://api.wordpress.org/themes/info/1.1/?action=query_themes&request[author]=nayrathemes&request[per_page]=100';
 
 		// Read JSON file
 		$response = wp_remote_get( $api_url );
@@ -474,7 +504,7 @@ if( 'NexCraft' == $theme->name || 'Nexcraft BPO' == $theme->name ){
 
 	
 		// All user data exists in 'data' object
-		$theme_data = $response_data->themes;
+		$cleverfox_theme_data = $response_data->themes;
 
 		// Traverse array and display user data
 		
@@ -482,20 +512,20 @@ if( 'NexCraft' == $theme->name || 'Nexcraft BPO' == $theme->name ){
 		
 		<div class="specia-sites-panel wp-clearfix">
 			<div class="specia-sites-wrapper" id="wrap-disk">
-				<?php foreach ($theme_data as $themes) { 
+				<?php foreach ($cleverfox_theme_data as $cleverfox_themes) { 
 				
-				$theme = wp_get_theme();
+				$cleverfox_theme = wp_get_theme();
 				
 				$get_theme_staus='';
 				// Theme installed and activate.
-				if ( $themes->name == $theme->name ) {
+				if ( $cleverfox_themes->name == $cleverfox_theme->name ) {
 					$get_theme_staus= 'installed-and-active';
 					$specia_btn_value= 'Activated';
 				}else{
 
 					// Theme installed but not activate.
-					foreach ( (array) wp_get_themes() as $theme_dir => $themesss ) {
-						if ( $themes->name == $themesss->name ) {
+					foreach ( (array) wp_get_themes() as $cleverfox_theme_dir => $cleverfox_themesss ) {
+						if ( $cleverfox_themes->name == $cleverfox_themesss->name ) {
 							$get_theme_staus= 'installed-but-inactive';
 							$specia_btn_value= 'Activate Now';
 						}
@@ -507,150 +537,153 @@ if( 'NexCraft' == $theme->name || 'Nexcraft BPO' == $theme->name ){
 				
 				
 					<?php 
-						if ( ($themes->name) == "Ampark" ):
-							$theme_category ="Business";
+						if ( ($cleverfox_themes->name) == "Ampark" ):
+							$cleverfox_theme_category ="Business";
 
-						elseif ( ($themes->name) == "Avitech" ):
-							$theme_category ="Business";
+						elseif ( ($cleverfox_themes->name) == "Avitech" ):
+							$cleverfox_theme_category ="Business";
 							
-						elseif ( ($themes->name) == "Aviser" ):
-							$theme_category ="Business";
+						elseif ( ($cleverfox_themes->name) == "Aviser" ):
+							$cleverfox_theme_category ="Business";
 							
-						elseif ( ($themes->name) == "Axtia" ):
-							$theme_category ="Business";
+						elseif ( ($cleverfox_themes->name) == "Axtia" ):
+							$cleverfox_theme_category ="Business";
 							
-						elseif ( ($themes->name) == "Avail" ):
-							$theme_category ="Business";
+						elseif ( ($cleverfox_themes->name) == "Avail" ):
+							$cleverfox_theme_category ="Business";
 							
-						elseif ( ($themes->name) == "Aera" ):
-							$theme_category ="Business";
+						elseif ( ($cleverfox_themes->name) == "Aera" ):
+							$cleverfox_theme_category ="Business";
 							
-						elseif ( ($themes->name) == "Avril" ):
-							$theme_category ="Business";
+						elseif ( ($cleverfox_themes->name) == "Avril" ):
+							$cleverfox_theme_category ="Business";
 							
-						elseif ( ($themes->name) == "Varuda" ):
-							$theme_category ="Business";
+						elseif ( ($cleverfox_themes->name) == "Varuda" ):
+							$cleverfox_theme_category ="Business";
 							
-						elseif ( ($themes->name) == "Avtari" ):
-							$theme_category ="Business";
+						elseif ( ($cleverfox_themes->name) == "Avtari" ):
+							$cleverfox_theme_category ="Business";
 							
-						elseif ( ($themes->name) == "Techine" ):
-						$theme_category ="Agency";
+						elseif ( ($cleverfox_themes->name) == "Techine" ):
+						$cleverfox_theme_category ="Agency";
 							
-						elseif ( ($themes->name) == "Conceptly" || ($themes->name) == "Convo" ):
-							$theme_category ="Agency";
+						elseif ( ($cleverfox_themes->name) == "Conceptly" || ($cleverfox_themes->name) == "Convo" ):
+							$cleverfox_theme_category ="Agency";
 							
-						elseif ( ($themes->name) == "Ameya" ):
-							$theme_category ="Agency";
+						elseif ( ($cleverfox_themes->name) == "Ameya" ):
+							$cleverfox_theme_category ="Agency";
 							
-						elseif ( ($themes->name) == "Azwa" ):
-							$theme_category ="Agency";
+						elseif ( ($cleverfox_themes->name) == "Azwa" ):
+							$cleverfox_theme_category ="Agency";
 							
-						elseif ( ($themes->name) == "Colorsy" ):
-						$theme_category ="Corporate";
+						elseif ( ($cleverfox_themes->name) == "Colorsy" ):
+						$cleverfox_theme_category ="Corporate";
 
-						elseif ( ($themes->name) == "ColorPress" ):
-						$theme_category ="Corporate";
+						elseif ( ($cleverfox_themes->name) == "ColorPress" ):
+						$cleverfox_theme_category ="Corporate";
 
-						elseif ( ($themes->name) == "Flavita" ):
-						$theme_category ="Corporate";
+						elseif ( ($cleverfox_themes->name) == "Flavita" ):
+						$cleverfox_theme_category ="Corporate";
 
-						elseif ( ($themes->name) == "Comoxa" ):
-						$theme_category ="Corporate";
+						elseif ( ($cleverfox_themes->name) == "Comoxa" ):
+						$cleverfox_theme_category ="Corporate";
 
-						elseif ( ($themes->name) == "Gradiant" ):
-						$theme_category ="Corporate";
+						elseif ( ($cleverfox_themes->name) == "Gradiant" ):
+						$cleverfox_theme_category ="Corporate";
 
-						elseif ( ($themes->name) == "Boostify" ):
-						$theme_category ="Multipurpose";
+						elseif ( ($cleverfox_themes->name) == "Boostify" ):
+						$cleverfox_theme_category ="Multipurpose";
 
-						elseif ( ($themes->name) == "Envira" ):
-						$theme_category ="Multipurpose";
+						elseif ( ($cleverfox_themes->name) == "Envira" ):
+						$cleverfox_theme_category ="Multipurpose";
 
-						elseif ( ($themes->name) == "StartKit" ):
-						$theme_category ="Multipurpose";
+						elseif ( ($cleverfox_themes->name) == "StartKit" ):
+						$cleverfox_theme_category ="Multipurpose";
 
-						elseif ( ($themes->name) == "StartBiz" ):
-						$theme_category ="Multipurpose";
+						elseif ( ($cleverfox_themes->name) == "StartBiz" ):
+						$cleverfox_theme_category ="Multipurpose";
 
-						elseif ( ($themes->name) == "Arowana" ):
-						$theme_category ="Multipurpose";
+						elseif ( ($cleverfox_themes->name) == "Arowana" ):
+						$cleverfox_theme_category ="Multipurpose";
 
-						elseif ( ($themes->name) == "StartWeb" ):
-						$theme_category ="Multipurpose";
+						elseif ( ($cleverfox_themes->name) == "StartWeb" ):
+						$cleverfox_theme_category ="Multipurpose";
 
-						elseif ( ($themes->name) == "MetaSoft" ):
-						$theme_category ="IT-Software";
+						elseif ( ($cleverfox_themes->name) == "MetaSoft" ):
+						$cleverfox_theme_category ="IT-Software";
 
-						elseif ( ($themes->name) == "Belltech" ):
-						$theme_category ="IT-Software";
+						elseif ( ($cleverfox_themes->name) == "Belltech" ):
+						$cleverfox_theme_category ="IT-Software";
 
-						elseif ( ($themes->name) == "Eduvert" ):
-						$theme_category ="Education";
+						elseif ( ($cleverfox_themes->name) == "Eduvert" ):
+						$cleverfox_theme_category ="Education";
 
-						elseif ( ($themes->name) == "Aravalli" || ($themes->name) == "VillaPress" ):
-						$theme_category ="Hotel-Resorts";
+						elseif ( ($cleverfox_themes->name) == "Aravalli" || ($cleverfox_themes->name) == "VillaPress" ):
+						$cleverfox_theme_category ="Hotel-Resorts";
 
-						elseif ( ($themes->name) == "Arbuda" ):
-						$theme_category ="Hotel-Resorts";
+						elseif ( ($cleverfox_themes->name) == "Arbuda" ):
+						$cleverfox_theme_category ="Hotel-Resorts";
 
-						elseif ( ($themes->name) == "Fiona Blog" ):
-						$theme_category ="News-Blog";
+						elseif ( ($cleverfox_themes->name) == "Fiona Blog" ):
+						$cleverfox_theme_category ="News-Blog";
 
-						elseif ( ($themes->name) == "Fiona Food" ):
-						$theme_category ="News-Blog";
+						elseif ( ($cleverfox_themes->name) == "Fiona Food" ):
+						$cleverfox_theme_category ="News-Blog";
 
-						elseif ( ($themes->name) == "Fiona News" ):
-						$theme_category ="News-Blog";
+						elseif ( ($cleverfox_themes->name) == "Fiona News" ):
+						$cleverfox_theme_category ="News-Blog";
 						
-						elseif ( ($themes->name) == "TimeBlog" ):
-						$theme_category ="News-Blog";
+						elseif ( ($cleverfox_themes->name) == "TimeBlog" ):
+						$cleverfox_theme_category ="News-Blog";
 
-						elseif ( ($themes->name) == "Hantus" ):
-						$theme_category ="Spa-Saloon";
+						elseif ( ($cleverfox_themes->name) == "Hantus" ):
+						$cleverfox_theme_category ="Spa-Saloon";
 
-						elseif ( ($themes->name) == "Thai Spa" ):
-						$theme_category ="Spa-Saloon";
+						elseif ( ($cleverfox_themes->name) == "Thai Spa" ):
+						$cleverfox_theme_category ="Spa-Saloon";
 
-						elseif ( ($themes->name) == "Cosmics" ):
-						$theme_category ="Spa-Saloon";
+						elseif ( ($cleverfox_themes->name) == "Cosmics" ):
+						$cleverfox_theme_category ="Spa-Saloon";
 
-						elseif ( ($themes->name) == "EventPress" ):
-						$theme_category ="Events";
+						elseif ( ($cleverfox_themes->name) == "EventPress" ):
+						$cleverfox_theme_category ="Events";
 
-						elseif ( ($themes->name) == "Appointo" ):
-						$theme_category ="Agency";
+						elseif ( ($cleverfox_themes->name) == "Appointo" ):
+						$cleverfox_theme_category ="Agency";
 						
-						elseif ( ($themes->name) == "Renoval" ||  ($themes->name) == "Builderse" || ($themes->name) == "Eractor"):
-						$theme_category ="Construction";
+						elseif ( ($cleverfox_themes->name) == "Renoval" ||  ($cleverfox_themes->name) == "Builderse" || ($cleverfox_themes->name) == "Eractor"):
+						$cleverfox_theme_category ="Construction";
 						
-						elseif ( ($themes->name) == "Medazin" || ($themes->name) == "DoctorHub"|| ($themes->name) == "CardioPress" ):
-						$theme_category ="Medical";
+						elseif ( ($cleverfox_themes->name) == "Medazin" || ($cleverfox_themes->name) == "DoctorHub" || ($cleverfox_themes->name) == "CardioPress" || ($cleverfox_themes->name) == "Medisafe" ):
+						$cleverfox_theme_category ="Medical";
+
+						elseif ( ($cleverfox_themes->name) == "News 25" || ($cleverfox_themes->name) == "News25 Live" || ($cleverfox_themes->name) == "News25 Prime" || ($cleverfox_themes->name) == "News25 Breaking" || ($cleverfox_themes->name) == "News25 Press" || ($cleverfox_themes->name) == "News25 Headline" ):
+						$cleverfox_theme_category ="News-Blog";
 
 						else :
-							$theme_category ="Business";
+							$cleverfox_theme_category ="Business";
 						endif;
 					?>
-					<div id="specia-theme-activation-xl" data-category="<?php echo esc_html($theme_category); ?>" class="clever-fox-sites-items <?php echo esc_html($themes->name); ?>">
+					<div id="specia-theme-activation-xl" data-category="<?php echo esc_html($cleverfox_theme_category); ?>" class="clever-fox-sites-items <?php echo esc_html($cleverfox_themes->name); ?>">
 						<div class="clever-fox-items-inner">
 							<div class="specia-demo-screenshot">
-								<div class="specia-demo-image" style="background-image: url(<?php echo esc_url($themes->screenshot_url); ?>);"></div>
+								<div class="specia-demo-image" style="background-image: url(<?php echo esc_url($cleverfox_themes->screenshot_url); ?>);"></div>
 									<div class="specia-demo-actions">
-										<a class="clever-fox-btn clever-fox-btn-outline" href="https://nayrathemes.com/demo/pro/<?php echo esc_html($themes->slug); ?>" target="_blank"><?php esc_html_e('Preview','clever-fox'); ?></a>
+										<a class="clever-fox-btn clever-fox-btn-outline" href="https://nayrathemes.com/demo/pro/<?php echo esc_html($cleverfox_themes->slug); ?>" target="_blank"><?php esc_html_e('Preview','clever-fox'); ?></a>
 										<?php 
 										if($get_theme_staus !== 'installed-and-active' && $get_theme_staus !== 'installed-but-inactive'):
 											$get_theme_staus= 'not-installed';
 											$specia_btn_value= 'Install & Activate Now';
 										endif;
-										$theme_status = 'clever-fox-theme-' . $get_theme_staus;
-										echo sprintf(/* translators: 1: Theme Slug 3:Anchor Class 4: Text */ esc_html__( '<a href="#" class="%3$s xl-btn-active clever-fox-btn-outline xl-install-action clever-fox-btn" data-theme-slug="%1$s">%4$s</a>', 'clever-fox' ), esc_html($themes->name),esc_url( admin_url( 'themes.php?theme=%1$s' ) ), esc_html($theme_status), esc_html($specia_btn_value) );
-										//switch_theme( $themes->name );
+										$cleverfox_theme_status = 'clever-fox-theme-' . $get_theme_staus;
+										echo wp_kses_post(sprintf(/* translators: 1: Theme Slug 3:Anchor Class 4: Text */ __( '<a href="#" class="%3$s xl-btn-active clever-fox-btn-outline xl-install-action clever-fox-btn" data-theme-slug="%1$s">%4$s</a>', 'clever-fox' ), esc_html($cleverfox_themes->name),esc_url( admin_url( 'themes.php?theme=%1$s' ) ), esc_html($cleverfox_theme_status), esc_html($specia_btn_value) ) );
+										//switch_theme( $cleverfox_themes->name );
 										?>
 									</div>
 								</div>
 								<div class="sp-demo-meta  sp-demo-meta--with-preview">
-									<div class="sp-demo-name"><h4 title="Nayra Themes"><a href="<?php echo esc_url(admin_url('theme-install.php?search='.$themes->name)); ?>"><?php echo esc_html($themes->name); ?></a></h4></div>	
-									<a class="clever-fox-btn clever-fox-btn-outline" href="https://nayrathemes.com/<?php echo esc_html($themes->slug); ?>-pro/" target="_blank"><?php esc_html_e('Buy Now','clever-fox'); ?></a>	
+									<div class="sp-demo-name"><h4 title="Nayra Themes"><a href="<?php echo esc_url(admin_url('theme-install.php?search='.$cleverfox_themes->name)); ?>"><?php echo esc_html($cleverfox_themes->name); ?></a></h4></div>	
+									<a class="clever-fox-btn clever-fox-btn-outline" href="https://nayrathemes.com/<?php echo esc_html($cleverfox_themes->slug); ?>-pro/" target="_blank"><?php esc_html_e('Buy Now','clever-fox'); ?></a>	
 								</div>
 								<?php //echo $get_theme_staus; ?>
 						</div>
@@ -668,14 +701,14 @@ if( 'NexCraft' == $theme->name || 'Nexcraft BPO' == $theme->name ){
 /**
  *  Kicking this off by calling 'get_instance()' method
  */
-Clever_Fox_Setup::get_instance();
+CleverFox_Setup::get_instance();
 
 
 /**
  * The code during plugin activation.
  */
-function activate_cleverfox() {
+function cleverfox__activate() {
 	require_once plugin_dir_path( __FILE__ ) . 'inc/cleverfox-activator.php';
 	Cleverfox_Activator::activate();
 }
-register_activation_hook( __FILE__, 'activate_cleverfox' );
+register_activation_hook( __FILE__, 'cleverfox__activate' );

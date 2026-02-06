@@ -1,5 +1,6 @@
 <?php
-function comoxa_slider_setting( $wp_customize ) {
+if ( ! defined( 'ABSPATH' ) ) exit;
+function gradiant_comoxa_slider_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	
 	// Subtitle Color
@@ -43,4 +44,4 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	);
 }
 
-add_action( 'customize_register', 'comoxa_slider_setting' );
+add_action( 'customize_register', 'gradiant_comoxa_slider_setting' );

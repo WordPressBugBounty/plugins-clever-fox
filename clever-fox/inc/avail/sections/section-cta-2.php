@@ -1,4 +1,5 @@
 <?php 
+if ( ! defined( 'ABSPATH' ) ) exit;
 if ( ! function_exists( 'avril_lite_cta' ) ) :
 	function avril_lite_cta() {
 	$hs_cta						= get_theme_mod('hs_cta','1');	
@@ -46,6 +47,6 @@ if($hs_cta == '1') {
 <?php	
 	}} endif; 
 	if ( function_exists( 'avril_lite_cta' ) ) {
-		$section_priority = apply_filters( 'avril_section_priority', 12, 'avril_lite_cta' );
-		add_action( 'avril_sections', 'avril_lite_cta', absint( $section_priority ) );
+		$cleverfox_section_priority = apply_filters( 'avril_section_priority', 12, 'avril_lite_cta' );
+		add_action( 'avril_sections', 'avril_lite_cta', absint( $cleverfox_section_priority ) );
 	}	

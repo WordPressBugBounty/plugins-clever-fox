@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 if ( ! function_exists( 'startkit_testimonial_setting' ) ) :
 function startkit_testimonial_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
@@ -194,15 +195,15 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		//Pro feature
 		class Startkit_testimonial__section_upgrade extends WP_Customize_Control {
 			public function render_content() { 
-				$theme = wp_get_theme(); // gets the current theme
-				if ( 'StartKit' == $theme->name){	
+				$cleverfox_theme = wp_get_theme(); // gets the current theme
+				if ( 'StartKit' == $cleverfox_theme->name){	
 			?>
 					<a class="customizer_testimonial_upgrade_section up-to-pro" href="https://www.nayrathemes.com/startkit-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
-				<?php }elseif( 'StartBiz' == $theme->name){ ?>
+				<?php }elseif( 'StartBiz' == $cleverfox_theme->name){ ?>
 					<a class="customizer_testimonial_upgrade_section up-to-pro" href="https://www.nayrathemes.com/startbiz-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
-				<?php }elseif( 'StartWeb' == $theme->name){ ?>
+				<?php }elseif( 'StartWeb' == $cleverfox_theme->name){ ?>
 					<a class="customizer_testimonial_upgrade_section up-to-pro" href="https://www.nayrathemes.com/startweb-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
-				<?php }elseif( 'Arowana' == $theme->name){ ?>	
+				<?php }elseif( 'Arowana' == $cleverfox_theme->name){ ?>	
 					<a class="customizer_testimonial_upgrade_section up-to-pro" href="https://www.nayrathemes.com/arowana-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
 				<?php }else{ ?>		
 					<a class="customizer_testimonial_upgrade_section up-to-pro" href="https://www.nayrathemes.com/startkit-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
@@ -239,21 +240,21 @@ function startkit_home_testimonial_section_partials( $wp_customize ){
 	$wp_customize->selective_refresh->add_partial( 'testimonial_title', array(
 		'selector'            => '#testimonial .section-header h2',
 		'settings'            => 'testimonial_title',
-		'render_callback'  => 'home_section_testimonial_title_render_callback',
+		'render_callback'  => 'startkit_home_section_testimonial_title_render_callback',
 	) );
 	
 	// testimonial_subttl
 	$wp_customize->selective_refresh->add_partial( 'testimonial_subttl', array(
 		'selector'            => '#testimonial .section-header .subtitle',
 		'settings'            => 'testimonial_subttl',
-		'render_callback'  => 'home_testimonial_subttl_render_callback',
+		'render_callback'  => 'startkit_home_testimonial_subttl_render_callback',
 	) );
 	
 	// description
 	$wp_customize->selective_refresh->add_partial( 'testimonial_description', array(
 		'selector'            => '#testimonial .section-header p',
 		'settings'            => 'testimonial_description',
-		'render_callback'  => 'home_section_testimonial_desc_render_callback',
+		'render_callback'  => 'startkit_home_section_testimonial_desc_render_callback',
 	) );
 	// contents
 	$wp_customize->selective_refresh->add_partial( 'testimonial_contents', array(
@@ -263,16 +264,16 @@ function startkit_home_testimonial_section_partials( $wp_customize ){
 add_action( 'customize_register', 'startkit_home_testimonial_section_partials' );
 
 // title
-function home_section_testimonial_title_render_callback() {
+function startkit_home_section_testimonial_title_render_callback() {
 	return get_theme_mod( 'testimonial_title' );
 }
 
 // testimonial_subttl
-function home_testimonial_subttl_render_callback() {
+function startkit_home_testimonial_subttl_render_callback() {
 	return get_theme_mod( 'testimonial_subttl' );
 }
 
 // description
-function home_section_testimonial_desc_render_callback() {
+function startkit_home_section_testimonial_desc_render_callback() {
 	return get_theme_mod( 'testimonial_description' );
 }
