@@ -4,7 +4,7 @@ Tags: homepage setup, companion, one click demo, sections, customizer
 Requires at least: 4.6 or higher
 Tested up to: 6.9
 Requires PHP: 5.6
-Stable tag: 28.6
+Stable tag: 28.7
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -33,6 +33,7 @@ Clever Fox plugin to enhance the functionality for free themes made by <a href="
 - [News 25](https://wordpress.org/themes/news-25/)    - [Free Demo](https://www.nayrathemes.com/demo/lite/news25/)
 - [News 25 Live](https://wordpress.org/themes/news25-live/)    - [Free Demo](https://www.nayrathemes.com/demo/lite/news25-live/)
 - [News 25 Breaking](https://wordpress.org/themes/news25-breaking/)    - [Free Demo](https://www.nayrathemes.com/demo/lite/news25-breaking/)
+- [News 25 Prime](https://wordpress.org/themes/news25-prime/)    - [Free Demo](https://www.nayrathemes.com/demo/lite/news25-prime/)
 - [Webique](https://wordpress.org/themes/webique/)    - [Free Demo](https://www.nayrathemes.com/demo/lite/webique/)
 - [Websy](https://wordpress.org/themes/websy/)    	  - [Free Demo](https://www.nayrathemes.com/demo/lite/websy/)
 - [Webora](https://wordpress.org/themes/webora/)	  - [Free Demo](https://www.nayrathemes.com/demo/lite/webora/)
@@ -128,6 +129,7 @@ Yes, This plugin is specially make for Nayra Themes. You can install theme for e
 - [News 25](https://wordpress.org/themes/news-25/)
 - [News 25 Live](https://wordpress.org/themes/news25-live/)
 - [News 25 Breaking](https://wordpress.org/themes/news25-breaking/)
+- [News 25 Prime](https://wordpress.org/themes/news25-prime/)
 - [Webique](https://wordpress.org/themes/webique/)
 - [Websy](https://wordpress.org/themes/websy/)
 - [Webora](https://wordpress.org/themes/webora/)
@@ -219,6 +221,9 @@ Clever Fox WordPress Plugin is licensed under the GPL3 (https://www.gnu.org/lice
 
 
 == Changelog ==
+
+= 28.7 =
+* Readme Updated
 
 = 28.6 =
 * Readme Updated
