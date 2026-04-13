@@ -2,7 +2,7 @@
 /**
 * Plugin Name: Clever Fox
 * Description: Clever Fox plugin to enhance the functionality for free themes made by Nayra Themes. More than 60000+ trusted websites with Nayra Themes. It provides intuitive features to your website. 45+ Themes compatible with Clever Fox. See below free themes listed here. Avril, Gradiant, Flavita, Fiona Blog, MetaSoft, Conceptly & ColorPress is one of highest installations themes in our collections. Visit our website and find theme as you need. https://www.nayrathemes.com/themes/
-* Version: 29.0
+* Version: 29.1
 * Author: nayrathemes
 * Author URI: https://nayrathemes.com
 * Requires:	4.6 or higher
@@ -27,6 +27,7 @@ function cleverfox_activate() {
 	define( 'CLEVERFOX_DIRECTORY_URI', plugin_dir_url( __FILE__ ) . '/inc/custom-controls/' );
 	if ( class_exists( 'WP_Customize_Control' ) ) {
 		require_once('inc/custom-controls/controls/range-validator/range-control.php');	
+		require_once CLEVERFOX_PLUGIN_DIR . 'inc/upgrade/init.php';
 	}
 	
 	$cleverfox_theme = wp_get_theme(); // gets the current theme
@@ -295,8 +296,12 @@ function cleverfox_activate() {
 		if( 'News25 Headline' == $cleverfox_theme->name){
 			require_once('inc/news25-headline/news25-headline.php');
 		}
+		if( 'Hotel 26' == $cleverfox_theme->name){
+			require_once('inc/hotel-26/hotel-26.php');
+		}
 	}
 add_action( 'init', 'cleverfox_activate' );
+
 
 $cleverfox_theme = wp_get_theme();
 
@@ -618,7 +623,7 @@ if( 'NexCraft' == $cleverfox_theme->name || 'Nexcraft BPO' == $cleverfox_theme->
 						elseif ( ($cleverfox_themes->name) == "Eduvert" ):
 						$cleverfox_theme_category ="Education";
 
-						elseif ( ($cleverfox_themes->name) == "Aravalli" || ($cleverfox_themes->name) == "VillaPress" ):
+						elseif ( ($cleverfox_themes->name) == "Aravalli" || ($cleverfox_themes->name) == "VillaPress" || ($cleverfox_themes->name) == "Hotel 26" ):
 						$cleverfox_theme_category ="Hotel-Resorts";
 
 						elseif ( ($cleverfox_themes->name) == "Arbuda" ):
