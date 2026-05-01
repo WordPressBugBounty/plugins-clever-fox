@@ -4,7 +4,7 @@ Tags: homepage setup, companion, one click demo, sections, customizer
 Requires at least: 4.6 or higher
 Tested up to: 6.9
 Requires PHP: 5.6
-Stable tag: 29.1
+Stable tag: 29.2
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -30,6 +30,7 @@ Clever Fox plugin to enhance the functionality for free themes made by <a href="
 
 **Clever Fox Compatible Themes:**
 
+- [Hotel 26](https://wordpress.org/themes/hotel-26/)    - [Free Demo](https://www.nayrathemes.com/demo/lite/hotel26/)
 - [News 25](https://wordpress.org/themes/news-25/)    - [Free Demo](https://www.nayrathemes.com/demo/lite/news25/)
 - [News 25 Live](https://wordpress.org/themes/news25-live/)    - [Free Demo](https://www.nayrathemes.com/demo/lite/news25-live/)
 - [News 25 Breaking](https://wordpress.org/themes/news25-breaking/)    - [Free Demo](https://www.nayrathemes.com/demo/lite/news25-breaking/)
@@ -126,6 +127,7 @@ Just upload the `clever-fox.zip` to the `/wp-content/plugins/` directory, and th
 Yes, This plugin is specially make for Nayra Themes. You can install theme for enhance your experience.
 
 = Clever Fox Compatible Themes =
+- [Hotel 26](https://wordpress.org/themes/hotel-26/)
 - [News 25](https://wordpress.org/themes/news-25/)
 - [News 25 Live](https://wordpress.org/themes/news25-live/)
 - [News 25 Breaking](https://wordpress.org/themes/news25-breaking/)
@@ -221,6 +223,9 @@ Clever Fox WordPress Plugin is licensed under the GPL3 (https://www.gnu.org/lice
 
 
 == Changelog ==
+
+= 29.2 =
+* Readme Updated
 
 = 29.1 =
 * New Theme Added
