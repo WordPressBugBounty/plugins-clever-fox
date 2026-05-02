@@ -25,7 +25,7 @@
 			<label><?php echo esc_html__('Adults','clever-fox'); ?></label>				
 			<div class="hb-form-field-input">
 				<select name="adults_capacity"><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option></select>				
-				<?php echo wp_kses_post(guests_nav()); ?>
+				<?php echo wp_kses_post(hotel_26_guest_nav()); ?>
 			</div>
 		</li>
 
@@ -33,7 +33,7 @@
 			<label><?php echo esc_html__('Children','clever-fox'); ?></label>				
 			<div class="hb-form-field-input">
 				<select name="max_child"><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option></select>				
-				<?php echo wp_kses_post(guests_nav()); ?>
+				<?php echo wp_kses_post(hotel_26_guest_nav()); ?>
 			</div>
 		</li>
 		<li class="hb-form-field">

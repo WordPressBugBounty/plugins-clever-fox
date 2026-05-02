@@ -68,6 +68,22 @@
 			$output_css .=".service-section.home {
 					background-image: url(".esc_url($hotel26_service_bg_img).");					
 			}\n";
+			
+		/**
+		 * Testimonial
+		 */
+		 $hotel26_testimonial_bg_img	= get_theme_mod('testimonial_bg_img', CLEVERFOX_PLUGIN_URL .'inc/hotel-26/images/testimonial/bg.jpg');
+			$output_css .=".testimonial-section {
+					background-image: url(".esc_url($hotel26_testimonial_bg_img).");					
+			}\n";
+			
+		/**
+		 * Funfact
+		 */
+		 $hotel26_funfact_bg_img	= get_theme_mod('funfact_bg_img', get_stylesheet_directory_uri(). '/assets/images/bg-shape-1.png');
+			$output_css .=".funfact-section::after, .funfact-section::before {
+					background-image: url(".esc_url($hotel26_funfact_bg_img).");					
+			}\n";
 					
 	 wp_add_inline_style( 'hotel-26-style', $output_css );
     }

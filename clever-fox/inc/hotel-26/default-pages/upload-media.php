@@ -2,7 +2,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 $cleverfox_theme = wp_get_theme() -> get('Name'); // gets the current theme
 $cleverfox_name = strtolower(str_replace(' ', '-', $cleverfox_theme));
-if( 's' == $cleverfox_theme){
+if( 'Hotel Elegance' == $cleverfox_theme){
 	$cleverfox_file = CLEVERFOX_PLUGIN_URL .'inc/'.$cleverfox_name.'/images/logo.png';
 }else{
 	$cleverfox_file = CLEVERFOX_PLUGIN_URL .'inc/'.$cleverfox_name.'/images/logo.png';

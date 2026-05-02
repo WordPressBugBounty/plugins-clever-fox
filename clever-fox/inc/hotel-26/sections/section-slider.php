@@ -2,9 +2,11 @@
 	if ( ! defined( 'ABSPATH' ) ) exit;
 	$hotel26_slider_hs 		= get_theme_mod('slider_hs','1');
 	$hotel26_slider 		= get_theme_mod('slider',hotel_26_get_slider_default());
+	$hotel26_theme		= wp_get_theme();
+	$hotel26_home	= ($hotel26_theme->get('Name') == 'Hotel Child3') ? 'home-4' : (($hotel26_theme->get('Name') == 'Hotel 26') ? 'style1' : '');
 	if($hotel26_slider_hs == '1') {
 ?>
-	<section id="slider-section" class="slider-wrapper style1">
+	<section id="slider-section" class="slider-wrapper <?php echo esc_attr($hotel26_home); ?>">
 		<div class="main-slider owl-carousel owl-theme">
 		<?php
 				if ( ! empty( $hotel26_slider ) ) {
@@ -19,7 +21,7 @@
 				$hotel26_slider = json_decode( $hotel26_slider );
 				foreach ( $hotel26_slider as $hotel26_slide_item ) {
 					$hotel26_repeater_title = ! empty( $hotel26_slide_item->title ) ? apply_filters( 'hotel_26_translate_single_string', $hotel26_slide_item->title, 'slider section' ) : '';
-					$hotel26_repeater_subtitle = ! empty( $hotel26_slide_item->subtitle ) ? apply_filters( 'hotel_26_translate_single_string', $hotel26_slide_item->subtitle, 'slider section' ) : '';				
+					$hotel26_repeater_subtitle = ! empty( $hotel26_slide_item->subtitle ) ? apply_filters( 'hotel_26_translate_single_string', $hotel26_slide_item->subtitle, 'slider section' ) : '';
 					$hotel26_repeater_description = ! empty( $hotel26_slide_item->description ) ? apply_filters( 'hotel_26_translate_single_string', $hotel26_slide_item->description, 'slider section' ) : '';
 					$hotel26_repeater_button = ! empty( $hotel26_slide_item->button_text) ? apply_filters( 'hotel_26_translate_single_string', $hotel26_slide_item->button_text,'slider section' ) : '';
 					$hotel26_repeater_button_link = ! empty( $hotel26_slide_item->button_link ) ? apply_filters( 'hotel_26_translate_single_string', $hotel26_slide_item->button_link, 'slider section' ) : '';
@@ -27,7 +29,6 @@
 					$hotel26_repeater_image = ! empty( $hotel26_slide_item->image_url ) ? apply_filters( 'hotel_26_translate_single_string', $hotel26_slide_item->image_url, 'slider section' ) : '';
 					$hotel26_repeater_newtab = ! empty( $hotel26_slide_item->newtab ) ? apply_filters( 'hotel_26_translate_single_string', $hotel26_slide_item->newtab, 'slider section' ) : '';
 					$hotel26_repeater_nofollow = ! empty( $hotel26_slide_item->nofollow ) ? apply_filters( 'hotel_26_translate_single_string', $hotel26_slide_item->nofollow, 'slider section' ) : '';
-					
 			?>
 			<div class="item">
 				<?php if(!empty($hotel26_repeater_image)): ?><img src="<?php echo esc_url($hotel26_repeater_image); ?>" data-img-url="<?php echo esc_url($hotel26_repeater_image); ?>" alt="<?php echo esc_attr__('Slider Image Here','clever-fox'); ?>" ><?php endif; ?>
