@@ -1218,8 +1218,8 @@ function hotel26_get_room_default() {
 		if( 'Hotel Elegance' == $theme->name){
 			$hotel_26_premium_url= 'https://www.nayrathemes.com/hotel-Elegance-pro/';
 		
-		}else if( 'Hotelchild2' == $theme->name){
-			$hotel_26_premium_url= 'https://www.nayrathemes.com/hotel-26-c2-pro/';
+		}else if( 'Hotel Prime' == $theme->name){
+			$hotel_26_premium_url= 'https://www.nayrathemes.com/hotel-prime-pro/';
 		
 		}else if( 'Hotelchild3' == $theme->name){
 			$hotel_26_premium_url= 'https://www.nayrathemes.com/hotel-26-c3-pro/';

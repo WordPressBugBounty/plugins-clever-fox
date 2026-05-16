@@ -2,7 +2,7 @@
 /**
 * Plugin Name: Clever Fox
 * Description: Clever Fox plugin to enhance the functionality for free themes made by Nayra Themes. More than 60000+ trusted websites with Nayra Themes. It provides intuitive features to your website. 45+ Themes compatible with Clever Fox. See below free themes listed here. Avril, Gradiant, Flavita, Fiona Blog, MetaSoft, Conceptly & ColorPress is one of highest installations themes in our collections. Visit our website and find theme as you need. https://www.nayrathemes.com/themes/
-* Version: 29.3
+* Version: 29.4
 * Author: nayrathemes
 * Author URI: https://nayrathemes.com
 * Requires:	4.6 or higher
@@ -301,6 +301,9 @@ function cleverfox_activate() {
 		}
 		if( 'Hotel Elegance' == $cleverfox_theme->name){
 			require_once('inc/hotel-elegance/hotel-elegance.php');
+		}
+		if( 'Hotel Prime' == $cleverfox_theme->name){
+			require_once('inc/hotel-prime/hotel-prime.php');
 		}
 	}
 add_action( 'init', 'cleverfox_activate' );
@@ -626,7 +629,7 @@ if( 'NexCraft' == $cleverfox_theme->name || 'Nexcraft BPO' == $cleverfox_theme->
 						elseif ( ($cleverfox_themes->name) == "Eduvert" ):
 						$cleverfox_theme_category ="Education";
 
-						elseif ( ($cleverfox_themes->name) == "Aravalli" || ($cleverfox_themes->name) == "VillaPress" || ($cleverfox_themes->name) == "Hotel 26" || ($cleverfox_themes->name) == "Hotel Elegance" ):
+						elseif ( ($cleverfox_themes->name) == "Aravalli" || ($cleverfox_themes->name) == "VillaPress" || ($cleverfox_themes->name) == "Hotel 26" || ($cleverfox_themes->name) == "Hotel Elegance" || ($cleverfox_themes->name) == "Hotel Prime" ):
 						$cleverfox_theme_category ="Hotel-Resorts";
 
 						elseif ( ($cleverfox_themes->name) == "Arbuda" ):
