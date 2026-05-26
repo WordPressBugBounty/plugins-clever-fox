@@ -36,8 +36,8 @@
 		?>
 			<div class="why-choose-card wow fadeIn" data-wow-delay="100ms" data-wow-duration="1500ms">
 				<div class="choose-content st-media-hover">
-					<img src="<?php echo esc_url($hotel26_repeater_image); ?>" alt="<?php echo esc_attr__('Choose Image','hotel-26-pro'); ?>">
-					<img src="<?php echo esc_url($hotel26_repeater_image); ?>" alt="<?php echo esc_attr__('Choose Image','hotel-26-pro'); ?>">
+					<img src="<?php echo esc_url($hotel26_repeater_image); ?>" alt="<?php echo esc_attr__('Choose Image','clever-fox'); ?>">
+					<img src="<?php echo esc_url($hotel26_repeater_image); ?>" alt="<?php echo esc_attr__('Choose Image','clever-fox'); ?>">
 					<h5 class="choose-title"><?php echo esc_html($hotel26_repeater_title); ?></h5>
 				</div>
 			</div>

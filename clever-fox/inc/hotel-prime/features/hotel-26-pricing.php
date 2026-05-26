@@ -7,7 +7,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	=========================================*/
 	$wp_customize->add_section(
 		'pricing_setting', array(
-			'title' => esc_html__( 'Pricing Section', 'hotel-26-pro' ),
+			'title' => esc_html__( 'Pricing Section', 'clever-fox' ),
 			'panel' => 'hotel_26_frontpage_sections',
 			'priority' => 12,
 		)
@@ -26,7 +26,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control( 
 		'pricing_hs',
 		array(
-		    'label'   => __('Show/Hide','hotel-26-pro'),
+		    'label'   => __('Show/Hide','clever-fox'),
 		    'section' => 'pricing_setting',
 			'type' => 'checkbox',
 		)  
@@ -47,7 +47,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	'pricing_headings',
 		array(
 			'type' => 'hidden',
-			'label' => __('Header','hotel-26-pro'),
+			'label' => __('Header','clever-fox'),
 			'section' => 'pricing_setting',
 		)
 	);
@@ -65,7 +65,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control( 
 		'pricing_header_hs',
 		array(
-		    'label'   => __('Show/Hide','hotel-26-pro'),
+		    'label'   => __('Show/Hide','clever-fox'),
 		    'section' => 'pricing_setting',
 			'type' => 'checkbox',
 		)  
@@ -85,7 +85,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control( 
 		'pricing_title',
 		array(
-		    'label'   => __('Title','hotel-26-pro'),
+		    'label'   => __('Title','clever-fox'),
 		    'section' => 'pricing_setting',
 			'type'           => 'text',
 		)  
@@ -105,7 +105,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control( 
 		'pricing_subtitle',
 		array(
-		    'label'   => __('Subtitle','hotel-26-pro'),
+		    'label'   => __('Subtitle','clever-fox'),
 		    'section' => 'pricing_setting',
 			'type'           => 'text',
 		)  
@@ -115,7 +115,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_setting(
     	'pricing_description',
     	array(
-	        'default'			=> __('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.','hotel-26-pro'),
+	        'default'			=> __('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.','clever-fox'),
 			'capability'     	=> 'edit_theme_options',
 			'sanitize_callback' => 'hotel_26_sanitize_text',
 			'priority' => 6,
@@ -125,7 +125,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control( 
 		'pricing_description',
 		array(
-		    'label'   => __('Description','hotel-26-pro'),
+		    'label'   => __('Description','clever-fox'),
 		    'section' => 'pricing_setting',
 			'type'           => 'textarea',
 		)  
@@ -145,7 +145,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	'pricing_content_head',
 		array(
 			'type' => 'hidden',
-			'label' => __('Content','hotel-26-pro'),
+			'label' => __('Content','clever-fox'),
 			'section' => 'pricing_setting',
 		)
 	);
@@ -166,10 +166,10 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 			new Hotel_26_Repeater( $wp_customize, 
 				'pricing_contents', 
 					array(
-						'label'   => esc_html__('Pricing','hotel-26-pro'),
+						'label'   => esc_html__('Pricing','clever-fox'),
 						'section' => 'pricing_setting',
-						'add_field_label'                   => esc_html__( 'Add New Pricing', 'hotel-26-pro' ),
-						'item_name'                         => esc_html__( 'Pricing', 'hotel-26-pro' ),
+						'add_field_label'                   => esc_html__( 'Add New Pricing', 'clever-fox' ),
+						'item_name'                         => esc_html__( 'Pricing', 'clever-fox' ),
 						'customizer_repeater_title_control' => true,
 						'customizer_repeater_subtitle_control' => true,
 						'customizer_repeater_text_control' => true,
@@ -207,15 +207,15 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control(
 		'pricing_sec_column',
 		array(
-		    'label'   		=> __('Pricing Column','hotel-26-pro'),
+		    'label'   		=> __('Pricing Column','clever-fox'),
 		    'section' 		=> 'pricing_setting',
 			'settings'   	 => 'pricing_sec_column',
 			'type'			=> 'select',
 			'choices'        => 
 			array(
-				'3' => __( '3 Column', 'hotel-26-pro' ),
-				'4' => __( '4 Column', 'hotel-26-pro' ),
-				'5' => __( '5 Column', 'hotel-26-pro' ),
+				'3' => __( '3 Column', 'clever-fox' ),
+				'4' => __( '4 Column', 'clever-fox' ),
+				'5' => __( '5 Column', 'clever-fox' ),
 			) 
 		) 
 	);
@@ -234,7 +234,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	'pricing_spacing_head',
 		array(
 			'type' => 'hidden',
-			'label' => __('Section Spacing','hotel-26-pro'),
+			'label' => __('Section Spacing','clever-fox'),
 			'section' => 'pricing_setting',
 		)
 	);
@@ -252,7 +252,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control( 
 		'pricing_padding_top',
 		array(
-		    'label'   => __('Padding Top','hotel-26-pro'),
+		    'label'   => __('Padding Top','clever-fox'),
 		    'section' => 'pricing_setting',
 			'type'           => 'text',
 		)  
@@ -269,7 +269,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control( 
 		'pricing_padding_bottom',
 		array(
-		    'label'   => __('Padding Bottom','hotel-26-pro'),
+		    'label'   => __('Padding Bottom','clever-fox'),
 		    'section' => 'pricing_setting',
 			'type'           => 'text',
 		)  
@@ -288,7 +288,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control( 
 		'pricing_margin_top',
 		array(
-		    'label'   => __('Margin Top','hotel-26-pro'),
+		    'label'   => __('Margin Top','clever-fox'),
 		    'section' => 'pricing_setting',
 			'type'           => 'text',
 		)  
@@ -305,7 +305,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control( 
 		'pricing_margin_bottom',
 		array(
-		    'label'   => __('Margin Bottom','hotel-26-pro'),
+		    'label'   => __('Margin Bottom','clever-fox'),
 		    'section' => 'pricing_setting',
 			'type'           => 'text',
 		)  

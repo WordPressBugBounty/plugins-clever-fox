@@ -7,7 +7,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	=========================================*/
 	$wp_customize->add_section(
 		'testimonial_setting', array(
-			'title' => esc_html__( 'Testimonial Section', 'hotel-26-pro' ),
+			'title' => esc_html__( 'Testimonial Section', 'clever-fox' ),
 			'panel' => 'hotel_26_frontpage_sections',
 			'priority' => 7,
 		)
@@ -26,7 +26,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control( 
 		'testimonial_hs',
 		array(
-		    'label'   => __('Show/Hide','hotel-26-pro'),
+		    'label'   => __('Show/Hide','clever-fox'),
 		    'section' => 'testimonial_setting',
 			'type' => 'checkbox',
 		)  
@@ -46,7 +46,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	'testimonial_content_head',
 		array(
 			'type' => 'hidden',
-			'label' => __('Content','hotel-26-pro'),
+			'label' => __('Content','clever-fox'),
 			'section' => 'testimonial_setting',
 		)
 	);
@@ -68,10 +68,10 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 			new Hotel_26_Repeater( $wp_customize, 
 				'testimonial_contents', 
 					array(
-						'label'   => esc_html__('Testimonial','hotel-26-pro'),
+						'label'   => esc_html__('Testimonial','clever-fox'),
 						'section' => 'testimonial_setting',
-						'add_field_label'                   => esc_html__( 'Add New Testimonial', 'hotel-26-pro' ),
-						'item_name'                         => esc_html__( 'Testimonial', 'hotel-26-pro' ),
+						'add_field_label'                   => esc_html__( 'Add New Testimonial', 'clever-fox' ),
+						'item_name'                         => esc_html__( 'Testimonial', 'clever-fox' ),
 						'customizer_repeater_image_control' => true,
 						'customizer_repeater_title_control' => true,
 						'customizer_repeater_subtitle_control' => true,
@@ -103,7 +103,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize , 'testimonial_bg_img' ,
 		array(
-			'label'          => esc_html__(  'Background Image', 'hotel-26-pro'),
+			'label'          => esc_html__(  'Background Image', 'clever-fox'),
 			'section'        => 'testimonial_setting',
 		) 
 	));
@@ -120,14 +120,14 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control(
 		'testimonial_background_attachment',
 		array(
-			'label'   		=> __('Background Attachment','hotel-26-pro'),
+			'label'   		=> __('Background Attachment','clever-fox'),
 			'section' 		=> 'testimonial_setting',
 			'settings'   	 => 'testimonial_background_attachment',
 			'type'			=> 'radio',
 			'choices'        => 
 			array(
-				'scroll' => __( 'Scroll', 'hotel-26-pro' ),
-				'fixed' => __( 'Fixed', 'hotel-26-pro' ),
+				'scroll' => __( 'Scroll', 'clever-fox' ),
+				'fixed' => __( 'Fixed', 'clever-fox' ),
 				
 			) 
 		) 
@@ -147,15 +147,15 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control(
 		'testimonial_sec_column',
 		array(
-		    'label'   		=> __('Testimonial Column','hotel-26-pro'),
+		    'label'   		=> __('Testimonial Column','clever-fox'),
 		    'section' 		=> 'testimonial_setting',
 			'settings'   	 => 'testimonial_sec_column',
 			'type'			=> 'select',
 			'choices'        => 
 			array(
-				'2' => __( '2 Column', 'hotel-26-pro' ),
-				'3' => __( '3 Column', 'hotel-26-pro' ),
-				'4' => __( '4 Column', 'hotel-26-pro' ),
+				'2' => __( '2 Column', 'clever-fox' ),
+				'3' => __( '3 Column', 'clever-fox' ),
+				'4' => __( '4 Column', 'clever-fox' ),
 			) 
 		) 
 	);
@@ -172,13 +172,13 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 			) 
 		);
 		$wp_customize->add_control('testimonial_autoplay', array(
-		'label' => __('Slide Autoplay', 'hotel-26-pro'),
+		'label' => __('Slide Autoplay', 'clever-fox'),
 		'section' => 'testimonial_setting',
 		'type'			=> 'select',
 		'choices'        => 
 				array(
-					'true'		=>__('Yes', 'hotel-26-pro'),
-					'false'=>__('No', 'hotel-26-pro'),
+					'true'		=>__('Yes', 'clever-fox'),
+					'false'=>__('No', 'clever-fox'),
 				) 
 		));
 		
@@ -193,13 +193,13 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 			) 
 		);
 		$wp_customize->add_control('testimonial_loop_rewind', array(
-		'label' => __('Loop/Rewind', 'hotel-26-pro'),
+		'label' => __('Loop/Rewind', 'clever-fox'),
 		'section' => 'testimonial_setting',
 		'type'			=> 'select',
 		'choices'        => 
 			array(
-				'loop'		=>__('Loop', 'hotel-26-pro'),
-				'rewind'=>__('Rewind', 'hotel-26-pro'),
+				'loop'		=>__('Loop', 'clever-fox'),
+				'rewind'=>__('Rewind', 'clever-fox'),
 			) 
 	));
 	
@@ -218,7 +218,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	'testimonial_spacing_head',
 		array(
 			'type' => 'hidden',
-			'label' => __('Section Spacing','hotel-26-pro'),
+			'label' => __('Section Spacing','clever-fox'),
 			'section' => 'testimonial_setting',
 		)
 	);
@@ -236,7 +236,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control( 
 		'testimonial_padding_top',
 		array(
-		    'label'   => __('Padding Top','hotel-26-pro'),
+		    'label'   => __('Padding Top','clever-fox'),
 		    'section' => 'testimonial_setting',
 			'type'           => 'text',
 		)  
@@ -253,7 +253,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control( 
 		'testimonial_padding_bottom',
 		array(
-		    'label'   => __('Padding Bottom','hotel-26-pro'),
+		    'label'   => __('Padding Bottom','clever-fox'),
 		    'section' => 'testimonial_setting',
 			'type'           => 'text',
 		)  
@@ -272,7 +272,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control( 
 		'testimonial_margin_top',
 		array(
-		    'label'   => __('Margin Top','hotel-26-pro'),
+		    'label'   => __('Margin Top','clever-fox'),
 		    'section' => 'testimonial_setting',
 			'type'           => 'text',
 		)  
@@ -289,7 +289,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control( 
 		'testimonial_margin_bottom',
 		array(
-		    'label'   => __('Margin Bottom','hotel-26-pro'),
+		    'label'   => __('Margin Bottom','clever-fox'),
 		    'section' => 'testimonial_setting',
 			'type'           => 'text',
 		)  

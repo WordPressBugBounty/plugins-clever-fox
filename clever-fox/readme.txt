@@ -2,9 +2,9 @@
 Contributors: nayrathemes
 Tags: homepage setup, companion, one click demo, sections, customizer
 Requires at least: 4.6 or higher
-Tested up to: 6.9
-Requires PHP: 5.6
-Stable tag: 29.4
+Tested up to: 7.0
+Requires PHP: 7.4
+Stable tag: 29.7
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -12,7 +12,7 @@ Clever Fox plugin to enhance the functionality of free themes made by Nayra Them
 
 == Description ==
 
-Clever Fox plugin to enhance the functionality for free themes made by <a href="https://nayrathemes.com/" rel="nofollow">Nayra Themes</a>. More than 40000+ trusted websites with Nayra Themes. It provides intuitive features to your website. Make your demo replica within a minutes. 60+ Themes compatible with Clever Fox. See below free themes listed here. <a href="https://wordpress.org/themes/webique/" rel="nofollow">Webique</a>, <a href="https://wordpress.org/themes/avril/" rel="nofollow">Avril</a>, <a href="https://wordpress.org/themes/gradiant/" rel="nofollow">Gradiant</a>, <a href="https://wordpress.org/themes/flavita/" rel="nofollow">Flavita</a>, <a href="https://wordpress.org/themes/conceptly/" rel="nofollow">Conceptly</a>, <a href="https://wordpress.org/themes/accron/" rel="nofollow">Accron</a>, <a href="https://wordpress.org/themes/corpex/" rel="nofollow">Corpex</a>, <a href="https://wordpress.org/themes/medazin/" rel="nofollow">Medazin</a> & <a href="https://wordpress.org/themes/colorpress/" rel="nofollow">ColorPress</a> is one of highest installations themes in our collections. Install any theme via single click install and import demo instantly. 
+Clever Fox plugin to enhance the functionality for free themes made by <a href="https://nayrathemes.com/" rel="nofollow">Nayra Themes</a>. More than 40000+ trusted websites with Nayra Themes. It provides intuitive features to your website. Make your demo replica within a minutes. 60+ Themes compatible with Clever Fox. See below free themes listed here. <a href="https://wordpress.org/themes/hotel-26/" rel="nofollow">Hotel 26</a>, <a href="https://wordpress.org/themes/webique/" rel="nofollow">Webique</a>, <a href="https://wordpress.org/themes/avril/" rel="nofollow">Avril</a>, <a href="https://wordpress.org/themes/gradiant/" rel="nofollow">Gradiant</a>, <a href="https://wordpress.org/themes/flavita/" rel="nofollow">Flavita</a>, <a href="https://wordpress.org/themes/conceptly/" rel="nofollow">Conceptly</a>, <a href="https://wordpress.org/themes/accron/" rel="nofollow">Accron</a>, <a href="https://wordpress.org/themes/corpex/" rel="nofollow">Corpex</a>, <a href="https://wordpress.org/themes/medazin/" rel="nofollow">Medazin</a> & <a href="https://wordpress.org/themes/colorpress/" rel="nofollow">ColorPress</a> is one of highest installations themes in our collections. Install any theme via single click install and import demo instantly. 
 
 **Features:**
 
@@ -30,6 +30,7 @@ Clever Fox plugin to enhance the functionality for free themes made by <a href="
 
 **Clever Fox Compatible Themes:**
 
+- [Hotel Elegance](https://wordpress.org/themes/hotel-elegance/)    - [Free Demo](https://www.nayrathemes.com/demo/lite/hotel-elegance/)
 - [Hotel 26](https://wordpress.org/themes/hotel-26/)    - [Free Demo](https://www.nayrathemes.com/demo/lite/hotel26/)
 - [News 25](https://wordpress.org/themes/news-25/)    - [Free Demo](https://www.nayrathemes.com/demo/lite/news25/)
 - [News 25 Live](https://wordpress.org/themes/news25-live/)    - [Free Demo](https://www.nayrathemes.com/demo/lite/news25-live/)
@@ -127,6 +128,7 @@ Just upload the `clever-fox.zip` to the `/wp-content/plugins/` directory, and th
 Yes, This plugin is specially make for Nayra Themes. You can install theme for enhance your experience.
 
 = Clever Fox Compatible Themes =
+- [Hotel Elegance](https://wordpress.org/themes/hotel-elegance/)
 - [Hotel 26](https://wordpress.org/themes/hotel-26/)
 - [News 25](https://wordpress.org/themes/news-25/)
 - [News 25 Live](https://wordpress.org/themes/news25-live/)
@@ -223,6 +225,15 @@ Clever Fox WordPress Plugin is licensed under the GPL3 (https://www.gnu.org/lice
 
 
 == Changelog ==
+
+= 29.7 =
+* Tested WP 7.0 Compatibility
+
+= 29.6 =
+* Readme Updated
+
+= 29.5 =
+* Readme Updated
 
 = 29.4 =
 * New Theme Added

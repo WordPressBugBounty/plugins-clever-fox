@@ -7,7 +7,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	=========================================*/
 	$wp_customize->add_section(
 		'choose_setting', array(
-			'title' => esc_html__( 'Why Choose Us Section', 'hotel-26-pro' ),
+			'title' => esc_html__( 'Why Choose Us Section', 'clever-fox' ),
 			'panel' => 'hotel_26_frontpage_sections',
 			'priority' => 17,
 		)
@@ -26,7 +26,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control( 
 		'choose_hs',
 		array(
-		    'label'   => __('Show/Hide','hotel-26-pro'),
+		    'label'   => __('Show/Hide','clever-fox'),
 		    'section' => 'choose_setting',
 			'type' => 'checkbox',
 		)  
@@ -45,7 +45,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control( 
 		'choose_ttl_head',
 		array(
-		    'label'   => __('Header','hotel-26-pro'),
+		    'label'   => __('Header','clever-fox'),
 		    'section' => 'choose_setting',
 			'type' => 'hidden',
 		)  
@@ -64,7 +64,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control( 
 		'choose_header_hs',
 		array(
-		    'label'   => __('Show/Hide','hotel-26-pro'),
+		    'label'   => __('Show/Hide','clever-fox'),
 		    'section' => 'choose_setting',
 			'type' => 'checkbox',
 		)  
@@ -83,7 +83,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control( 
 		'choose_title',
 		array(
-		    'label'   => __('Title','hotel-26-pro'),
+		    'label'   => __('Title','clever-fox'),
 		    'section' => 'choose_setting',
 			'type'           => 'text',
 		)  
@@ -102,7 +102,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control( 
 		'choose_subtitle',
 		array(
-		    'label'   => __('Subtitle','hotel-26-pro'),
+		    'label'   => __('Subtitle','clever-fox'),
 		    'section' => 'choose_setting',
 			'type'           => 'text',
 		)  
@@ -121,7 +121,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control( 
 		'choose_description',
 		array(
-		    'label'   => __('Description','hotel-26-pro'),
+		    'label'   => __('Description','clever-fox'),
 		    'section' => 'choose_setting',
 			'type'           => 'textarea',
 		)  
@@ -141,7 +141,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	'choose_content_head',
 		array(
 			'type' => 'hidden',
-			'label' => __('Content','hotel-26-pro'),
+			'label' => __('Content','clever-fox'),
 			'section' => 'choose_setting',
 		)
 	);
@@ -162,10 +162,10 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 			new Hotel_26_Repeater( $wp_customize, 
 				'choose_contents', 
 					array(
-						'label'   => esc_html__('Why Choose Us','hotel-26-pro'),
+						'label'   => esc_html__('Why Choose Us','clever-fox'),
 						'section' => 'choose_setting',
-						'add_field_label'                   => esc_html__( 'Add New Choose Us', 'hotel-26-pro' ),
-						'item_name'                         => esc_html__( 'Choose', 'hotel-26-pro' ),
+						'add_field_label'                   => esc_html__( 'Add New Choose Us', 'clever-fox' ),
+						'item_name'                         => esc_html__( 'Choose', 'clever-fox' ),
 						'customizer_repeater_image_control' => true,
 						'customizer_repeater_title_control' => true,
 					) 
@@ -195,15 +195,15 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control(
 		'choose_sec_column',
 		array(
-		    'label'   		=> __('Why Choose Us Column','hotel-26-pro'),
+		    'label'   		=> __('Why Choose Us Column','clever-fox'),
 		    'section' 		=> 'choose_setting',
 			'settings'   	 => 'choose_sec_column',
 			'type'			=> 'select',
 			'choices'        => 
 			array(
-				'3' => __( '3 Column', 'hotel-26-pro' ),
-				'4' => __( '4 Column', 'hotel-26-pro' ),
-				'5' => __( '5 Column', 'hotel-26-pro' ),
+				'3' => __( '3 Column', 'clever-fox' ),
+				'4' => __( '4 Column', 'clever-fox' ),
+				'5' => __( '5 Column', 'clever-fox' ),
 			) 
 		) 
 	);
@@ -221,7 +221,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		$wp_customize->add_control( 
 		new Hotel_26_Customizer_Range_Control( $wp_customize, 'choose_animation_speed', 
 			array(
-				'label'      => __( 'Slide Speed', 'hotel-26-pro' ),
+				'label'      => __( 'Slide Speed', 'clever-fox' ),
 				'section'  => 'choose_setting',
 				 'media_query'   => false,
 					'input_attr'    => array(
@@ -248,13 +248,13 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 			) 
 		);
 		$wp_customize->add_control('choose_autoplay', array(
-		'label' => __('Slide Autoplay', 'hotel-26-pro'),
+		'label' => __('Slide Autoplay', 'clever-fox'),
 		'section' => 'choose_setting',
 		'type'			=> 'select',
 		'choices'        => 
 				array(
-					'true'		=>__('Yes', 'hotel-26-pro'),
-					'false'=>__('No', 'hotel-26-pro'),
+					'true'		=>__('Yes', 'clever-fox'),
+					'false'=>__('No', 'clever-fox'),
 				) 
 		));
 		
@@ -269,13 +269,13 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 			) 
 		);
 		$wp_customize->add_control('choose_loop_rewind', array(
-		'label' => __('Loop/Rewind', 'hotel-26-pro'),
+		'label' => __('Loop/Rewind', 'clever-fox'),
 		'section' => 'choose_setting',
 		'type'			=> 'select',
 		'choices'        => 
 			array(
-				'loop'		=>__('Loop', 'hotel-26-pro'),
-				'rewind'=>__('Rewind', 'hotel-26-pro'),
+				'loop'		=>__('Loop', 'clever-fox'),
+				'rewind'=>__('Rewind', 'clever-fox'),
 			) 
 	));
 	
@@ -293,7 +293,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	'choose_spacing_head',
 		array(
 			'type' => 'hidden',
-			'label' => __('Section Spacing','hotel-26-pro'),
+			'label' => __('Section Spacing','clever-fox'),
 			'section' => 'choose_setting',
 		)
 	);
@@ -311,7 +311,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control( 
 		'choose_padding_top',
 		array(
-		    'label'   => __('Padding Top','hotel-26-pro'),
+		    'label'   => __('Padding Top','clever-fox'),
 		    'section' => 'choose_setting',
 			'type'           => 'text',
 		)  
@@ -328,7 +328,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control( 
 		'choose_padding_bottom',
 		array(
-		    'label'   => __('Padding Bottom','hotel-26-pro'),
+		    'label'   => __('Padding Bottom','clever-fox'),
 		    'section' => 'choose_setting',
 			'type'           => 'text',
 		)  
@@ -347,7 +347,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control( 
 		'choose_margin_top',
 		array(
-		    'label'   => __('Margin Top','hotel-26-pro'),
+		    'label'   => __('Margin Top','clever-fox'),
 		    'section' => 'choose_setting',
 			'type'           => 'text',
 		)  
@@ -364,7 +364,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control( 
 		'choose_margin_bottom',
 		array(
-		    'label'   => __('Margin Bottom','hotel-26-pro'),
+		    'label'   => __('Margin Bottom','clever-fox'),
 		    'section' => 'choose_setting',
 			'type'           => 'text',
 		)  

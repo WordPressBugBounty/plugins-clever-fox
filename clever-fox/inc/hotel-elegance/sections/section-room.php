@@ -35,7 +35,7 @@
 			<div class="room-slider owl-carousel">
 			<?php
 			if ( ! empty( $hotel26_room_contents ) ) {
-			$allowed_html = array(
+			$hotel26_allowed_html = array(
 					'br'     => array(),
 					'em'     => array(),
 					'strong' => array(),
@@ -57,13 +57,13 @@
 						<div class="room-item">
 						<?php if(!empty($hotel26_repeater_image)): ?>
 							<div class="room-img">
-								<img src="<?php echo esc_url($hotel26_repeater_image); ?>" alt="<?php echo esc_attr__('Room Image','hotel-26-pro'); ?>">
+								<img src="<?php echo esc_url($hotel26_repeater_image); ?>" alt="<?php echo esc_attr__('Room Image','clever-fox'); ?>">
 							</div>
 						<?php endif; ?>
 							<div class="room-content row g-3">
 								<div class="col-md-4 col-lg-5 my-md-auto my-0">
-									<h4 class="room-title"><?php echo wp_kses( html_entity_decode( $hotel26_repeater_title ), $allowed_html ); ?></h4>
-									<p class="room-price"><?php echo wp_kses(html_entity_decode( $hotel26_repeater_subtitle ), $allowed_html ); ?></p>    
+									<h4 class="room-title"><?php echo wp_kses( html_entity_decode( $hotel26_repeater_title ), $hotel26_allowed_html ); ?></h4>
+									<p class="room-price"><?php echo wp_kses(html_entity_decode( $hotel26_repeater_subtitle ), $hotel26_allowed_html ); ?></p>    
 									<a href="<?php echo esc_url($hotel26_repeater_link); ?>" <?php if($hotel26_repeater_newtab == '1') {echo 'target="_blank"'; } ?> rel="<?php if($hotel26_repeater_newtab == '1') {echo 'noreferrer noopener'; } ?> <?php if($hotel26_repeater_nofollow == '1') {echo 'nofollow'; } ?>" class="btn btn-secondary"><?php echo wp_kses_post($hotel26_repeater_button); ?></a>
 								</div>
 								<div class="col-md-8 col-lg-7">

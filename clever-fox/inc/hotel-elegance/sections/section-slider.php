@@ -8,7 +8,7 @@
 	<div class="main-slider owl-carousel">
 		<?php
 			if ( ! empty( $hotel26_slider ) ) {
-			$allowed_html = array(
+			$hotel26_allowed_html = array(
 						'br'     => array(),
 						'em'     => array(),
 						'strong' => array(),
@@ -33,7 +33,7 @@
 				$hotel26_rtl = ! is_rtl() ? 'left' : 'right';
 		?>
 		<div class="item">
-			<?php if(!empty($hotel26_repeater_image)): ?><img src="<?php echo esc_url($hotel26_repeater_image); ?>" data-img-url="<?php echo esc_url($hotel26_repeater_image); ?>" alt="<?php echo esc_attr__('Slider Image Here','hotel-26-pro'); ?>"><?php endif; ?>
+			<?php if(!empty($hotel26_repeater_image)): ?><img src="<?php echo esc_url($hotel26_repeater_image); ?>" data-img-url="<?php echo esc_url($hotel26_repeater_image); ?>" alt="<?php echo esc_attr__('Slider Image Here','clever-fox'); ?>"><?php endif; ?>
 			<div class="theme-slider">
 				<div class="theme-table">
 					<div class="theme-table-cell">
@@ -54,9 +54,9 @@
 									} 
 								?>
 								</div>
-								<?php if(!empty($hotel26_repeater_title)) { ?><h3 data-animation="fadeInDown" data-delay="150ms"><?php echo wp_kses( html_entity_decode( $hotel26_repeater_title ), $allowed_html ); ?></h3><?php } ?>
-								<?php if(!empty($hotel26_repeater_subtitle)) { ?><h1 data-animation="flipInX" data-delay="200ms"><?php echo wp_kses( html_entity_decode( $hotel26_repeater_subtitle ), $allowed_html ); ?></h1><?php } ?>
-								<?php if(!empty($hotel26_repeater_description)) { ?><p data-animation="fadeInUp" data-delay="500ms"><?php echo wp_kses_post( html_entity_decode($hotel26_repeater_description ), $allowed_html ); ?></p><?php } ?>
+								<?php if(!empty($hotel26_repeater_title)) { ?><h3 data-animation="fadeInDown" data-delay="150ms"><?php echo wp_kses( html_entity_decode( $hotel26_repeater_title ), $hotel26_allowed_html ); ?></h3><?php } ?>
+								<?php if(!empty($hotel26_repeater_subtitle)) { ?><h1 data-animation="flipInX" data-delay="200ms"><?php echo wp_kses( html_entity_decode( $hotel26_repeater_subtitle ), $hotel26_allowed_html ); ?></h1><?php } ?>
+								<?php if(!empty($hotel26_repeater_description)) { ?><p data-animation="fadeInUp" data-delay="500ms"><?php echo wp_kses_post( html_entity_decode($hotel26_repeater_description ), $hotel26_allowed_html ); ?></p><?php } ?>
 								<?php if(!empty($hotel26_repeater_button)) { ?><a href="<?php echo esc_url($hotel26_repeater_button_link); ?>" <?php if($hotel26_repeater_newtab =='1') {echo 'target="_blank"'; } ?> rel="<?php if($hotel26_repeater_newtab =='1') {echo 'noreferrer noopener';} ?> <?php if($hotel26_repeater_nofollow =='1') {echo 'nofollow';} ?>" class="btn btn-secondary" data-animation="fadeInUp" data-delay="600ms"><?php echo wp_kses_post( $hotel26_repeater_button ); ?></a><?php } ?>
 							</div>
 						</div>

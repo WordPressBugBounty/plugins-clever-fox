@@ -81,7 +81,7 @@ function conceptly_techine_lite_header_setting( $wp_customize ){
 		)  
 	);
 };
-add_action( 'customize_register', 'techine_lite_header_setting' );
+add_action( 'customize_register', 'conceptly_techine_lite_header_setting' );
 
 // header selective refresh
 function conceptly_techine_clverfox_header_section_partials( $wp_customize ){
