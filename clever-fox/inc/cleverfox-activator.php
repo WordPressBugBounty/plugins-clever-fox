@@ -88,7 +88,7 @@ class Cleverfox_Activator {
 				require CLEVERFOX_PLUGIN_DIR . 'inc/techine/default-widgets/default-widget.php';
 			}
 			
-			if ( 'Avril' == $cleverfox_theme->name){
+			if ( 'Avril' == $cleverfox_theme->name || 'Axivo' == $cleverfox_theme->name){
 				require CLEVERFOX_PLUGIN_DIR . 'inc/avril/default-pages/upload-media.php';
 				require CLEVERFOX_PLUGIN_DIR . 'inc/avril/default-pages/home-page.php';
 				require CLEVERFOX_PLUGIN_DIR . 'inc/avril/default-widgets/default-widget.php';

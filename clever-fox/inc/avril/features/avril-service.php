@@ -222,6 +222,10 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 			<?php }elseif ( 'Varuda' == $cleverfox_theme->name){ ?>
 			
 				<a class="customizer_service_upgrade_section up-to-pro" href="https://www.nayrathemes.com/varuda-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>		
+			
+			<?php }elseif ( 'Axivo' == $cleverfox_theme->name){ ?>
+				
+				<a class="customizer_service_upgrade_section up-to-pro"  href="https://www.nayrathemes.com/axivo-pro/" target="_blank"  style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>		
 					
 			<?php
 			   }else{

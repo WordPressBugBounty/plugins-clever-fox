@@ -2,7 +2,7 @@
 /**
 * Plugin Name: Clever Fox
 * Description: Clever Fox plugin to enhance the functionality for free themes made by Nayra Themes. More than 60000+ trusted websites with Nayra Themes. It provides intuitive features to your website. 45+ Themes compatible with Clever Fox. See below free themes listed here. Avril, Gradiant, Flavita, Fiona Blog, MetaSoft, Conceptly & ColorPress is one of highest installations themes in our collections. Visit our website and find theme as you need. https://www.nayrathemes.com/themes/
-* Version: 29.8
+* Version: 29.9
 * Author: nayrathemes
 * Author URI: https://nayrathemes.com
 * Requires at least : 4.6 or higher
@@ -305,6 +305,9 @@ function cleverfox_activate() {
 		if( 'Hotel Prime' == $cleverfox_theme->name){
 			require_once('inc/hotel-prime/hotel-prime.php');
 		}
+		if( 'Axivo' == $cleverfox_theme->name){
+			require_once('inc/axivo/axivo.php');
+		}
 	}
 add_action( 'init', 'cleverfox_activate' );
 
@@ -548,7 +551,7 @@ if( 'NexCraft' == $cleverfox_theme->name || 'Nexcraft BPO' == $cleverfox_theme->
 				
 				
 					<?php 
-						if ( ($cleverfox_themes->name) == "Ampark" ):
+						if ( ($cleverfox_themes->name) == "Ampark" || ($cleverfox_themes->name) == "Axivo" ):
 							$cleverfox_theme_category ="Business";
 
 						elseif ( ($cleverfox_themes->name) == "Avitech" ):

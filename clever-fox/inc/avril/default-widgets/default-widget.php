@@ -1,5 +1,12 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit;
+$cleverfox_theme = wp_get_theme();
+	$cleverfox_name = strtolower(str_replace(' ', '-', $cleverfox_theme->name));
+	if($cleverfox_name == 'axivo') {
+		$cleverfox_logo_url = CLEVERFOX_PLUGIN_URL .'inc/'.$cleverfox_name.'/images/logo.png';
+	} else {
+		$cleverfox_logo_url = CLEVERFOX_PLUGIN_URL .'inc/'.$cleverfox_name.'/images/logo-2.png';
+	}
 $cleverfox_activate = array(
         'avril-sidebar-primary' => array(
             'search-1',
@@ -16,7 +23,7 @@ $cleverfox_activate = array(
     /* the default titles will appear */
    update_option('widget_text', array(
         1 => array('title' => '',
-        'text'=>'<div class="footer-logo"><img src="'.CLEVERFOX_PLUGIN_URL.'inc/avril/images/logo-2.png" alt=""></div>
+        'text'=>'<div class="footer-logo"><img src="'.$cleverfox_logo_url.'" alt=""></div>
                         <p>'.sprintf(/* translators: %s: Description */esc_html__( '%s.', 'clever-fox' ),CLEVERFOX_FOOTER_ABOUT).'</p>
 		'),        
 		2 => array('title' => 'Recent Posts'),

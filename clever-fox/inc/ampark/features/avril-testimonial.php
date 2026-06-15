@@ -184,12 +184,18 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 			
 	//Pro feature
 		class Avril_testimonial__section_upgrade extends WP_Customize_Control {
-			public function render_content() {			
+			public function render_content() {	
+			$cleverfox_theme = wp_get_theme(); // gets the current theme
+			if('Axivo' == $cleverfox_theme->name){
 			?>
-				<a class="customizer_testimonial_upgrade_section up-to-pro" href="https://www.nayrathemes.com/ampark-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
+				<a class="customizer_testimonial_upgrade_section up-to-pro" href="https://www.nayrathemes.com/axivo-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>
+			
+			<?php } else { ?>
+				
+				<a class="customizer_social_upgrade_section up-to-pro"  href="https://www.nayrathemes.com/ampark-pro/" target="_blank"  style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>		
 				
 			<?php
-			}
+			}}
 		}
 		
 		$wp_customize->add_setting( 'avril_testimonial_upgrade_to_pro', array(

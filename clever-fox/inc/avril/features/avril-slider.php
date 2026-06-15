@@ -84,6 +84,10 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 
 				<a class="customizer_slider_upgrade_section up-to-pro" href="https://www.nayrathemes.com/ampark-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>		
 			
+			<?php }elseif ( 'Axivo' == $cleverfox_theme->name){ ?>
+				
+				<a class="customizer_slider_upgrade_section up-to-pro"  href="https://www.nayrathemes.com/axivo-pro/" target="_blank"  style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>		
+			
 			<?php }else{ ?>	
 				
 				<a class="customizer_slider_upgrade_section up-to-pro" href="https://www.nayrathemes.com/avril-pro/" target="_blank" style="display: none;"><?php esc_html_e('Upgrade to Pro','clever-fox'); ?></a>

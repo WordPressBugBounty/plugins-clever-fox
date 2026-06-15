@@ -1,10 +1,16 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit;
-$cleverfox_file = CLEVERFOX_PLUGIN_URL .'inc/avril/images/logo.png';
+$cleverfox_theme = wp_get_theme(); // gets the current theme
+$cleverfox_logo = strtolower(str_replace(' ', '-', $cleverfox_theme->name));
+if( 'axivo' == $cleverfox_logo){
+	$cleverfox_file = CLEVERFOX_PLUGIN_URL .'inc/'.$cleverfox_logo.'/images/logo.png';
+}else{
+	$cleverfox_file = CLEVERFOX_PLUGIN_URL .'inc/'.$cleverfox_logo.'/images/logo.png';
+}
 $cleverfox_ImagePath = CLEVERFOX_PLUGIN_URL .'inc/avril/images';
 
 $cleverfox_images = array(
-$cleverfox_ImagePath. '/logo.png',
+$cleverfox_file
 );
 $cleverfox_parent_post_id = null;
 foreach($cleverfox_images as $cleverfox_name) {
