@@ -247,7 +247,7 @@ class Cleverfox_Activator {
 				require CLEVERFOX_PLUGIN_DIR . 'inc/news-25/default-widgets/default-widget.php';
 				require CLEVERFOX_PLUGIN_DIR . 'inc/news-25/default-widgets/default-post.php';
 			}
-			if ( 'Hotel 26' == $cleverfox_theme->name || 'Hotel Elegance' == $cleverfox_theme->name || 'Hotel Prime' == $cleverfox_theme->name ){
+			if ( 'Hotel 26' == $cleverfox_theme->name || 'Hotel Elegance' == $cleverfox_theme->name || 'Hotel Prime' == $cleverfox_theme->name || 'Mukundra' == $cleverfox_theme->name ){
 				require CLEVERFOX_PLUGIN_DIR . 'inc/hotel-26/default-pages/upload-media.php';
 				require CLEVERFOX_PLUGIN_DIR . 'inc/hotel-26/default-pages/home-page.php';
 				require CLEVERFOX_PLUGIN_DIR . 'inc/hotel-26/default-widgets/default-widget.php';

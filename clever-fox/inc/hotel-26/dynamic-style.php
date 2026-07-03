@@ -80,7 +80,7 @@
 		/**
 		 * Funfact
 		 */
-		 $hotel26_funfact_bg_img	= get_theme_mod('funfact_bg_img', get_stylesheet_directory_uri(). '/assets/images/bg-shape-1.png');
+		 $hotel26_funfact_bg_img	= get_theme_mod('funfact_bg_img', CLEVERFOX_PLUGIN_URL. 'inc/hotel-26/images/funfact/bg-shape-1.png');
 			$output_css .=".funfact-section::after, .funfact-section::before {
 					background-image: url(".esc_url($hotel26_funfact_bg_img).");					
 			}\n";

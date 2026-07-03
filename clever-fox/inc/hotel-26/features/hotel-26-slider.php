@@ -62,6 +62,32 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 			  'default' => hotel_26_get_slider_default()
 			)
 		);
+		$hotel26_theme = wp_get_theme();
+		
+		if($hotel26_theme->get('Name') == 'Mukundra'):
+		
+		$wp_customize->add_control( 
+			new Hotel_26_Repeater( $wp_customize, 
+				'slider', 
+					array(
+						'label'   => esc_html__('Slide','clever-fox'),
+						'section' => 'slider_setting',
+						'add_field_label'                   => esc_html__( 'Add New Slide', 'clever-fox' ),
+						'item_name'                         => esc_html__( 'Slide', 'clever-fox' ),						
+						'customizer_repeater_title_control' => true,
+						'customizer_repeater_subtitle_control' => true,
+						'customizer_repeater_description_control' => true,
+						'customizer_repeater_text_control' => true,				
+						'customizer_repeater_button_text_control' => true,
+						'customizer_repeater_button_link_control' => true,
+						'customizer_repeater_video_url_control' => true,
+						'customizer_repeater_newtab_control' => true,
+						'customizer_repeater_nofollow_control' => true,
+					) 
+				) 
+			);
+			
+		else:
 		
 		$wp_customize->add_control( 
 			new Hotel_26_Repeater( $wp_customize, 
@@ -83,6 +109,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 					) 
 				) 
 			);
+		endif;
 	
 		//Pro feature
 		cleverfox_themes_section_upgrade_control( $wp_customize, array(
@@ -92,6 +119,25 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 			'pro_url'    => hotel_26_premium_links(),
 			'custom_text'    => __('Upgrade to Pro','clever-fox'),
 		) );
+
+		if($hotel26_theme->get('Name') == 'Mukundra'):
+		$wp_customize->add_setting(	'slider_elements_hs',
+			array(
+				'default'	=> '1',
+				'capability'     	=> 'edit_theme_options',
+				'sanitize_callback' => 'hotel_26_sanitize_checkbox',
+				'priority' => 7,
+			)
+		);
+
+		$wp_customize->add_control('slider_elements_hs',
+			array(
+				'type' => 'checkbox',
+				'label' => __('Show/Hide Animated Elements','clever-fox'),
+				'section' => 'slider_setting',
+			)
+		);	
+	endif;
 	
 	//Overlay Enable //
 	$wp_customize->add_setting( 

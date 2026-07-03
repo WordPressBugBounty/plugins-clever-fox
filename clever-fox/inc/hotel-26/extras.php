@@ -20,6 +20,7 @@ function hotel_26_guest_nav(){
 					 array(
 					array(
 						'image_url'       => CLEVERFOX_PLUGIN_URL. 'inc/hotel-26/images/slider01.jpg',
+						'video_url'       => 'https://www.youtube.com/embed/y9tWNIlP1AI',
 						'title'           => esc_html__( 'Welcome To Nayra Luxury Hotel', 'clever-fox' ),
 						'subtitle'         => esc_html__( 'A New Vision of <span>Luxury</span>', 'clever-fox' ),
 						'description'       => esc_html__( 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. <br>gallery of type and scrambled it to make a type specimen book.', 'clever-fox' ),
@@ -388,6 +389,23 @@ function hotel_26_guest_nav(){
 					'newtab'		=> '',
 					'nofollow'		=> '',
 					'id'        	=> 'customizer_repeater_package_003',
+				),
+					array(
+					'image_url'		=> esc_url( CLEVERFOX_PLUGIN_URL. 'inc/hotel-26/images/packages/post2.jpg' ),
+					'title'			=> esc_html__('Hongkong Tour Package' , 'clever-fox' ),
+					'subtitle'		=> esc_html__( 'Duration: 05 Nights / 06 Days by <span class="color-highlight">Volvo/Cab</span>', 'clever-fox' ),
+					'subtitle2'		=> esc_html__( 'OFF 20%', 'clever-fox' ),
+					'subtitle3'		=> esc_html__( 'Most Visited', 'clever-fox' ),
+					'color'			=> esc_html( '#0076a5' ),
+					'text'			=> esc_html__( 'Welcome Drink On Arrival', 'clever-fox' ),
+					'text2'			=> esc_html__( 'Morning Tea With Breakfast & Dinner', 'clever-fox' ),
+					'text6'			=> esc_html__( '<span class="old-price">$10,500</span><strong class="new-price"><span class="color-highlight">$5,500</span> / Person</strong>', 'clever-fox' ),
+					'button_text'	=> esc_html__( 'Get A Quote', 'clever-fox' ),
+					'button_link'	=> '',
+					'button2_text'	=> esc_html__( ' Call Now : <span class="color-highlight">70 975 975 70</span>', 'clever-fox' ),
+					'newtab'		=> '',
+					'nofollow'		=> '',
+					'id'        	=> 'customizer_repeater_package_004',
 				),
 			)								
 		)
@@ -1221,8 +1239,8 @@ function hotel26_get_room_default() {
 		}else if( 'Hotel Prime' == $theme->name){
 			$hotel_26_premium_url= 'https://www.nayrathemes.com/hotel-prime-pro/';
 		
-		}else if( 'Hotelchild3' == $theme->name){
-			$hotel_26_premium_url= 'https://www.nayrathemes.com/hotel-26-c3-pro/';
+		}else if( 'Mukundra' == $theme->name){
+			$hotel_26_premium_url= 'https://www.nayrathemes.com/mukundra-pro/';
 		
 		}else{
 			$hotel_26_premium_url= 'https://www.nayrathemes.com/hotel-26-pro/';
