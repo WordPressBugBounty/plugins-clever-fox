@@ -4,7 +4,7 @@ Tags: homepage setup, companion, one click demo, sections, customizer
 Requires at least: 4.6 or higher
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 30.0
+Stable tag: 30.1
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -30,6 +30,7 @@ Clever Fox plugin to enhance the functionality for free themes made by <a href="
 
 **Clever Fox Compatible Themes:**
 
+- [Mukundra](https://wordpress.org/themes/mukundra/)    - [Free Demo](https://www.nayrathemes.com/demo/lite/mukundra/)
 - [Hotel Prime](https://wordpress.org/themes/hotel-prime/)    - [Free Demo](https://www.nayrathemes.com/demo/lite/hotel-prime/)
 - [Hotel Elegance](https://wordpress.org/themes/hotel-elegance/)    - [Free Demo](https://www.nayrathemes.com/demo/lite/hotel-elegance/)
 - [Hotel 26](https://wordpress.org/themes/hotel-26/)    - [Free Demo](https://www.nayrathemes.com/demo/lite/hotel26/)
@@ -129,6 +130,7 @@ Just upload the `clever-fox.zip` to the `/wp-content/plugins/` directory, and th
 Yes, This plugin is specially make for Nayra Themes. You can install theme for enhance your experience.
 
 = Clever Fox Compatible Themes =
+- [Mukundra](https://wordpress.org/themes/mukundra/)
 - [Hotel Prime](https://wordpress.org/themes/hotel-prime/)
 - [Hotel Elegance](https://wordpress.org/themes/hotel-elegance/)
 - [Hotel 26](https://wordpress.org/themes/hotel-26/)
@@ -227,6 +229,9 @@ Clever Fox WordPress Plugin is licensed under the GPL3 (https://www.gnu.org/lice
 
 
 == Changelog ==
+
+= 30.1 =
+* Readme Updated
 
 = 30.0 =
 * Add Mukundra Theme
