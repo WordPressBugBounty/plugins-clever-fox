@@ -4,7 +4,7 @@ Tags: homepage setup, companion, one click demo, sections, customizer
 Requires at least: 4.6 or higher
 Tested up to: 7.1.2
 Requires PHP: 7.4
-Stable tag: 30.3
+Stable tag: 30.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -98,6 +98,7 @@ Clever Fox plugin to enhance the functionality for free themes made by <a href="
 - [GradiantX](https://wordpress.org/themes/gradiantx/)		- [Free Demo](https://www.nayrathemes.com/demo/lite/gradiantx/)
 - [ColorFlow](https://wordpress.org/themes/colorflow/)		- [Free Demo](https://www.nayrathemes.com/demo/lite/colorflow/)
 - [Shadiant](https://wordpress.org/themes/shadiant/)		- [Free Demo](https://www.nayrathemes.com/demo/lite/shadiant/)
+- [Arxon](https://wordpress.org/themes/arxon/)				- [Free Demo](https://www.nayrathemes.com/demo/lite/arxon/)
 
 == Installation ==
 
@@ -198,6 +199,7 @@ Yes, This plugin is specially make for Nayra Themes. You can install theme for e
 - [GradiantX](https://wordpress.org/themes/gradiantx/)
 - [ColorFlow](https://wordpress.org/themes/colorflow/)
 - [Shadiant](https://wordpress.org/themes/shadiant/)
+- [Arxon](https://wordpress.org/themes/arxon/)
 
 == Screenshots ==
 
@@ -229,6 +231,9 @@ Clever Fox WordPress Plugin is licensed under the GPL3 (https://www.gnu.org/lice
 
 
 == Changelog ==
+
+= 30.4 =
+* Readme Updated
 
 = 30.3 =
 * Readme Updated
