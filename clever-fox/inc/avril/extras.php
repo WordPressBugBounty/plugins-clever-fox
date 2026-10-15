@@ -528,3 +528,42 @@ function avril_get_social_icon_default() {
 		)
 	);
 }
+
+function avril_get_animate2_default() {
+	return apply_filters(
+		'avril_get_animate2_default', json_encode(
+			array(
+				array(					
+					'image_url'       => CLEVERFOX_PLUGIN_URL . 'inc/arxon/images/gallery/logo1.png',
+					'id'              => 'customizer_repeater_animate2_001'
+					
+				),
+				array(					
+					'image_url'       => CLEVERFOX_PLUGIN_URL . 'inc/arxon/images/gallery/logo2.png',
+					'id'              => 'customizer_repeater_animate2_002',
+					
+				),
+				array(					
+					'image_url'       => CLEVERFOX_PLUGIN_URL . 'inc/arxon/images/gallery/logo3.png',
+					'id'              => 'customizer_repeater_animate2_003',
+					
+				),
+				array(					
+					'image_url'       => CLEVERFOX_PLUGIN_URL . 'inc/arxon/images/gallery/logo4.png',
+					'id'              => 'customizer_repeater_animate2_004',
+					
+				),
+				array(					
+					'image_url'       => CLEVERFOX_PLUGIN_URL . 'inc/arxon/images/gallery/logo5.png',
+					'id'              => 'customizer_repeater_animate2_005',
+					
+				),
+				array(					
+					'image_url'       => CLEVERFOX_PLUGIN_URL . 'inc/arxon/images/gallery/logo6.png',
+					'id'              => 'customizer_repeater_animate2_003',
+					
+				),
+			)
+		)
+	);
+}
